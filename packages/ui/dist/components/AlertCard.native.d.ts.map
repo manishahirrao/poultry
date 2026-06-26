@@ -1,0 +1,1 @@
+{"version":3,"file":"AlertCard.native.d.ts","sourceRoot":"","sources":["../../src/components/AlertCard.native.tsx"],"names":[],"mappings":"AAKA,OAAO,KAAK,MAAM,OAAO,CAAC;AAS1B,OAAO,KAAK,EAAE,KAAK,EAAE,MAAM,UAAU,CAAC;AAEtC,UAAU,cAAc;IACtB,KAAK,EAAE,KAAK,CAAC;IACb,OAAO,CAAC,EAAE,MAAM,IAAI,CAAC;CACtB;AAED,QAAA,MAAM,SAAS,EAAE,KAAK,CAAC,EAAE,CAAC,cAAc,CAyFvC,CAAC;AA0EF,eAAe,SAAS,CAAC"}

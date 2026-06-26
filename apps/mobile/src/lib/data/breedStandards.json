@@ -1,0 +1,110 @@
+{
+  "breeds": [
+    {
+      "name": "Cobb 500",
+      "target_harvest_weight_kg": 2.2,
+      "target_harvest_age_days": 42,
+      "fcr_benchmarks": {
+        "day_28": 1.65,
+        "day_35": 1.75,
+        "day_42": 1.85
+      },
+      "weight_curve": {
+        "day_7": 0.18,
+        "day_14": 0.45,
+        "day_21": 0.85,
+        "day_28": 1.35,
+        "day_35": 1.85,
+        "day_42": 2.20
+      },
+      "mortality_curve": {
+        "daily_rate_percent": 0.3
+      },
+      "doc_weight_g": 42
+    },
+    {
+      "name": "Ross 308",
+      "target_harvest_weight_kg": 2.3,
+      "target_harvest_age_days": 42,
+      "fcr_benchmarks": {
+        "day_28": 1.60,
+        "day_35": 1.70,
+        "day_42": 1.80
+      },
+      "weight_curve": {
+        "day_7": 0.19,
+        "day_14": 0.48,
+        "day_21": 0.90,
+        "day_28": 1.42,
+        "day_35": 1.95,
+        "day_42": 2.30
+      },
+      "mortality_curve": {
+        "daily_rate_percent": 0.28
+      },
+      "doc_weight_g": 43
+    },
+    {
+      "name": "Vencobb",
+      "target_harvest_weight_kg": 2.0,
+      "target_harvest_age_days": 40,
+      "fcr_benchmarks": {
+        "day_28": 1.70,
+        "day_35": 1.80,
+        "day_40": 1.90
+      },
+      "weight_curve": {
+        "day_7": 0.16,
+        "day_14": 0.40,
+        "day_21": 0.78,
+        "day_28": 1.25,
+        "day_35": 1.72,
+        "day_40": 2.00
+      },
+      "mortality_curve": {
+        "daily_rate_percent": 0.32
+      },
+      "doc_weight_g": 40
+    },
+    {
+      "name": "Hubbard",
+      "target_harvest_weight_kg": 2.1,
+      "target_harvest_age_days": 41,
+      "fcr_benchmarks": {
+        "day_28": 1.68,
+        "day_35": 1.78,
+        "day_41": 1.88
+      },
+      "weight_curve": {
+        "day_7": 0.17,
+        "day_14": 0.42,
+        "day_21": 0.82,
+        "day_28": 1.30,
+        "day_35": 1.78,
+        "day_41": 2.10
+      },
+      "mortality_curve": {
+        "daily_rate_percent": 0.30
+      },
+      "doc_weight_g": 41
+    }
+  ],
+  "default_breed": "Cobb 500",
+  "season_adjustments": {
+    "summer": {
+      "fcr_multiplier": 1.05,
+      "weight_multiplier": 0.98,
+      "mortality_multiplier": 1.2
+    },
+    "winter": {
+      "fcr_multiplier": 0.98,
+      "weight_multiplier": 1.02,
+      "mortality_multiplier": 0.9
+    },
+    "monsoon": {
+      "fcr_multiplier": 1.03,
+      "weight_multiplier": 0.99,
+      "mortality_multiplier": 1.1
+    }
+  }
+}

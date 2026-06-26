@@ -1,0 +1,35 @@
+{
+  "name": "FlockIQ",
+  "short_name": "FlockIQ",
+  "description": "The poultry management platform for integrators and farms. Batch tracking, WhatsApp automation, price intelligence.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#166534",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "agriculture", "finance"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "View Prices",
+      "short_name": "Prices",
+      "description": "View current broiler prices",
+      "url": "/",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

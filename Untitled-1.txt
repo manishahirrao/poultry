@@ -1,0 +1,337 @@
+[Skip to main content](http://localhost:3000#main-content)
+🆓 Try free for 14 days — no credit card, cancel anytime 🆓 Try free for 14 days — no credit card, cancel anytime... [Start free trial →](http://localhost:3000/signup)
+- Products
+- Solutions
+- Features
+- Pricing
+- Resources
+[Sign in](http://localhost:3000/login)
+[Start free trial →](http://localhost:3000/signup)
+
+# Run Your Poultry Operation Like a Fortune 500 Company.
+
+FlockIQ gives integrators and farm managers complete visibility over every batch — FCR, mortality, weight, health — with daily data collected automatically via WhatsApp. No spreadsheets. No manual calls.
+[Start Free Trial — 14 Days](http://localhost:3000/signup)
+[See a 3-Min Demo](http://localhost:3000#demo)
+Powered by verified data
+
+## Why 80% of Gorakhpur farmers leave money on the table every batch
+
+Three problems that cost you thousands every batch
+
+### ₹2–4/kg
+Lost Every Batch
+बेचते हैं भरोसे पर, और हर बार ₹2–4/kg का नुकसान होता है
+At 25K birds:
+₹30K–80K/batch
+
+### HPAI Alert
+Reaches You Late
+HPAI alert का पता लगता है जब ट्रांसपोर्ट पहले से बंद हो चुका होता है
+At 25K birds:
+₹1L–5L total loss risk
+
+### ₹2/kg Stolen
+By Middleman
+बिचौलिया ₹8 देता है जब लखनऊ में ₹10 है — आपको नहीं पता
+At 25K birds × 4kg:
+₹2L per batch lost to information gap
+
+## Built for every link in the poultry chain
+
+Whether you manage one farm or fifty — FlockIQ has a plan that fits.
+
+### Commercial Farm
+10K–50K birds
+Lost ₹2–4/kg on timing this batch?
+₹2,000–5,000/mo
+[Free Trial →](http://localhost:3000/login?action=signup&segment=commercial_farm)
+
+### Integrator
+50K+ birds
+20 farms, no central dashboard?
+₹8,000–25,000/mo
+[Request Demo →](http://localhost:3000/demo)
+
+### Feed Company
+Regional mills
+Demand forecasting for production runs.
+₹10,000+/mo
+[Talk to Sales →](http://localhost:3000/demo)
+
+### Enterprise
+QSR & Processors
+30-day forward pricing. API-first.
+Custom pricing
+[Request Demo →](http://localhost:3000/demo)
+
+## 4:30 AM to 6:30 AM — You Don't Have to Do Anything
+
+We handle everything. You just check your WhatsApp.
+Time saved daily
+2 hrs
+from manual mandi calling
+
+### AGMARKNET, NECC, IMD, feed rates — all public data, all updated daily.
+We pull from 47 public sources every morning — mandi prices, weather, feed costs, disease alerts — so you never have to.
+
+### Trained on 2 years of broiler price data. 95.2% directional accuracy.
+Our ensemble model runs at 5 AM and produces P10/P50/P90 forecasts for the next 7 days — verified on 847 real predictions.
+
+### Sell today or wait — a clear action, every morning.
+7-day price forecast (P10/P50/P90) with a clear sell or hold signal — delivered via WhatsApp. No app required for the farmer.
+[Try WhatsApp Demo →](http://localhost:3000/try-whatsapp)
+
+### Today's Price
+
+हर सुबह 4:30 AM को 47 sources से data — 06:00 AM पर AI prediction — 06:30 AM पर आपके phone पर
+- P10/P50/P90 explanation: "₹155 (low) — ₹165 (likely) — ₹175 (high) — we tell you all three, not just one number. Live bird vs dressed bird prices tracked separately."
+- Offline mode: "No internet? Last cached price shows with timestamp — you are never in the dark. Works even on basic ₹8,000 Android phones."
+- Comparison callout: "WhatsApp mandi groups बताते हैं कल का भाव। हम बताते हैं अगले 7 दिन का — Cobb 400, Ross 308, Hubbard-specific."
+- Breed-specific: "Different growth rates (Cobb 400: 2.2kg @ 35 days, Ross 308: 2.3kg @ 35 days, Hubbard: 2.1kg @ 35 days) mean different optimal sell days."
+
+## 57 Features Across 6 Intelligence Modules
+
+From AI-powered price forecasting to automated disease detection — everything you need to run a profitable poultry operation.
+
+### Price Intelligence
+AI-powered price forecasting with confidence bands and historical data analysis
+
+### Sell Intelligence
+Daily sell signals with financial impact analysis and negotiation support
+
+### Farm Operations
+Complete batch lifecycle management from DOC to harvest with performance tracking
+
+### Health & Biosecurity
+Vaccination scheduling, medication records, and compliance documentation
+
+### Alerts Intelligence
+Real-time alerts for disease, weather, price crashes, and operational anomalies
+
+### Integrations
+Connect with ERP systems, IoT devices, and third-party services
+[Explore All 32 Features](http://localhost:3000/features)
+96.2%
+Directional Accuracy
+Validated on 847 real predictions across 15 countries
+₹3–5/kg
+Average Profit Improvement
+Per batch, from better sell timing
+200+
+Farms Already Using FlockIQ
+Gorakhpur belt — Deoria, Kushinagar, Maharajganj
+[View Live Accuracy Dashboard →](http://localhost:3000/accuracy)
+
+## Farms That Made the Switch
+
+See how poultry operations across India and Southeast Asia transformed their outcomes with FlockIQ
+
+### राजेश यादव (Rajesh Yadav)
+गोरखपुर, उत्तर प्रदेश
+25,000 पक्षी (birds)
+
+### Suresh Kumar Patel
+Deoria, UP — 8 farms managed
+Integrator
+Watch Video
+
+### David Chen
+Jakarta, Indonesia
+120,000 birds (integrator)
+As featured in
+[Read All Case Studies →](http://localhost:3000/case-studies)
+
+## 150+ farmers saving ₹50,000+ for just ₹167/day
+
+Every feature you need to make smarter selling decisions. 14-day free trial — no credit card.
+150+ farmers
+
+### FlockIQ FARM
+For individual farmers
+₹167/day
+- Live today's mandi price
+- 7-day price forecast
+- Daily sell signal (WhatsApp)
+- Batch ROI calculator
+- Middleman check
+- HPAI/disease alerts
+- Weather alerts
+- Farm management (3 farms)
+- 30-day forecast
+- Multi-farm dashboard
+- API access
+[Start 14-day free trial](http://localhost:3000/signup?plan=flockiq_farm)
+No credit card required
+45+ integrators
+
+### FlockIQ PRO
+For integrators & large farms
+- Everything in FARM
+- 30-day AI forecast (P10/P50/P90)
+- Multi-farm dashboard
+- Unlimited farms & batches
+- Optimal sell window analysis
+- Price driver analysis (SHAP)
+- Employee management
+- API access
+[Start 14-day free trial](http://localhost:3000/signup?plan=flockiq_pro)
+
+### Calculate Your ROI
+₹1.5 back for every ₹1 invested
+[Get This ROI — Start Free →](http://localhost:3000/signup)
+
+## Frequently Asked Questions
+Everything you need to know about FlockIQ
+FlockIQ achieves 96.2% directional accuracy — meaning 96+ out of 100 predictions get the right direction (up/down). MAPE is 4.8% — average error under ₹8/kg when price is ₹160. This is verified on 847 predictions across 15 countries.
+Yes. FlockIQ works on both iOS and Android. It also works well on basic Android phones (₹8,000–15,000 range). The app loads in under 2 seconds even on slow 3G connections.
+After 14 days, you can continue with FlockIQ FARM (₹5,000/month) or upgrade to FlockIQ PRO (₹8,000/month). We only charge after you manually confirm — no automatic charges without permission.
+The app always shows the last cached data with a timestamp. We never show a blank screen. WhatsApp messages will still be delivered when you're back online.
+Your data is stored on Supabase (AWS ap-south-1, Mumbai). DPDP Act 2023 compliant. Your data is never sold to third parties.
+FlockIQ is currently available in India, Indonesia, Vietnam, Thailand, and 11 other countries across 4 continents. We're expanding to more markets in Phase 2.
+Daily at 6:30 AM — 7 days a week. This timing was chosen based on farmer feedback as the most suitable time for making decisions.
+Yes, at any time. No lock-in period, no penalty. Just go to the app and cancel — it takes effect instantly.
+[View all questions →](http://localhost:3000/faq)
+
+## We will never lie to a farmer. That's why we tell you all this.
+Radical transparency is how we build trust that lasts.
+
+### 95%+ accuracy before launch
+We will not onboard a single customer until our model hits 95%+ directional accuracy on Gorakhpur holdout data. Not one rupee before this gate.
+
+### All data is public
+We use only public, zero-cost data. AGMARKNET, NECC, IMD. No black-box proprietary feeds. You can verify our sources.
+
+### Accuracy always visible
+Our live accuracy dashboard is public. If our model underperforms, you see it before we do. We don't hide bad days.
+
+### Below 95% = money back
+If our rolling 30-day accuracy drops below 95%, you get that month free. Automatically. No claim needed.
+
+### About Our Team
+We combine deep technical expertise with real field experience — because models need to be validated at the mandi gate, not just in a notebook.
+
+#### Senior Architect
+30+ years building large-scale agri-tech systems
+
+#### Data Science
+IIT-trained ML engineers, commodity forecasting background
+
+#### Ground Truth
+Our team spent 30+ days visiting mandis to verify predictions in person
+
+## Get Started — First 14 Days Free
+
+No credit card. Cancel anytime. Setup in 3 minutes.
+"Your first price signal will arrive on WhatsApp tonight at 6:30 PM."
+[Start Now →](http://localhost:3000/login?action=signup)
+The poultry management platform for integrators and farms worldwide.
+[+91-XXXXXXXXXX](https://wa.me/91XXXXXXXXXX)
+[hello@flockiq.com](mailto:hello@flockiq.com)
+
+### Product
+- [Features](http://localhost:3000/features)
+- [How It Works](http://localhost:3000/how-it-works)
+- [Pricing](http://localhost:3000/pricing)
+- [Accuracy](http://localhost:3000/accuracy)
+- [Farm Intelligence](http://localhost:3000/farm-intelligence)
+- [Free Disease Alerts](http://localhost:3000/free-disease-alerts)
+- [WhatsApp Demo](http://localhost:3000/try-whatsapp)
+- [Loss Calculator](http://localhost:3000/loss-calculator)
+[Features](http://localhost:3000/features)
+[How It Works](http://localhost:3000/how-it-works)
+[Pricing](http://localhost:3000/pricing)
+[Accuracy](http://localhost:3000/accuracy)
+[Farm Intelligence](http://localhost:3000/farm-intelligence)
+[Free Disease Alerts](http://localhost:3000/free-disease-alerts)
+[WhatsApp Demo](http://localhost:3000/try-whatsapp)
+[Loss Calculator](http://localhost:3000/loss-calculator)
+
+### Solutions
+- [For Farms](http://localhost:3000/solutions/farms)
+- [For Integrators](http://localhost:3000/solutions/integrators)
+- [For Commercial Farms](http://localhost:3000/solutions/commercial-farms)
+- [For Feed Companies](http://localhost:3000/solutions/feed-companies)
+- [For Traders](http://localhost:3000/solutions/traders)
+- [Enterprise](http://localhost:3000/enterprise)
+[For Farms](http://localhost:3000/solutions/farms)
+[For Integrators](http://localhost:3000/solutions/integrators)
+[For Commercial Farms](http://localhost:3000/solutions/commercial-farms)
+[For Feed Companies](http://localhost:3000/solutions/feed-companies)
+[For Traders](http://localhost:3000/solutions/traders)
+[Enterprise](http://localhost:3000/enterprise)
+
+### Company
+- [About Us](http://localhost:3000/about)
+- [Blog](http://localhost:3000/blog)
+- [Case Studies](http://localhost:3000/case-studies)
+- [Press](http://localhost:3000/press)
+- [Partner With Us](http://localhost:3000/partner-with-us)
+- [Refer & Earn](http://localhost:3000/refer)
+- [Contact](http://localhost:3000/contact)
+- [Book Demo](http://localhost:3000/demo)
+[About Us](http://localhost:3000/about)
+[Blog](http://localhost:3000/blog)
+[Case Studies](http://localhost:3000/case-studies)
+[Press](http://localhost:3000/press)
+[Partner With Us](http://localhost:3000/partner-with-us)
+[Refer & Earn](http://localhost:3000/refer)
+[Contact](http://localhost:3000/contact)
+[Book Demo](http://localhost:3000/demo)
+
+### Resources
+- [FAQ](http://localhost:3000/faq)
+- [Glossary](http://localhost:3000/glossary)
+- [Templates](http://localhost:3000/templates)
+- [Tools](http://localhost:3000/tools/price-trends)
+- [Mandi Events](http://localhost:3000/mandi-events)
+- [Research](http://localhost:3000/research/up-poultry-timing-loss-report-2025)
+- [Directory](http://localhost:3000/directory)
+- [All Locations](http://localhost:3000/locations)
+[FAQ](http://localhost:3000/faq)
+[Glossary](http://localhost:3000/glossary)
+[Templates](http://localhost:3000/templates)
+[Tools](http://localhost:3000/tools/price-trends)
+[Mandi Events](http://localhost:3000/mandi-events)
+[Research](http://localhost:3000/research/up-poultry-timing-loss-report-2025)
+[Directory](http://localhost:3000/directory)
+[All Locations](http://localhost:3000/locations)
+
+### Legal
+- [Privacy Policy](http://localhost:3000/privacy)
+- [Terms of Service](http://localhost:3000/terms)
+- [Compliance](http://localhost:3000/compliance)
+- [Refund Policy](http://localhost:3000/refund)
+[Privacy Policy](http://localhost:3000/privacy)
+[Terms of Service](http://localhost:3000/terms)
+[Compliance](http://localhost:3000/compliance)
+[Refund Policy](http://localhost:3000/refund)
+© 2026 FlockIQ Technologies Pvt. Ltd. | CIN: U01404UP2026PTC123456
+[Privacy](http://localhost:3000/privacy)
+[Terms](http://localhost:3000/terms)
+[Compliance](http://localhost:3000/compliance)
+VERIFIED ACCURACY
+
+## 95%+ Accuracy — Proven Before Launch, Maintained After
+
+Verified on 847 real predictions across 15 countries
+Guarantee
+95%+
+or full refund
+
+### How We Measure — Full Methodology
+
+#### Data Sources
+100% public data only — AGMARKNET, NECC, IMD weather, feed commodity prices (maize, soybean meal). Broiler-specific demand patterns tracked.
+
+#### Model
+LightGBM + Temporal Fusion Transformer ensemble — trained on 2 years of broiler price data (Cobb 400, Ross 308, Hubbard). FCR-adjusted predictions.
+
+#### Validation
+6-month out-of-sample Gorakhpur holdout (3,000+ predictions) + manual mandi verification. Breed-specific accuracy validated.
+
+#### Accuracy Gate
+If accuracy drops below 95%, service pauses automatically. No exceptions. Applied per breed (Cobb 400, Ross 308, Hubbard).
+[View Full Accuracy Report →](http://localhost:3000/accuracy)
+If accuracy ever drops below 95% for any broiler breed, we'll refund that month entirely.
+Automatically applied — no claim needed.

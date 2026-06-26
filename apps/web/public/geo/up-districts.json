@@ -1,0 +1,113 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Gorakhpur",
+        "name_hi": "गोरखपुर",
+        "district": "gorakhpur"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [83.0, 26.5],
+          [83.5, 26.5],
+          [83.5, 27.0],
+          [83.0, 27.0],
+          [83.0, 26.5]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Deoria",
+        "name_hi": "देवरिया",
+        "district": "deoria"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [83.5, 26.0],
+          [84.0, 26.0],
+          [84.0, 26.5],
+          [83.5, 26.5],
+          [83.5, 26.0]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kushinagar",
+        "name_hi": "कुशीनगर",
+        "district": "kushinagar"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [83.5, 26.5],
+          [84.0, 26.5],
+          [84.0, 27.0],
+          [83.5, 27.0],
+          [83.5, 26.5]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Maharajganj",
+        "name_hi": "महाराजगंज",
+        "district": "maharajganj"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [82.5, 27.0],
+          [83.0, 27.0],
+          [83.0, 27.5],
+          [82.5, 27.5],
+          [82.5, 27.0]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Basti",
+        "name_hi": "बस्ती",
+        "district": "basti"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [82.5, 26.5],
+          [83.0, 26.5],
+          [83.0, 27.0],
+          [82.5, 27.0],
+          [82.5, 26.5]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sant Kabir Nagar",
+        "name_hi": "संत कबीर नगर",
+        "district": "sant_kabir_nagar"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [83.0, 26.0],
+          [83.5, 26.0],
+          [83.5, 26.5],
+          [83.0, 26.5],
+          [83.0, 26.0]
+        ]]
+      }
+    }
+  ]
+}

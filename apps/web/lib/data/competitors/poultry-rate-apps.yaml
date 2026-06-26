@@ -1,0 +1,128 @@
+# Poultry Rate Apps Competitor Profile
+# Centralized data for poultry rate apps (Poultry Rates of India, Egg and Broiler Rates, etc.)
+# Last Updated: May 2026
+
+competitor:
+  name: Poultry Rate Apps
+  nameHi: पोल्ट्री रेट ऐप्स
+  website: Multiple (Google Play Store)
+  category: rate_information_apps
+  tier: indirect_competitor
+  
+positioning:
+  tagline: Daily poultry market rates on your phone
+  valueProposition: Free mobile apps providing daily egg, broiler, and feed rates from major markets
+  targetAudience: Poultry farmers, traders, and industry workers
+  geographicFocus: India-wide
+  
+pricing:
+  model: Free (ad-supported or basic)
+  tiers:
+    - name: Free
+      price: ₹0
+      period: forever
+      features:
+        - Daily egg rates
+        - Daily broiler rates
+        - Feed material prices
+        - Market-wise rates
+        - Simple interface
+  hiddenCosts: Ad-supported in some apps
+  enterprisePricing: Not available
+  
+features:
+  core:
+    - Daily egg rates (major markets)
+    - Daily broiler live bird prices
+    - Cull bird prices
+    - Feed and raw material prices
+    - Market-wise coverage
+  prediction:
+    hasPricePrediction: false
+    predictionWindow: 0 days
+    accuracy: Not applicable
+    confidenceIntervals: false
+  data:
+    dataSources: "Public rate aggregation from major groups (NECC, VenCobb, etc.)"
+    updateFrequency: Daily
+    historicalData: Limited
+    districtLevelGranularity: Market-level (not district-specific)
+  alerts:
+    hpaiAlerts: false
+    diseaseAlerts: false
+    weatherAlerts: false
+    priceAlerts: false
+  delivery:
+    channels: ["Mobile App (Android)"]
+    whatsappIntegration: false
+    automatedDelivery: false
+    languageSupport: ["English", "Hindi (varies by app)"]
+  
+strengths:
+  - Free to use
+  - Simple, easy-to-use interface
+  - Daily rate updates
+  - Covers major markets
+  - Works offline (some apps)
+  - Lightweight apps
+  
+weaknesses:
+  - No price prediction capability
+  - No forward visibility
+  - No AI-powered insights
+  - Limited to current rates only
+  - No analysis or trends
+  - No disease outbreak alerts
+  - Ad-supported (user experience issues)
+  - Data accuracy varies by app
+  
+bestFor:
+  - Farmers wanting quick rate checks
+  - Farmers with basic smartphones
+  - Those who need simple rate information
+  - Budget-conscious farmers
+  - Traders needing market rates
+  
+notIdealFor:
+  - Commercial farmers (10K+ birds) needing price intelligence
+  - Farmers requiring 7-day price forecasts
+  - Farmers needing disease outbreak alerts
+  - Operations requiring analysis and trends
+  - Farmers needing district-specific predictions
+  
+commonComplaints:
+  - "Only shows today's rates - no prediction"
+  - "Can't plan ahead with this"
+  - "Ads are annoying"
+  - "Sometimes rates are outdated"
+  - "No analysis or trends"
+  - "Limited to major markets only"
+  
+marketPosition:
+  marketShare: Multiple apps with varying user bases
+  funding: Individual developers/small companies
+  launchYear: Various (2015-2023)
+  customerCount: Thousands across multiple apps
+  
+comparisonNotes:
+  vsPoultryPulse:
+    keyDifference: "Poultry rate apps show current daily rates; PoultryPulse provides AI-powered 7-day price forecasts"
+    whyPoultryPulseWins: "95%+ accuracy, 7-day forward visibility, HPAI alerts, Hindi-first, WhatsApp delivery, analysis and trends"
+    whyRateAppsWin: "Free, simple, works offline, quick rate checks"
+    switchDifficulty: "Low - PoultryPulse provides additional value beyond rate checking"
+    
+migrationNotes:
+  dataTransfer: "Not applicable - different product category"
+  learningCurve: "Low - PoultryPulse is WhatsApp-first, easier than app navigation"
+  supportOffered: "Onboarding assistance for price intelligence features"
+  timeToValue: "Immediate - first prediction delivers value"
+  
+seoKeywords:
+  primary:
+    - "poultry rate app alternative"
+    - "poultry rate app vs PoultryPulse"
+    - "broiler price prediction app"
+  secondary:
+    - "poultry rates India app"
+    - "egg rate app comparison"
+    - "poultry price intelligence app"

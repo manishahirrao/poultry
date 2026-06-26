@@ -1,0 +1,128 @@
+{
+  "protocols": {
+    "broiler": {
+      "default": {
+        "name": "UP Broiler Standard Protocol",
+        "description": "Standard vaccination protocol for broiler chickens in Uttar Pradesh",
+        "vaccinations": [
+          {
+            "day": 1,
+            "vaccine_name": "Marek's Disease Vaccine",
+            "vaccine_type": "Live",
+            "route": "injection",
+            "dose_per_bird": "1 dose",
+            "notes": "If not in-ovo vaccinated"
+          },
+          {
+            "day": 7,
+            "vaccine_name": "Newcastle Disease (La Sota)",
+            "vaccine_type": "Live",
+            "route": "drinking_water",
+            "dose_per_bird": "1 dose",
+            "notes": "Standard ND vaccine"
+          },
+          {
+            "day": 14,
+            "vaccine_name": "IBD (Gumboro)",
+            "vaccine_type": "Live",
+            "route": "drinking_water",
+            "dose_per_bird": "1 dose",
+            "notes": "Infectious Bursal Disease"
+          },
+          {
+            "day": 21,
+            "vaccine_name": "Infectious Bronchitis",
+            "vaccine_type": "Live",
+            "route": "spray",
+            "dose_per_bird": "1 dose",
+            "notes": "IB Spray vaccine"
+          },
+          {
+            "day": 28,
+            "vaccine_name": "Newcastle Clone 30 Booster",
+            "vaccine_type": "Live",
+            "route": "drinking_water",
+            "dose_per_bird": "1 dose",
+            "notes": "ND booster dose"
+          }
+        ]
+      }
+    },
+    "layer": {
+      "default": {
+        "name": "Layer Standard Protocol",
+        "description": "Standard vaccination protocol for layer chickens",
+        "vaccinations": [
+          {
+            "day": 1,
+            "vaccine_name": "Marek's Disease Vaccine",
+            "vaccine_type": "Live",
+            "route": "injection",
+            "dose_per_bird": "1 dose",
+            "notes": "If not in-ovo vaccinated"
+          },
+          {
+            "day": 7,
+            "vaccine_name": "Newcastle Disease (La Sota)",
+            "vaccine_type": "Live",
+            "route": "drinking_water",
+            "dose_per_bird": "1 dose",
+            "notes": "Standard ND vaccine"
+          },
+          {
+            "day": 14,
+            "vaccine_name": "IBD (Gumboro)",
+            "vaccine_type": "Live",
+            "route": "drinking_water",
+            "dose_per_bird": "1 dose",
+            "notes": "Infectious Bursal Disease"
+          }
+        ]
+      }
+    }
+  },
+  "vaccine_routes": [
+    {
+      "value": "drinking_water",
+      "label": "Drinking Water",
+      "label_hi": "पीने के पानी में"
+    },
+    {
+      "value": "spray",
+      "label": "Spray",
+      "label_hi": "स्प्रे"
+    },
+    {
+      "value": "injection",
+      "label": "Injection",
+      "label_hi": "इंजेक्शन"
+    },
+    {
+      "value": "eye_drop",
+      "label": "Eye Drop",
+      "label_hi": "आई ड्रॉप"
+    },
+    {
+      "value": "nasal",
+      "label": "Nasal",
+      "label_hi": "नाक के जरिए"
+    }
+  ],
+  "vaccine_types": [
+    {
+      "value": "live",
+      "label": "Live",
+      "label_hi": "लाइव"
+    },
+    {
+      "value": "killed",
+      "label": "Killed",
+      "label_hi": "किल्ड"
+    },
+    {
+      "value": "recombinant",
+      "label": "Recombinant",
+      "label_hi": "रिकॉम्बिनेंट"
+    }
+  ]
+}

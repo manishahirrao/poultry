@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "verbatimModuleSyntax": true,
+    "baseUrl": ".",
+    "paths": {
+      "@pp/types": ["./packages/types/src"],
+      "@pp/ui": ["./packages/ui/src"],
+      "@pp/i18n": ["./packages/i18n/src"],
+      "@pp/config": ["./packages/config/src"]
+    },
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "checkJs": false,
+    "jsx": "preserve",
+    "incremental": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"]
+  },
+  "exclude": ["node_modules", "dist", ".next", "build"]
+}

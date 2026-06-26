@@ -1,0 +1,88 @@
+{
+  "budgets": [
+    {
+      "path": "/*",
+      "timings": [
+        {
+          "metric": "interactive",
+          "budget": 5000,
+          "warning": 4000
+        },
+        {
+          "metric": "first-contentful-paint",
+          "budget": 2000,
+          "warning": 1800
+        },
+        {
+          "metric": "largest-contentful-paint",
+          "budget": 2500,
+          "warning": 2000
+        },
+        {
+          "metric": "cumulative-layout-shift",
+          "budget": 0.1,
+          "warning": 0.05
+        },
+        {
+          "metric": "total-blocking-time",
+          "budget": 200,
+          "warning": 150
+        },
+        {
+          "metric": "max-potential-fid",
+          "budget": 200,
+          "warning": 150
+        }
+      ],
+      "resourceSizes": [
+        {
+          "resourceType": "total",
+          "budget": 800,
+          "warning": 600
+        },
+        {
+          "resourceType": "script",
+          "budget": 200,
+          "warning": 150
+        },
+        {
+          "resourceType": "stylesheet",
+          "budget": 100,
+          "warning": 75
+        },
+        {
+          "resourceType": "image",
+          "budget": 300,
+          "warning": 250
+        },
+        {
+          "resourceType": "font",
+          "budget": 100,
+          "warning": 75
+        }
+      ],
+      "resourceCounts": [
+        {
+          "resourceType": "total",
+          "budget": 50,
+          "warning": 40
+        },
+        {
+          "resourceType": "script",
+          "budget": 20,
+          "warning": 15
+        },
+        {
+          "resourceType": "stylesheet",
+          "budget": 5,
+          "warning": 3
+        },
+        {
+          "resourceType": "image",
+          "budget": 15,
+          "warning": 10
+        }
+      ]
+    }
+  ]
+}

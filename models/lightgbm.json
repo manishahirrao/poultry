@@ -1,0 +1,24 @@
+{
+  "model_type": "lightgbm",
+  "version": "1.0",
+  "created_at": "2026-05-25T08:23:57.593Z",
+  "parameters": {
+    "num_trees": 100,
+    "max_depth": 6,
+    "learning_rate": 0.1,
+    "base_prediction": 148,
+    "feature_importance": {
+      "temperature": 0.35,
+      "humidity": 0.2,
+      "feed_intake": 0.25,
+      "light_hours": 0.15,
+      "bird_age": 0.05
+    },
+    "tree_structure": "simplified_for_json"
+  },
+  "metadata": {
+    "training_period": "2024-01-01 to 2024-12-31",
+    "target_variable": "egg_production",
+    "units": "eggs_per_day"
+  }
+}

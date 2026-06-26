@@ -1,0 +1,88 @@
+﻿app/api/accounts/groups/route.ts(105,9): error TS2552: Cannot find name 'group_code'. Did you mean 'groupCode'?
+app/api/accounts/reports/balance-sheet/route.ts(79,11): error TS7034: Variable 'assets' implicitly has type 'any[]' in some locations where its type cannot be determined.
+app/api/accounts/reports/balance-sheet/route.ts(80,11): error TS7034: Variable 'liabilities' implicitly has type 'any[]' in some locations where its type cannot be determined.
+app/api/accounts/reports/balance-sheet/route.ts(81,11): error TS7034: Variable 'equity' implicitly has type 'any[]' in some locations where its type cannot be determined.
+app/api/accounts/reports/balance-sheet/route.ts(101,25): error TS7005: Variable 'assets' implicitly has an 'any[]' type.
+app/api/accounts/reports/balance-sheet/route.ts(102,30): error TS7005: Variable 'liabilities' implicitly has an 'any[]' type.
+app/api/accounts/reports/balance-sheet/route.ts(103,25): error TS7005: Variable 'equity' implicitly has an 'any[]' type.
+app/api/accounts/reports/balance-sheet/route.ts(108,16): error TS7005: Variable 'assets' implicitly has an 'any[]' type.
+app/api/accounts/reports/balance-sheet/route.ts(112,16): error TS7005: Variable 'liabilities' implicitly has an 'any[]' type.
+app/api/accounts/reports/balance-sheet/route.ts(116,16): error TS7005: Variable 'equity' implicitly has an 'any[]' type.
+app/api/accounts/reports/pl/route.ts(92,11): error TS7034: Variable 'income' implicitly has type 'any[]' in some locations where its type cannot be determined.
+app/api/accounts/reports/pl/route.ts(93,11): error TS7034: Variable 'expenses' implicitly has type 'any[]' in some locations where its type cannot be determined.
+app/api/accounts/reports/pl/route.ts(113,25): error TS7005: Variable 'income' implicitly has an 'any[]' type.
+app/api/accounts/reports/pl/route.ts(114,27): error TS7005: Variable 'expenses' implicitly has an 'any[]' type.
+app/api/accounts/reports/pl/route.ts(121,16): error TS7005: Variable 'income' implicitly has an 'any[]' type.
+app/api/accounts/reports/pl/route.ts(125,16): error TS7005: Variable 'expenses' implicitly has an 'any[]' type.
+app/api/auth/reset-password/verify/route.ts(67,31): error TS2304: Cannot find name 'cookies'.
+app/api/broiler/bird-sales/route.ts(97,9): error TS2552: Cannot find name 'sale_number'. Did you mean 'saleNumber'?
+app/api/broiler/chick-allocations/route.ts(109,41): error TS2339: Property 'farmer_id' does not exist on type '{ farm_name: any; farmer_id: any; }[]'.
+app/api/broiler/payroll/generate/route.ts(106,13): error TS2552: Cannot find name 'total_amount'. Did you mean 'totalAmount'?
+app/api/broiler/vehicles/route.ts(118,9): error TS2552: Cannot find name 'vehicle_code'. Did you mean 'vehicleCode'?
+app/api/metrics/biosecurity-checklist/route.ts(6,31): error TS2304: Cannot find name 'cookies'.
+app/api/metrics/biosecurity-checklist/route.ts(71,31): error TS2304: Cannot find name 'cookies'.
+app/api/metrics/cause-of-death/route.ts(6,31): error TS2304: Cannot find name 'cookies'.
+app/api/metrics/daily-deaths/route.ts(6,31): error TS2304: Cannot find name 'cookies'.
+app/api/metrics/fcr-breakdown/route.ts(6,31): error TS2304: Cannot find name 'cookies'.
+app/api/metrics/fcr-by-farm/route.ts(6,31): error TS2304: Cannot find name 'cookies'.
+app/api/metrics/fcr-recommendations/route.ts(6,31): error TS2304: Cannot find name 'cookies'.
+app/api/metrics/fcr-trend/route.ts(6,31): error TS2304: Cannot find name 'cookies'.
+app/api/metrics/fcr/export/route.ts(6,31): error TS2304: Cannot find name 'cookies'.
+app/api/metrics/feed-consumption/route.ts(6,31): error TS2304: Cannot find name 'cookies'.
+app/api/metrics/feed-cost/export/route.ts(6,31): error TS2304: Cannot find name 'cookies'.
+app/api/metrics/feed-cost/route.ts(6,31): error TS2304: Cannot find name 'cookies'.
+app/api/metrics/feed-rate-trend/route.ts(6,31): error TS2304: Cannot find name 'cookies'.
+app/api/metrics/health-events/route.ts(6,31): error TS2304: Cannot find name 'cookies'.
+app/api/metrics/mortality-log/export/route.ts(6,31): error TS2304: Cannot find name 'cookies'.
+app/api/metrics/mortality-log/route.ts(6,31): error TS2304: Cannot find name 'cookies'.
+app/api/metrics/mortality-timeline/route.ts(6,31): error TS2304: Cannot find name 'cookies'.
+app/api/metrics/pending-actions/route.ts(6,31): error TS2304: Cannot find name 'cookies'.
+app/api/metrics/portfolio-summary/route.ts(6,31): error TS2304: Cannot find name 'cookies'.
+app/api/metrics/vaccination-compliance/route.ts(6,31): error TS2304: Cannot find name 'cookies'.
+app/api/onboarding/state/route.ts(25,31): error TS2304: Cannot find name 'cookies'.
+app/api/onboarding/state/route.ts(89,31): error TS2304: Cannot find name 'cookies'.
+app/api/onboarding/state/route.ts(194,31): error TS2304: Cannot find name 'cookies'.
+app/api/payroll/components/route.ts(15,31): error TS2304: Cannot find name 'cookies'.
+app/api/payroll/components/route.ts(16,22): error TS2304: Cannot find name 'createRouteHandlerClient'.
+app/api/payroll/components/route.ts(41,31): error TS2304: Cannot find name 'cookies'.
+app/api/payroll/components/route.ts(42,22): error TS2304: Cannot find name 'createRouteHandlerClient'.
+app/api/payroll/leave-balance/route.ts(6,31): error TS2304: Cannot find name 'cookies'.
+app/api/payroll/leave-balance/route.ts(7,22): error TS2304: Cannot find name 'createRouteHandlerClient'.
+app/api/payroll/leave-entries/[id]/approve/route.ts(9,31): error TS2304: Cannot find name 'cookies'.
+app/api/payroll/leave-entries/[id]/approve/route.ts(10,22): error TS2304: Cannot find name 'createRouteHandlerClient'.
+app/api/payroll/leave-entries/[id]/reject/route.ts(9,31): error TS2304: Cannot find name 'cookies'.
+app/api/payroll/leave-entries/[id]/reject/route.ts(10,22): error TS2304: Cannot find name 'createRouteHandlerClient'.
+app/api/payroll/leave-entries/route.ts(16,31): error TS2304: Cannot find name 'cookies'.
+app/api/payroll/leave-entries/route.ts(17,22): error TS2304: Cannot find name 'createRouteHandlerClient'.
+app/api/payroll/leave-entries/route.ts(63,31): error TS2304: Cannot find name 'cookies'.
+app/api/payroll/leave-entries/route.ts(64,22): error TS2304: Cannot find name 'createRouteHandlerClient'.
+app/api/reports/[batchId]/pdf/route.ts(37,31): error TS2304: Cannot find name 'cookies'.
+app/api/v2/mortality/route.ts(13,31): error TS2304: Cannot find name 'cookies'.
+app/api/v2/mortality/route.ts(151,31): error TS2304: Cannot find name 'cookies'.
+app/dashboard/accounts/groups/page.tsx(107,40): error TS18047: 'supabase' is possibly 'null'.
+app/dashboard/accounts/groups/page.tsx(112,33): error TS18047: 'supabase' is possibly 'null'.
+app/dashboard/accounts/groups/page.tsx(138,33): error TS18047: 'supabase' is possibly 'null'.
+app/dashboard/accounts/groups/page.tsx(142,13): error TS2552: Cannot find name 'group_code'. Did you mean 'groupCode'?
+app/dashboard/accounts/groups/page.tsx(182,40): error TS18047: 'supabase' is possibly 'null'.
+app/dashboard/accounts/groups/page.tsx(187,41): error TS18047: 'supabase' is possibly 'null'.
+app/dashboard/accounts/groups/page.tsx(228,31): error TS18047: 'supabase' is possibly 'null'.
+app/dashboard/accounts/ledgers/page.tsx(174,13): error TS2552: Cannot find name 'account_code'. Did you mean 'accountCode'?
+app/dashboard/accounts/ledgers/page.tsx(218,40): error TS18047: 'supabase' is possibly 'null'.
+app/dashboard/accounts/ledgers/page.tsx(221,37): error TS18047: 'supabase' is possibly 'null'.
+app/dashboard/accounts/ledgers/page.tsx(229,42): error TS18047: 'supabase' is possibly 'null'.
+app/dashboard/accounts/ledgers/page.tsx(274,31): error TS18047: 'supabase' is possibly 'null'.
+app/dashboard/broiler/body-weight/page.tsx(9,3): error TS2724: '"@phosphor-icons/react"' has no exported member named 'Scale'. Did you mean 'Scales'?
+app/dashboard/broiler/body-weight/page.tsx(242,60): error TS2339: Property 'batches' does not exist on type 'Batch'.
+app/dashboard/broiler/reports/batch/page.tsx(4,25): error TS2307: Cannot find module '@/components/broiler/reports/BatchReport' or its corresponding type declarations.
+app/dashboard/broiler/reports/farm-stock/page.tsx(4,36): error TS2307: Cannot find module '@/components/broiler/reports/FarmBalanceStockReport' or its corresponding type declarations.
+app/dashboard/broiler/reports/feed-med-register/page.tsx(4,35): error TS2307: Cannot find module '@/components/broiler/reports/FeedMedRegisterReport' or its corresponding type declarations.
+app/dashboard/broiler/reports/feed-transfer/page.tsx(4,32): error TS2307: Cannot find module '@/components/broiler/reports/FeedTransferReport' or its corresponding type declarations.
+app/dashboard/broiler/reports/payroll/page.tsx(4,27): error TS2307: Cannot find module '@/components/broiler/reports/PayrollReport' or its corresponding type declarations.
+app/dashboard/broiler/reports/travel/page.tsx(4,36): error TS2307: Cannot find module '@/components/broiler/reports/SupervisorTravelReport' or its corresponding type declarations.
+app/dashboard/broiler/vehicles/page.tsx(166,13): error TS2552: Cannot find name 'vehicle_code'. Did you mean 'vehicleCode'?
+app/dashboard/broiler/vehicles/page.tsx(230,31): error TS18047: 'supabase' is possibly 'null'.
+app/dashboard/farms/FarmsClient.tsx(8,83): error TS2307: Cannot find module '@/components/farms/portfolio/FarmMagnifyingGlassSlidersHorizontal' or its corresponding type declarations.
+app/dashboard/inventory/branch-opening/page.tsx(37,27): error TS2307: Cannot find module '@pp/ui' or its corresponding type declarations.
+app/dashboard/inventory/branch-opening/page.tsx(297,61): error TS2353: Object literal may only specify known properties, and ''--tw-ring-color'' does not exist in type 'CSSProperties'.
+app/dashboard/inventory/branch-opening/page.tsx(331,61): error TS2353: Object literal may only specify known properties, and ''--tw-ring-color'' does not exist in type 'CSSProperties'.
+app/dashboard/inventory/farmer-opening/page.tsx(37,27): error TS2307: Cannot find module '@pp/ui' or its corresponding type declarations.

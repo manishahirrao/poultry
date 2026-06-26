@@ -1,0 +1,155 @@
+{
+  "name": "poultrypulse-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "npm@11.6.1",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck",
+    "clean": "turbo run clean",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepare": "husky install",
+    "worker:mqtt": "tsx workers/mqtt-worker.ts",
+    "worker:mqtt:dev": "tsx watch workers/mqtt-worker.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.2.0",
+    "tsx": "^4.7.0",
+    "turbo": "^2.9.14",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "@expo/server": "0.7.5",
+    "@expo/webpack-config": "19.0.1",
+    "@supabase/supabase-js": "^2.108.2",
+    "@types/canvas-confetti": "^1.9.0",
+    "canvas-confetti": "^1.9.4",
+    "d3-color": "^3.1.0",
+    "d3-interpolate": "^3.0.1",
+    "dotenv": "^17.4.2",
+    "mqtt": "^5.3.0",
+    "next": "^15.0.0",
+    "next-intl": "4.12.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "overrides": {
+    "cookie": "0.7.2",
+    "d3-scale": "4.0.2",
+    "d3-scale-chromatic": "3.1.0",
+    "fast-xml-parser": "5.8.0",
+    "postcss": "8.5.10",
+    "glob": "13.0.6",
+    "rollup": "4.61.1",
+    "semver": "7.6.3",
+    "turbo-stream": "3.2.0",
+    "send": "0.19.0",
+    "serialize-javascript": "7.0.5",
+    "tar": "7.5.11",
+    "uuid": "11.1.1",
+    "webpack-dev-server": "5.2.4",
+    "shell-quote": "1.8.3",
+    "cssnano": "6.0.5",
+    "cssnano-preset-default": "6.0.5",
+    "@xmldom/xmldom": "0.9.10",
+    "core-js": "3.40.0",
+    "rimraf": "6.0.1",
+    "hoek": "6.5.0",
+    "joi": "17.13.3",
+    "@types/react": "18.3.30",
+    "react-dev-utils": {
+      "shell-quote": "1.8.3"
+    },
+    "@expo/cli": {
+      "semver": "7.6.3",
+      "send": "0.19.0",
+      "tar": "7.5.11"
+    },
+    "@expo/webpack-config": {
+      "serialize-javascript": "7.0.5",
+      "shell-quote": "1.8.3",
+      "webpack-dev-server": "5.2.4"
+    },
+    "@expo/config-plugins": {
+      "semver": "7.6.3"
+    },
+    "@expo/image-utils": {
+      "semver": "7.6.3"
+    },
+    "@expo/config": {
+      "semver": "7.6.3"
+    },
+    "@expo/prebuild-config": {
+      "semver": "7.6.3",
+      "@xmldom/xmldom": "0.9.10"
+    },
+    "@expo/plist": {
+      "@xmldom/xmldom": "0.9.10"
+    },
+    "expo-constants": {
+      "semver": "7.6.3"
+    },
+    "expo-linking": {
+      "semver": "7.6.3"
+    },
+    "expo-splash-screen": {
+      "semver": "7.6.3"
+    },
+    "expo": {
+      "semver": "7.6.3",
+      "uuid": "11.1.1"
+    },
+    "webpack": {
+      "serialize-javascript": "7.0.5"
+    },
+    "optimize-css-assets-webpack-plugin": {
+      "cssnano": "6.0.5"
+    },
+    "@react-native-community/cli-platform-android": {
+      "fast-xml-parser": "5.8.0"
+    },
+    "@react-native-community/cli-platform-ios": {
+      "fast-xml-parser": "5.8.0"
+    },
+    "@react-native-community/cli": {
+      "fast-xml-parser": "5.8.0"
+    },
+    "react-simple-maps": {
+      "d3-scale": "4.0.2",
+      "d3-scale-chromatic": "3.1.0",
+      "react-dom": "^18.3.1",
+      "react": "^18.3.1"
+    },
+    "copy-webpack-plugin": {
+      "serialize-javascript": "7.0.5"
+    },
+    "terser-webpack-plugin": {
+      "serialize-javascript": "7.0.5"
+    },
+    "cacache": {
+      "tar": "7.5.11"
+    },
+    "micromatch": "4.0.8",
+    "node-libs-browser": "2.2.1",
+    "chokidar": "3.5.3",
+    "watchpack-chokidar2": "2.0.1",
+    "watchpack": "1.7.5",
+    "mini-css-extract-plugin": "2.9.2",
+    "axios": "1.7.9",
+    "follow-redirects": "1.16.0",
+    "react-native": "0.73.6",
+    "react": "18.3.1"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "overview": "अवलोकन",
+    "price_intelligence": "मूल्य जानकारी",
+    "district_map": "जिला नक्शा",
+    "alerts": "अलर्ट",
+    "my_farms": "मेरे Farms",
+    "feed_intelligence": "चारा जानकारी",
+    "settings": "सेटिंग्स"
+  },
+  "dashboard": {
+    "todays_price": "आज का भाव",
+    "sell_signal": "बेचें कब?",
+    "sell_now": "आज बेचें ✓",
+    "hold": "रुकें",
+    "caution": "सावधान",
+    "model_accuracy": "मॉडल सटीकता",
+    "data_stale": "डेटा पुराना है"
+  },
+  "farms": {
+    "log_pending": "आज का लॉग बाकी है",
+    "log_submitted": "लॉग जमा हो गया",
+    "no_farms": "अभी तक कोई Farm नहीं जोड़ा",
+    "add_farm": "Farm जोड़ें"
+  },
+  "errors": {
+    "load_failed": "डेटा लोड नहीं हो सका। कृपया Refresh करें।",
+    "save_failed": "सुरक्षित नहीं हो सका। फिर से कोशिश करें।",
+    "network_offline": "इंटरनेट कनेक्शन नहीं है।"
+  }
+}

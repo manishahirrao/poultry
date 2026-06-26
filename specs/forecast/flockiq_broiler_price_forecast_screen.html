@@ -1,0 +1,598 @@
+
+<h2 class="sr-only">FlockIQ broiler price forecast screen — dedicated price intelligence view showing 30-day forecast, confidence bands, accuracy decay, sell signals, market context, and driver analysis</h2>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans)}
+.page{padding:0;background:var(--color-background-tertiary);min-height:100vh}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:10px 20px;background:var(--color-background-primary);border-bottom:0.5px solid var(--color-border-tertiary);position:sticky;top:0;z-index:10}
+.topbar-left{display:flex;align-items:center;gap:12px}
+.brand{font-size:15px;font-weight:500;color:var(--color-text-primary)}
+.brand span{color:#3DAE72}
+.breadcrumb{font-size:12px;color:var(--color-text-secondary)}
+.topbar-right{display:flex;align-items:center;gap:10px}
+.mape-pill{display:flex;align-items:center;gap:5px;font-size:11px;padding:4px 9px;border-radius:20px;background:#EDF7F1;color:#1A5C34;border:0.5px solid #3DAE72;font-weight:500}
+.mape-dot{width:6px;height:6px;border-radius:50%;background:#16A34A}
+.district-pill{font-size:11px;padding:4px 9px;border-radius:20px;background:var(--color-background-secondary);color:var(--color-text-secondary);border:0.5px solid var(--color-border-tertiary)}
+.content{padding:16px 20px;max-width:1200px;margin:0 auto}
+.page-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px}
+.page-title-block{display:flex;flex-direction:column;gap:3px}
+.page-title{font-size:18px;font-weight:500;color:var(--color-text-primary)}
+.page-sub{font-size:12px;color:var(--color-text-secondary)}
+.page-actions{display:flex;align-items:center;gap:8px}
+.btn-outline{font-size:12px;padding:6px 12px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);color:var(--color-text-secondary);cursor:pointer}
+.btn-outline:hover{background:var(--color-background-secondary)}
+.btn-primary{font-size:12px;padding:6px 12px;border-radius:var(--border-radius-md);border:0.5px solid #1A5C34;background:#1A5C34;color:#fff;cursor:pointer}
+.controls-row{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.control-group{display:flex;align-items:center;gap:6px}
+.control-label{font-size:11px;color:var(--color-text-secondary)}
+.control-select{font-size:12px;padding:5px 10px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);color:var(--color-text-primary);cursor:pointer}
+.range-tabs{display:flex;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);overflow:hidden}
+.range-tab{font-size:11px;padding:5px 10px;background:var(--color-background-primary);color:var(--color-text-secondary);cursor:pointer;border:none;transition:all .15s}
+.range-tab.active{background:#1A5C34;color:#fff}
+.disclaimer-strip{display:flex;align-items:center;gap:7px;padding:7px 12px;background:#FFFBEB;border:0.5px solid #D97706;border-radius:var(--border-radius-md);margin-bottom:14px;font-size:11px;color:#92400E}
+.main-grid{display:grid;grid-template-columns:1fr 280px;gap:14px;margin-bottom:14px}
+.chart-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:16px}
+.chart-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.chart-title{font-size:13px;font-weight:500;color:var(--color-text-primary)}
+.chart-meta{font-size:11px;color:var(--color-text-secondary)}
+.legend-row{display:flex;align-items:center;gap:14px;margin-bottom:10px;flex-wrap:wrap}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--color-text-secondary)}
+.leg-line{width:20px;height:2px}
+.leg-dash{width:20px;height:2px;border-top:2px dashed}
+.leg-area{width:14px;height:10px;border-radius:2px;opacity:.4}
+.today-marker{font-size:10px;color:#6B7280;display:flex;align-items:center;gap:3px}
+.right-panel{display:flex;flex-direction:column;gap:12px}
+.signal-card{border-radius:var(--border-radius-lg);padding:16px;border:0.5px solid var(--color-border-tertiary)}
+.signal-card.sell{background:#EDF7F1;border-color:#3DAE72}
+.signal-card.hold{background:#FFFBEB;border-color:#D97706}
+.signal-label{font-size:10px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.signal-label.sell{color:#1A5C34}
+.signal-label.hold{color:#92400E}
+.signal-badge{display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border-radius:20px;font-size:13px;font-weight:500;margin-bottom:10px}
+.signal-badge.sell{background:#1A5C34;color:#fff}
+.signal-badge.hold{background:#D97706;color:#fff}
+.signal-window{font-size:11px;color:var(--color-text-secondary);line-height:1.5}
+.signal-price{font-size:22px;font-weight:500;color:var(--color-text-primary);margin:6px 0 2px}
+.signal-range{font-size:11px;color:var(--color-text-secondary)}
+.confidence-stars{display:flex;gap:3px;margin-top:8px}
+.star{width:10px;height:10px;border-radius:50%}
+.star.filled{background:#1A5C34}
+.star.empty{background:var(--color-border-tertiary)}
+.accuracy-decay-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:14px}
+.decay-title{font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px}
+.decay-sub{font-size:11px;color:var(--color-text-secondary);margin-bottom:10px;line-height:1.4}
+.decay-bar-row{display:flex;align-items:center;gap:8px;margin-bottom:5px}
+.decay-day-label{font-size:10px;color:var(--color-text-secondary);width:32px;flex-shrink:0}
+.decay-bar-track{flex:1;height:6px;background:var(--color-background-secondary);border-radius:3px;overflow:hidden}
+.decay-bar-fill{height:100%;border-radius:3px}
+.decay-pct{font-size:10px;font-weight:500;width:36px;text-align:right;flex-shrink:0}
+.kpi-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
+.kpi-card{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px 14px}
+.kpi-label{font-size:11px;color:var(--color-text-secondary);margin-bottom:4px}
+.kpi-value{font-size:20px;font-weight:500;color:var(--color-text-primary);line-height:1}
+.kpi-trend{font-size:10px;margin-top:3px}
+.kpi-trend.up{color:#16A34A}
+.kpi-trend.down{color:#DC2626}
+.kpi-trend.neutral{color:var(--color-text-secondary)}
+.bottom-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.drivers-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:14px}
+.section-title{font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:10px}
+.driver-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.driver-rank{font-size:10px;width:16px;color:var(--color-text-secondary);flex-shrink:0}
+.driver-name{font-size:11px;color:var(--color-text-primary);flex:1;line-height:1.3}
+.driver-bar-track{width:60px;height:5px;background:var(--color-background-secondary);border-radius:2px;overflow:hidden;flex-shrink:0}
+.driver-bar-fill{height:100%;border-radius:2px}
+.driver-impact{font-size:10px;font-weight:500;width:34px;text-align:right;flex-shrink:0}
+.driver-up{color:#16A34A}
+.driver-down{color:#DC2626}
+.watermark-note{font-size:10px;color:var(--color-text-secondary);margin-top:10px;padding-top:8px;border-top:0.5px solid var(--color-border-tertiary);line-height:1.4}
+.matrix-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:14px}
+.matrix-row{display:flex;align-items:center;gap:0;margin-bottom:6px;border-radius:var(--border-radius-md);padding:6px 8px}
+.matrix-row.optimal{background:#EDF7F1;border:0.5px solid #3DAE72}
+.matrix-day{font-size:11px;font-weight:500;color:var(--color-text-primary);width:42px;flex-shrink:0}
+.matrix-price{font-size:11px;color:var(--color-text-primary);width:52px;flex-shrink:0}
+.matrix-signal{font-size:10px;padding:2px 7px;border-radius:10px;flex-shrink:0}
+.sig-sell{background:#EDF7F1;color:#1A5C34}
+.sig-hold{background:#FFFBEB;color:#92400E}
+.sig-caution{background:#FEE2E2;color:#991B1B}
+.matrix-stars-col{display:flex;gap:2px;margin-left:auto}
+.ms{width:7px;height:7px;border-radius:50%}
+.ms.f{background:#1A5C34}
+.ms.e{background:var(--color-border-tertiary)}
+.optimal-badge{font-size:9px;background:#1A5C34;color:#fff;padding:1px 5px;border-radius:8px;margin-left:6px}
+.mkt-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:14px}
+.mandi-row{display:flex;align-items:center;justify-content:space-between;padding:5px 0;border-bottom:0.5px solid var(--color-border-tertiary)}
+.mandi-row:last-child{border-bottom:none}
+.mandi-name{font-size:11px;color:var(--color-text-primary)}
+.mandi-price{font-size:12px;font-weight:500;color:var(--color-text-primary)}
+.mandi-signal{font-size:10px;padding:1px 6px;border-radius:8px}
+.mini-sparkline{height:24px;width:60px}
+</style>
+
+<div class="page">
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="brand">Flock<span>IQ</span></div>
+      <div class="breadcrumb">Price Intelligence &rsaquo; Broiler Forecast</div>
+    </div>
+    <div class="topbar-right">
+      <div class="district-pill">Gorakhpur</div>
+      <div class="district-pill">Deoria</div>
+      <div class="district-pill">Kushinagar</div>
+      <div class="mape-pill"><span class="mape-dot"></span>4.8% MAPE</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="page-header">
+      <div class="page-title-block">
+        <div class="page-title">Broiler Price Forecast</div>
+        <div class="page-sub">Live weight broiler (farm gate) &mdash; updated daily 6:00 AM &middot; Last updated today 06:04 AM</div>
+      </div>
+      <div class="page-actions">
+        <button class="btn-outline"><i class="ti ti-download" aria-hidden="true"></i> Export CSV</button>
+        <button class="btn-primary"><i class="ti ti-bell" aria-hidden="true"></i> Set Price Alert</button>
+      </div>
+    </div>
+
+    <div class="disclaimer-strip">
+      <i class="ti ti-info-circle" aria-hidden="true"></i>
+      <span>Forecast accuracy decreases with prediction horizon. Day 1&ndash;3: high confidence (&lt;6% MAPE). Day 7&ndash;14: moderate (&lt;10%). Day 15&ndash;30: indicative only (&lt;15%). FlockIQ is not liable for trading decisions. Verify with local mandi before transacting.</span>
+    </div>
+
+    <div class="controls-row">
+      <div class="control-group">
+        <span class="control-label">Mandi</span>
+        <select class="control-select">
+          <option>Gorakhpur APMC</option>
+          <option>Deoria Mandi</option>
+          <option>Basti Mandi</option>
+          <option>Kushinagar</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <span class="control-label">Horizon</span>
+        <div class="range-tabs">
+          <button class="range-tab">7D</button>
+          <button class="range-tab active">30D</button>
+          <button class="range-tab">Compare Mandis</button>
+        </div>
+      </div>
+      <div class="control-group" style="margin-left:auto">
+        <span class="control-label">View as</span>
+        <div class="range-tabs">
+          <button class="range-tab active">Chart</button>
+          <button class="range-tab">Table</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="kpi-strip">
+      <div class="kpi-card">
+        <div class="kpi-label">Today's P50 &mdash; Gorakhpur</div>
+        <div class="kpi-value">&#8377;168<span style="font-size:13px;font-weight:400">/kg</span></div>
+        <div class="kpi-trend up"><i class="ti ti-trending-up" style="font-size:11px" aria-hidden="true"></i> +&#8377;3.8 vs yesterday (+2.3%)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">80% Confidence band</div>
+        <div class="kpi-value" style="font-size:16px">&#8377;160 &ndash; &#8377;176</div>
+        <div class="kpi-trend neutral">Range width: &#8377;16/kg</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">D+7 Forecast P50</div>
+        <div class="kpi-value">&#8377;171<span style="font-size:13px;font-weight:400">/kg</span></div>
+        <div class="kpi-trend up"><i class="ti ti-trending-up" style="font-size:11px" aria-hidden="true"></i> +&#8377;3 from today</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">D+30 Forecast P50</div>
+        <div class="kpi-value">&#8377;163<span style="font-size:13px;font-weight:400">/kg</span></div>
+        <div class="kpi-trend down"><i class="ti ti-trending-down" style="font-size:11px" aria-hidden="true"></i> Indicative &mdash; low conf.</div>
+      </div>
+    </div>
+
+    <div class="main-grid">
+      <div class="chart-card">
+        <div class="chart-header">
+          <div class="chart-title">30-Day Broiler Price Forecast &mdash; Gorakhpur APMC</div>
+          <div class="chart-meta">P10 / P50 / P90 confidence bands + actual prices</div>
+        </div>
+        <div class="legend-row">
+          <div class="legend-item"><span class="leg-line" style="background:#1A5C34"></span>P50 Forecast</div>
+          <div class="legend-item"><span class="leg-area" style="background:#3DAE72"></span>P10&ndash;P90 band</div>
+          <div class="legend-item"><span class="leg-line" style="background:#E8611A"></span>Actual price</div>
+          <div class="legend-item"><span class="leg-dash" style="border-color:#6B7280"></span>Today</div>
+          <div class="legend-item"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#DC2626"></span>Disease alert</div>
+          <div class="legend-item"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#D97706"></span>Festival</div>
+        </div>
+        <div style="position:relative;width:100%;height:300px;">
+          <canvas id="forecastChart" role="img" aria-label="30-day broiler price forecast for Gorakhpur APMC. Actual prices for past 7 days range from 156 to 168. P50 forecast rises to 171 by day 7 then gradually declines to 163 by day 30. P10-P90 confidence band widens from 16 rupees near-term to 32 rupees by day 30.">Broiler price forecast: today 168, D+7 171, D+14 167, D+30 163. Band widens from ±8 near-term to ±16 at 30 days.</canvas>
+        </div>
+        <div style="margin-top:8px;display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+          <div style="display:flex;align-items:center;gap:5px;font-size:10px;color:var(--color-text-secondary)">
+            <span style="display:inline-block;width:12px;height:12px;background:#FEE2E2;border:0.5px solid #DC2626;border-radius:2px"></span>
+            HPAI zone (Maharajganj, active)
+          </div>
+          <div style="display:flex;align-items:center;gap:5px;font-size:10px;color:var(--color-text-secondary)">
+            <span style="display:inline-block;width:12px;height:12px;background:#FEF9C3;border:0.5px solid #D97706;border-radius:2px"></span>
+            Bakrid +14D &mdash; demand spike expected
+          </div>
+          <div style="margin-left:auto;font-size:10px;color:var(--color-text-secondary)">
+            Model v1.0 &middot; Retrained 3 days ago &middot; 150 predictions verified
+          </div>
+        </div>
+      </div>
+
+      <div class="right-panel">
+        <div class="signal-card sell">
+          <div class="signal-label sell">Sell signal &mdash; Gorakhpur</div>
+          <div class="signal-badge sell"><i class="ti ti-check" style="font-size:14px" aria-hidden="true"></i> आज बेचें &mdash; SELL NOW</div>
+          <div class="signal-window">Optimal window: <strong>Jun 3&ndash;Jun 8</strong><br>Expected P50: &#8377;170&ndash;&#8377;174/kg<br>Post-window risk: declining trend</div>
+          <div class="signal-price">&#8377;171/kg</div>
+          <div class="signal-range">Expected D+3&ndash;D+5 &middot; P10 &#8377;163 &mdash; P90 &#8377;179</div>
+          <div style="font-size:10px;color:#1A5C34;margin-top:6px">Confidence:</div>
+          <div class="confidence-stars">
+            <div class="star filled"></div><div class="star filled"></div><div class="star filled"></div><div class="star filled"></div><div class="star empty"></div>
+            <span style="font-size:10px;color:#1A5C34;margin-left:4px">High (4/5)</span>
+          </div>
+        </div>
+
+        <div class="accuracy-decay-card">
+          <div class="decay-title">Accuracy by Forecast Horizon</div>
+          <div class="decay-sub">Confidence decreases as prediction date gets further away. Do not rely on Day 15+ for firm trading decisions.</div>
+          <div class="decay-bar-row">
+            <div class="decay-day-label">D+1</div>
+            <div class="decay-bar-track"><div class="decay-bar-fill" style="width:96%;background:#16A34A"></div></div>
+            <div class="decay-pct" style="color:#16A34A">~96%</div>
+          </div>
+          <div class="decay-bar-row">
+            <div class="decay-day-label">D+3</div>
+            <div class="decay-bar-track"><div class="decay-bar-fill" style="width:92%;background:#16A34A"></div></div>
+            <div class="decay-pct" style="color:#16A34A">~92%</div>
+          </div>
+          <div class="decay-bar-row">
+            <div class="decay-day-label">D+7</div>
+            <div class="decay-bar-track"><div class="decay-bar-fill" style="width:82%;background:#65A30D"></div></div>
+            <div class="decay-pct" style="color:#65A30D">~82%</div>
+          </div>
+          <div class="decay-bar-row">
+            <div class="decay-day-label">D+14</div>
+            <div class="decay-bar-track"><div class="decay-bar-fill" style="width:70%;background:#D97706"></div></div>
+            <div class="decay-pct" style="color:#D97706">~70%</div>
+          </div>
+          <div class="decay-bar-row">
+            <div class="decay-day-label">D+21</div>
+            <div class="decay-bar-track"><div class="decay-bar-fill" style="width:58%;background:#D97706"></div></div>
+            <div class="decay-pct" style="color:#D97706">~58%</div>
+          </div>
+          <div class="decay-bar-row">
+            <div class="decay-day-label">D+30</div>
+            <div class="decay-bar-track"><div class="decay-bar-fill" style="width:46%;background:#DC2626"></div></div>
+            <div class="decay-pct" style="color:#DC2626">~46%</div>
+          </div>
+          <div style="margin-top:8px;padding:6px 8px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);font-size:10px;color:var(--color-text-secondary);line-height:1.4">
+            <i class="ti ti-info-circle" style="font-size:11px" aria-hidden="true"></i> Day 15&ndash;30 forecasts are trend indicators only. Actual accuracy is lower than near-term forecasts. Always verify with local mandi data.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-grid">
+      <div class="drivers-card">
+        <div class="section-title">Why is the price moving? &mdash; Top drivers</div>
+        <div class="driver-row">
+          <div class="driver-rank">#1</div>
+          <div class="driver-name">Maize price lag (42-day feed cost)<br><span style="color:var(--color-text-secondary);font-size:10px">Maize &#8377;2,200/qtl &uarr; 50 (7D)</span></div>
+          <div class="driver-bar-track"><div class="driver-bar-fill" style="width:90%;background:#1A5C34"></div></div>
+          <div class="driver-impact driver-up">+&#8377;4.2</div>
+        </div>
+        <div class="driver-row">
+          <div class="driver-rank">#2</div>
+          <div class="driver-name">Bakrid festival +14D<br><span style="color:var(--color-text-secondary);font-size:10px">Demand spike signal</span></div>
+          <div class="driver-bar-track"><div class="driver-bar-fill" style="width:72%;background:#1A5C34"></div></div>
+          <div class="driver-impact driver-up">+&#8377;2.1</div>
+        </div>
+        <div class="driver-row">
+          <div class="driver-rank">#3</div>
+          <div class="driver-name">7-day price momentum<br><span style="color:var(--color-text-secondary);font-size:10px">Uptrend last 7 days</span></div>
+          <div class="driver-bar-track"><div class="driver-bar-fill" style="width:60%;background:#1A5C34"></div></div>
+          <div class="driver-impact driver-up">+&#8377;1.8</div>
+        </div>
+        <div class="driver-row">
+          <div class="driver-rank">#4</div>
+          <div class="driver-name">District supply index<br><span style="color:var(--color-text-secondary);font-size:10px">Arrivals +8% vs last week</span></div>
+          <div class="driver-bar-track"><div class="driver-bar-fill" style="width:42%;background:#DC2626"></div></div>
+          <div class="driver-impact driver-down">&minus;&#8377;1.3</div>
+        </div>
+        <div class="driver-row">
+          <div class="driver-rank">#5</div>
+          <div class="driver-name">Heat stress index<br><span style="color:var(--color-text-secondary);font-size:10px">3 days &gt;38&deg;C forecast</span></div>
+          <div class="driver-bar-track"><div class="driver-bar-fill" style="width:28%;background:#D97706"></div></div>
+          <div class="driver-impact driver-down">&minus;&#8377;0.7</div>
+        </div>
+        <div class="watermark-note">
+          <i class="ti ti-lock" style="font-size:11px" aria-hidden="true"></i> This forecast is personalized &amp; watermarked. Sharing outside your organization violates FlockIQ terms. Unique token: <span style="font-family:var(--font-mono);font-size:10px">FQ-RY2041-&#x200B;&#x200C;</span>
+        </div>
+      </div>
+
+      <div class="matrix-card">
+        <div class="section-title">Sell vs hold &mdash; decision matrix</div>
+        <div style="font-size:10px;color:var(--color-text-secondary);margin-bottom:8px">Based on 25,000 birds @ D+21 &middot; Avg weight 1.68 kg</div>
+        <div class="matrix-row">
+          <div class="matrix-day">Today</div>
+          <div class="matrix-price">&#8377;168/kg</div>
+          <div class="matrix-signal sig-sell">आज बेचें</div>
+          <div class="matrix-stars-col"><div class="ms f"></div><div class="ms f"></div><div class="ms f"></div><div class="ms f"></div><div class="ms e"></div></div>
+        </div>
+        <div class="matrix-row optimal">
+          <div class="matrix-day">D+3 <span class="optimal-badge">Optimal</span></div>
+          <div class="matrix-price">&#8377;171/kg</div>
+          <div class="matrix-signal sig-sell">आज बेचें</div>
+          <div class="matrix-stars-col"><div class="ms f"></div><div class="ms f"></div><div class="ms f"></div><div class="ms f"></div><div class="ms f"></div></div>
+        </div>
+        <div class="matrix-row">
+          <div class="matrix-day">D+7</div>
+          <div class="matrix-price">&#8377;170/kg</div>
+          <div class="matrix-signal sig-hold">रुकें</div>
+          <div class="matrix-stars-col"><div class="ms f"></div><div class="ms f"></div><div class="ms f"></div><div class="ms e"></div><div class="ms e"></div></div>
+        </div>
+        <div class="matrix-row">
+          <div class="matrix-day">D+14</div>
+          <div class="matrix-price">&#8377;167/kg</div>
+          <div class="matrix-signal sig-hold">रुकें</div>
+          <div class="matrix-stars-col"><div class="ms f"></div><div class="ms f"></div><div class="ms e"></div><div class="ms e"></div><div class="ms e"></div></div>
+        </div>
+        <div class="matrix-row">
+          <div class="matrix-day">D+21</div>
+          <div class="matrix-price">&#8377;165/kg</div>
+          <div class="matrix-signal sig-caution">सावधान</div>
+          <div class="matrix-stars-col"><div class="ms f"></div><div class="ms e"></div><div class="ms e"></div><div class="ms e"></div><div class="ms e"></div></div>
+        </div>
+        <div class="matrix-row">
+          <div class="matrix-day">D+30</div>
+          <div class="matrix-price">&#8377;163/kg</div>
+          <div class="matrix-signal sig-caution">सावधान</div>
+          <div class="matrix-stars-col"><div class="ms e"></div><div class="ms e"></div><div class="ms e"></div><div class="ms e"></div><div class="ms e"></div></div>
+        </div>
+        <div style="margin-top:10px;padding:8px;background:var(--color-background-secondary);border-radius:var(--border-radius-md)">
+          <div style="font-size:10px;font-weight:500;color:var(--color-text-primary);margin-bottom:3px">Break-even price</div>
+          <div style="font-size:18px;font-weight:500;color:var(--color-text-primary)">&#8377;152/kg</div>
+          <div style="font-size:10px;color:#16A34A">Current &#8377;168 &mdash; &#8377;16/kg above break-even</div>
+        </div>
+      </div>
+
+      <div class="mkt-card">
+        <div class="section-title">Live market context</div>
+        <div style="font-size:11px;color:var(--color-text-secondary);margin-bottom:8px">Today's mandi prices + signals</div>
+        <div class="mandi-row">
+          <div>
+            <div class="mandi-name">Gorakhpur APMC</div>
+            <div style="font-size:10px;color:var(--color-text-secondary)">Primary &middot; 0 min ago</div>
+          </div>
+          <div style="text-align:right">
+            <div class="mandi-price">&#8377;168/kg</div>
+            <div class="mandi-signal sig-sell">आज बेचें</div>
+          </div>
+        </div>
+        <div class="mandi-row">
+          <div>
+            <div class="mandi-name">Deoria Mandi</div>
+            <div style="font-size:10px;color:var(--color-text-secondary)">12 km &middot; 2 hr ago</div>
+          </div>
+          <div style="text-align:right">
+            <div class="mandi-price">&#8377;165/kg</div>
+            <div class="mandi-signal sig-hold">रुकें</div>
+          </div>
+        </div>
+        <div class="mandi-row">
+          <div>
+            <div class="mandi-name">Basti Mandi</div>
+            <div style="font-size:10px;color:var(--color-text-secondary)">48 km &middot; 3 hr ago</div>
+          </div>
+          <div style="text-align:right">
+            <div class="mandi-price">&#8377;162/kg</div>
+            <div class="mandi-signal sig-hold">रुकें</div>
+          </div>
+        </div>
+        <div class="mandi-row">
+          <div>
+            <div class="mandi-name">Kushinagar</div>
+            <div style="font-size:10px;color:var(--color-text-secondary)">55 km &middot; 4 hr ago</div>
+          </div>
+          <div style="text-align:right">
+            <div class="mandi-price">&#8377;166/kg</div>
+            <div class="mandi-signal sig-sell">आज बेचें</div>
+          </div>
+        </div>
+        <div style="margin-top:10px;border-top:0.5px solid var(--color-border-tertiary);padding-top:8px">
+          <div style="font-size:11px;font-weight:500;color:var(--color-text-primary);margin-bottom:6px">Feed cost index</div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:3px">
+            <span style="font-size:11px;color:var(--color-text-secondary)">Maize (Gorakhpur)</span>
+            <span style="font-size:11px;font-weight:500;color:var(--color-text-primary)">&#8377;2,200/qtl <span style="color:#DC2626;font-size:10px">&#8593;50</span></span>
+          </div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:3px">
+            <span style="font-size:11px;color:var(--color-text-secondary)">Soya meal</span>
+            <span style="font-size:11px;font-weight:500;color:var(--color-text-primary)">&#8377;3,800/qtl <span style="color:#16A34A;font-size:10px">&#8595;30</span></span>
+          </div>
+          <div style="display:flex;justify-content:space-between">
+            <span style="font-size:11px;color:var(--color-text-secondary)">Feed cost index</span>
+            <span style="font-size:11px;font-weight:500;color:var(--color-text-primary)">&#8377;2,850 <span style="color:#DC2626;font-size:10px">&#8593;35</span></span>
+          </div>
+          <div style="margin-top:8px;padding:5px 8px;background:#FFFBEB;border-radius:var(--border-radius-md);font-size:10px;color:#92400E">
+            <i class="ti ti-trending-up" style="font-size:11px" aria-hidden="true"></i> Feed costs rising &mdash; buy feed NOW to lock in current rates
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const today = new Date('2026-06-05');
+const labels = [];
+const actual = [];
+const p50 = [];
+const p10 = [];
+const p90 = [];
+const hpaiZone = [];
+const festivalZone = [];
+
+const actualPrices = [156, 159, 161, 160, 163, 165, 168];
+const p50Fore = [168, 169, 170, 171, 171, 170, 170, 169, 168, 167, 167, 166, 165, 164, 163, 163, 163, 164, 165, 166, 166, 165, 164, 163, 163, 162, 162, 163, 163, 163];
+const p10Fore = [162, 163, 163, 164, 163, 162, 161, 159, 158, 156, 155, 153, 151, 149, 147, 147, 146, 147, 148, 149, 148, 147, 145, 144, 143, 142, 141, 141, 141, 141];
+const p90Fore = [174, 175, 177, 178, 179, 178, 179, 179, 178, 178, 179, 179, 179, 179, 179, 179, 180, 181, 182, 183, 184, 183, 183, 182, 183, 182, 183, 185, 185, 185];
+
+for(let i = -6; i <= 29; i++) {
+  const d = new Date(today);
+  d.setDate(d.getDate() + i);
+  const mo = d.getMonth()+1;
+  const dy = d.getDate();
+  labels.push((mo<10?'0'+mo:mo)+'-'+(dy<10?'0'+dy:dy));
+  if(i <= 0) {
+    actual.push(actualPrices[i+6]);
+    p50.push(actualPrices[i+6]);
+    p10.push(actualPrices[i+6]-1);
+    p90.push(actualPrices[i+6]+1);
+  } else {
+    actual.push(null);
+    p50.push(p50Fore[i-1]);
+    p10.push(p10Fore[i-1]);
+    p90.push(p90Fore[i-1]);
+  }
+}
+
+const isDark = matchMedia('(prefers-color-scheme: dark)').matches;
+const gridC = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)';
+const axisC = isDark ? 'rgba(255,255,255,0.35)' : '#888';
+const bgC = isDark ? '#1a1a1a' : '#ffffff';
+
+const todayIdx = 6;
+
+const ctx = document.getElementById('forecastChart').getContext('2d');
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels,
+    datasets: [
+      {
+        label: 'P90 (upper bound)',
+        data: p90,
+        borderColor: 'transparent',
+        backgroundColor: isDark ? 'rgba(61,174,114,0.12)' : 'rgba(61,174,114,0.15)',
+        fill: '+1',
+        pointRadius: 0,
+        tension: 0.35
+      },
+      {
+        label: 'P10 (lower bound)',
+        data: p10,
+        borderColor: 'transparent',
+        backgroundColor: isDark ? 'rgba(61,174,114,0.12)' : 'rgba(61,174,114,0.15)',
+        fill: false,
+        pointRadius: 0,
+        tension: 0.35
+      },
+      {
+        label: 'P50 Forecast',
+        data: p50,
+        borderColor: '#1A5C34',
+        backgroundColor: 'transparent',
+        borderWidth: 2,
+        pointRadius: 0,
+        tension: 0.35,
+        borderDash: p50.map((v,i) => i <= todayIdx ? [] : [4,3])
+      },
+      {
+        label: 'Actual Price',
+        data: actual,
+        borderColor: '#E8611A',
+        backgroundColor: '#E8611A',
+        borderWidth: 2.5,
+        pointRadius: actual.map(v => v !== null ? 4 : 0),
+        pointBackgroundColor: '#E8611A',
+        tension: 0.25
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: { mode: 'index', intersect: false },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: bgC,
+        titleColor: isDark ? '#fff' : '#111',
+        bodyColor: isDark ? '#ccc' : '#555',
+        borderColor: isDark ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.12)',
+        borderWidth: 1,
+        padding: 10,
+        cornerRadius: 8,
+        callbacks: {
+          title: items => 'Date: ' + items[0].label,
+          label: item => {
+            const labels2 = { 'P50 Forecast': 'P50 Forecast', 'Actual Price': 'Actual', 'P90 (upper bound)': 'P90 (upper)', 'P10 (lower bound)': 'P10 (lower)' };
+            return ' ' + labels2[item.dataset.label] + ': \u20B9' + item.parsed.y + '/kg';
+          }
+        }
+      },
+      annotation: undefined
+    },
+    scales: {
+      x: {
+        grid: { color: gridC },
+        ticks: {
+          color: axisC,
+          font: { size: 10 },
+          maxTicksLimit: 10,
+          maxRotation: 0
+        }
+      },
+      y: {
+        grid: { color: gridC },
+        ticks: {
+          color: axisC,
+          font: { size: 10 },
+          callback: v => '\u20B9' + v
+        },
+        min: 130,
+        max: 200
+      }
+    }
+  },
+  plugins: [{
+    id: 'todayLine',
+    afterDraw(chart) {
+      const { ctx: c, chartArea: { top, bottom }, scales: { x } } = chart;
+      const xPos = x.getPixelForIndex(todayIdx);
+      c.save();
+      c.strokeStyle = isDark ? 'rgba(255,255,255,0.3)' : 'rgba(100,100,100,0.5)';
+      c.setLineDash([4, 3]);
+      c.lineWidth = 1.5;
+      c.beginPath();
+      c.moveTo(xPos, top);
+      c.lineTo(xPos, bottom);
+      c.stroke();
+      c.fillStyle = isDark ? 'rgba(255,255,255,0.5)' : 'rgba(80,80,80,0.7)';
+      c.font = '9px sans-serif';
+      c.fillText('Today', xPos + 4, top + 12);
+      c.restore();
+    }
+  }, {
+    id: 'festivalBand',
+    afterDraw(chart) {
+      const { ctx: c, chartArea: { top, bottom }, scales: { x } } = chart;
+      const festStart = x.getPixelForIndex(todayIdx + 13);
+      const festEnd = x.getPixelForIndex(todayIdx + 16);
+      c.save();
+      c.fillStyle = 'rgba(217,119,6,0.08)';
+      c.fillRect(festStart, top, festEnd - festStart, bottom - top);
+      c.fillStyle = isDark ? 'rgba(217,119,6,0.7)' : 'rgba(146,64,14,0.6)';
+      c.font = '9px sans-serif';
+      c.fillText('Bakrid', festStart + 2, top + 11);
+      c.restore();
+    }
+  }]
+});
+</script>

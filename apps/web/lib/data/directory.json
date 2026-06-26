@@ -1,0 +1,621 @@
+{
+  "categories": [
+    {
+      "id": "price-intelligence",
+      "name": "Price Intelligence Tools",
+      "nameHi": "भाव जानकारी उपकरण",
+      "slug": "price-intelligence-tools",
+      "priority": 1,
+      "status": "live",
+      "description": "Tools and platforms that provide poultry price forecasting, market intelligence, and sell signals.",
+      "descriptionHi": "उपकरण और प्लेटफॉर्म जो मुर्गी भाव भविष्यवाणी, बाजार जानकारी और सेल सिग्नल प्रदान करते हैं।",
+      "tools": [
+        {
+          "id": "FlockIQ-ai",
+          "name": "FlockIQ",
+          "nameHi": "FlockIQ",
+          "description": "AI-powered 7-day price forecasting with 95%+ accuracy. Daily WhatsApp sell signals, HPAI alerts, Hindi-first app.",
+          "descriptionHi": "AI-संचालित 7-दिन की भाव भविष्यवाणी 95%+ सटीकता के साथ। दैनिक WhatsApp सेल सिग्नल, HPAI चेतावनी, हिंदी-पहले ऐप।",
+          "pricing": "₹2,000/month (PulseFarm), ₹8,000/month (PulsePro)",
+          "pricingHi": "₹2,000/माह (PulseFarm), ₹8,000/माह (PulsePro)",
+          "keyFeatures": [
+            "7-day price forecast",
+            "Daily WhatsApp sell signals",
+            "HPAI disease alerts",
+            "District-level accuracy",
+            "Hindi-first interface",
+            "P10/P50/P90 price range"
+          ],
+          "targetFarmSize": "10,000–500,000 birds",
+          "languageSupport": ["Hindi", "English"],
+          "platform": ["Web", "Mobile (Android/iOS)", "WhatsApp"],
+          "pros": [
+            "95%+ verified accuracy",
+            "7-day forward visibility",
+            "Hindi-first design",
+            "Daily WhatsApp delivery",
+            "District-specific predictions"
+          ],
+          "cons": [
+            "Subscription cost",
+            "Requires smartphone",
+            "Internet dependency"
+          ],
+          "userRating": "4.8/5",
+          "url": "https://FlockIQ.ai",
+          "isOurProduct": true
+        },
+        {
+          "id": "agmarknet-portal",
+          "name": "AGMARKNET Portal",
+          "nameHi": "AGMARKNET पोर्टल",
+          "description": "Government portal providing daily mandi prices from APMC markets across India. Historical data available.",
+          "descriptionHi": "सरकारी पोर्टल जो भारत भर के APMC बाजारों से दैनिक मंडी कीमतें प्रदान करता है। ऐतिहासिक डेटा उपलब्ध।",
+          "pricing": "Free",
+          "pricingHi": "मुफ्त",
+          "keyFeatures": [
+            "Daily mandi prices",
+            "Historical data (5+ years)",
+            "2,000+ mandis covered",
+            "Government verified data",
+            "Price trends"
+          ],
+          "targetFarmSize": "All sizes",
+          "languageSupport": ["English"],
+          "platform": ["Web"],
+          "pros": [
+            "Free to use",
+            "Government verified data",
+            "Historical data available",
+            "National coverage"
+          ],
+          "cons": [
+            "No prediction capability",
+            "English only",
+            "Complex interface",
+            "No analysis or insights"
+          ],
+          "userRating": "3.5/5",
+          "url": "https://agmarknet.gov.in",
+          "isOurProduct": false
+        },
+        {
+          "id": "necc-reports",
+          "name": "NECC Weekly Reports",
+          "nameHi": "NECC साप्ताहिक रिपोर्ट",
+          "description": "National Egg Coordination Committee publishes weekly poultry rate reports for members.",
+          "descriptionHi": "नेशनल एग कोऑर्डिनेशन कमेटी सदस्यों के लिए साप्ताहिक मुर्गी दर रिपोर्ट प्रकाशित करती है।",
+          "pricing": "Membership required",
+          "pricingHi": "सदस्यता आवश्यक",
+          "keyFeatures": [
+            "Weekly rate reports",
+            "Industry benchmarks",
+            "National coverage",
+            "Member discussions",
+            "Market analysis"
+          ],
+          "targetFarmSize": "Large integrators",
+          "languageSupport": ["English"],
+          "platform": ["Web", "Email"],
+          "pros": [
+            "Industry standard data",
+            "National perspective",
+            "Member networking",
+            "Market analysis"
+          ],
+          "cons": [
+            "Membership fee",
+            "Weekly (not daily)",
+            "English only",
+            "No prediction"
+          ],
+          "userRating": "4.0/5",
+          "url": "https://neccindia.com",
+          "isOurProduct": false
+        }
+      ],
+      "selectionCriteria": [
+        "Prediction capability (7-day preferred)",
+        "Accuracy verification",
+        "Hindi language support",
+        "Delivery method (WhatsApp preferred)",
+        "District-level granularity",
+        "Cost vs value"
+      ],
+      "ourRecommendation": "For commercial farmers (10,000+ birds), FlockIQ provides the best combination of accuracy, language support, and daily delivery. AGMARKNET is excellent for free historical data research.",
+      "ourRecommendationHi": "व्यावसायिक किसानों (10,000+ पक्षी) के लिए, FlockIQ सटीकता, भाषा समर्थन और दैनिक वितरण का सर्वोत्तम संयोजन प्रदान करता है। AGMARKNET मुफ्त ऐतिहासिक डेटा शोध के लिए उत्कृष्ट है।"
+    },
+    {
+      "id": "farm-management",
+      "name": "Farm Management Software",
+      "nameHi": "खेत प्रबंधन सॉफ्टवेयर",
+      "slug": "farm-management-software",
+      "priority": 1,
+      "status": "live",
+      "description": "Software solutions for managing poultry farm operations including feed, inventory, finances, and production tracking.",
+      "descriptionHi": "मुर्गी खेत संचालन प्रबंधन के लिए सॉफ्टवेयर समाधान जिसमें चारा, इन्वेंटरी, वित्त और उत्पादन ट्रैकिंग शामिल है।",
+      "tools": [
+        {
+          "id": "FlockIQ-dashboard",
+          "name": "FlockIQ Dashboard",
+          "nameHi": "FlockIQ डैशबोर्ड",
+          "description": "Multi-farm dashboard with price intelligence, feed cost tracking, batch analytics, and profit calculations.",
+          "descriptionHi": "बहु-खेत डैशबोर्ड भाव जानकारी, चारा लागत ट्रैकिंग, बैच विश्लेषण और मुनाफा गणना के साथ।",
+          "pricing": "Included in PulsePro (₹8,000/month)",
+          "pricingHi": "PulsePro में शामिल (₹8,000/माह)",
+          "keyFeatures": [
+            "Multi-farm management",
+            "Batch profit calculator",
+            "Feed cost intelligence",
+            "Price forecast integration",
+            "Historical performance",
+            "Export to CSV"
+          ],
+          "targetFarmSize": "50,000–500,000 birds",
+          "languageSupport": ["Hindi", "English"],
+          "platform": ["Web", "Mobile"],
+          "pros": [
+            "Integrated with price intelligence",
+            "Hindi interface",
+            "Multi-farm support",
+            "Real-time data"
+          ],
+          "cons": [
+            "Requires subscription",
+            "Internet needed",
+            "Learning curve"
+          ],
+          "userRating": "4.7/5",
+          "url": "https://FlockIQ.ai",
+          "isOurProduct": true
+        },
+        {
+          "id": "generic-farm-erp",
+          "name": "Generic Farm ERP Systems",
+          "nameHi": "सामान्य खेत ERP सिस्टम",
+          "description": "General agricultural ERP systems that can be adapted for poultry farming with customization.",
+          "descriptionHi": "सामान्य कृषि ERP सिस्टम जिन्हें मुर्गी पालन के लिए अनुकूलन के साथ अपनाया जा सकता है।",
+          "pricing": "₹5,000–₹50,000/month",
+          "pricingHi": "₹5,000–₹50,000/माह",
+          "keyFeatures": [
+            "Inventory management",
+            "Financial accounting",
+            "Production tracking",
+            "Multi-crop support",
+            "Reporting"
+          ],
+          "targetFarmSize": "100,000+ birds",
+          "languageSupport": ["English"],
+          "platform": ["Web"],
+          "pros": [
+            "Comprehensive features",
+            "Scalable",
+            "Established vendors",
+            "Integration options"
+          ],
+          "cons": [
+            "Expensive",
+            "Not poultry-specific",
+            "English only",
+            "Complex setup"
+          ],
+          "userRating": "3.5/5",
+          "url": "Various vendors",
+          "isOurProduct": false
+        },
+        {
+          "id": "spreadsheet-method",
+          "name": "Excel/Google Sheets",
+          "nameHi": "Excel/Google Sheets",
+          "description": "Manual spreadsheet-based tracking using templates for feed, mortality, and financial records.",
+          "descriptionHi": "चारा, मृत्यु और वित्तीय रिकॉर्ड के लिए टेम्पलेट का उपयोग करके मैनुअल स्प्रेडशीट-आधारित ट्रैकिंग।",
+          "pricing": "Free (Google Sheets) or ₹1,500/month (Microsoft 365)",
+          "pricingHi": "मुफ्त (Google Sheets) या ₹1,500/माह (Microsoft 365)",
+          "keyFeatures": [
+            "Customizable templates",
+            "Offline capability",
+            "No learning curve",
+            "Free options available"
+          ],
+          "targetFarmSize": "All sizes",
+          "languageSupport": ["All languages"],
+          "platform": ["Desktop", "Web", "Mobile"],
+          "pros": [
+            "Free or low cost",
+            "Fully customizable",
+            "No internet needed (Excel)",
+            "Familiar interface"
+          ],
+          "cons": [
+            "Manual data entry",
+            "No automation",
+            "Error-prone",
+            "No integration"
+          ],
+          "userRating": "3.8/5",
+          "url": "N/A",
+          "isOurProduct": false
+        }
+      ],
+      "selectionCriteria": [
+        "Poultry-specific features",
+        "Hindi language support",
+        "Multi-farm capability",
+        "Mobile accessibility",
+        "Integration with price data",
+        "Cost vs farm size"
+      ],
+      "ourRecommendation": "For 10,000–50,000 bird farms, use Excel templates with FlockIQ for price intelligence. For 50,000+ birds or integrators, FlockIQ Dashboard provides integrated management.",
+      "ourRecommendationHi": "10,000–50,000 पक्षियों के खेतों के लिए, भाव जानकारी के लिए Excel टेम्पलेट का उपयोग FlockIQ के साथ करें। 50,000+ पक्षियों या इंटीग्रेटर के लिए, FlockIQ डैशबोर्ड एकीकृत प्रबंधन प्रदान करता है।"
+    },
+    {
+      "id": "disease-alerts",
+      "name": "Disease Alert Systems",
+      "nameHi": "बीमारी चेतावनी प्रणाली",
+      "slug": "disease-alert-systems",
+      "priority": 1,
+      "status": "live",
+      "description": "Systems that provide early warnings for poultry diseases like HPAI, bird flu, and other health threats.",
+      "descriptionHi": "HPAI, बर्ड फ्लू और अन्य स्वास्थ्य खतरों जैसी मुर्गी बीमारियों के लिए प्रारंभिक चेतावनी प्रदान करने वाली प्रणाली।",
+      "tools": [
+        {
+          "id": "FlockIQ-hpai",
+          "name": "FlockIQ HPAI Alerts",
+          "nameHi": "FlockIQ HPAI चेतावनी",
+          "description": "48-hour early warning for HPAI outbreaks based on government reports and AI analysis. Delivered via WhatsApp.",
+          "descriptionHi": "सरकारी रिपोर्ट और AI विश्लेषण के आधार पर HPAI प्रकोप के लिए 48-घंटे की प्रारंभिक चेतावनी। WhatsApp के माध्यम से वितरित।",
+          "pricing": "Included in all plans",
+          "pricingHi": "सभी योजनाओं में शामिल",
+          "keyFeatures": [
+            "48-hour early warning",
+            "District-specific alerts",
+            "WhatsApp delivery",
+            "Action recommendations",
+            "Government source verification"
+          ],
+          "targetFarmSize": "All sizes",
+          "languageSupport": ["Hindi", "English"],
+          "platform": ["WhatsApp", "App"],
+          "pros": [
+            "48-hour advance notice",
+            "Hindi alerts",
+            "Actionable recommendations",
+            "Verified sources"
+          ],
+          "cons": [
+            "Requires subscription",
+            "Dependent on government reporting"
+          ],
+          "userRating": "4.9/5",
+          "url": "https://FlockIQ.ai",
+          "isOurProduct": true
+        },
+        {
+          "id": "dadf-reports",
+          "name": "DADF Disease Reports",
+          "nameHi": "DADF बीमारी रिपोर्ट",
+          "description": "Department of Animal Husbandry & Dairying publishes monthly disease situation reports.",
+          "descriptionHi": "पशुपालन और डेयरी विभाग मासिक बीमारी स्थिति रिपोर्ट प्रकाशित करता है।",
+          "pricing": "Free",
+          "pricingHi": "मुफ्त",
+          "keyFeatures": [
+            "Official government data",
+            "Monthly reports",
+            "National coverage",
+            "Disease statistics",
+            "Control measures"
+          ],
+          "targetFarmSize": "All sizes",
+          "languageSupport": ["English"],
+          "platform": ["Web"],
+          "pros": [
+            "Free and official",
+            "Comprehensive data",
+            "National perspective",
+            "Historical records"
+          ],
+          "cons": [
+            "Monthly (not real-time)",
+            "English only",
+            "No alerts",
+            "Complex to navigate"
+          ],
+          "userRating": "3.5/5",
+          "url": "https://dahd.nic.in",
+          "isOurProduct": false
+        },
+        {
+          "id": "veterinary-consultation",
+          "name": "Veterinary Consultation Apps",
+          "nameHi": "पशु चिकित्सा परामर्श ऐप",
+          "description": "Apps connecting farmers with veterinarians for disease diagnosis and treatment advice.",
+          "descriptionHi": "ऐप जो किसानों को बीमारी के निदान और उपचार सलाह के लिए पशु चिकित्सकों से जोड़ते हैं।",
+          "pricing": "₹100–₹500 per consultation",
+          "pricingHi": "प्रति परामर्श ₹100–₹500",
+          "keyFeatures": [
+            "Video consultation",
+            "Photo diagnosis",
+            "Prescription generation",
+            "Follow-up support",
+            "Multiple language support"
+          ],
+          "targetFarmSize": "All sizes",
+          "languageSupport": ["Multiple regional languages"],
+          "platform": ["Mobile"],
+          "pros": [
+            "Direct expert access",
+            "Quick diagnosis",
+            "Prescription support",
+            "Regional languages"
+          ],
+          "cons": [
+            "Per-consultation cost",
+            "Dependent on vet availability",
+            "Internet required",
+            "Not preventive"
+          ],
+          "userRating": "4.2/5",
+          "url": "Various apps",
+          "isOurProduct": false
+        }
+      ],
+      "selectionCriteria": [
+        "Alert speed (48-hour preferred)",
+        "District-level specificity",
+        "Hindi language support",
+        "Delivery method (WhatsApp preferred)",
+        "Source verification",
+        "Cost"
+      ],
+      "ourRecommendation": "FlockIQ HPAI alerts provide the fastest, most actionable warnings in Hindi. Combine with veterinary consultation for diagnosis and treatment.",
+      "ourRecommendationHi": "FlockIQ HPAI चेतावनी हिंदी में सबसे तेज, सबसे कार्यवाही योग्य चेतावनी प्रदान करती है। निदान और उपचार के लिए पशु चिकित्सा परामर्श के साथ संयोजित करें।"
+    },
+    {
+      "id": "financial-services",
+      "name": "Financial Services for Poultry",
+      "nameHi": "मुर्गी के लिए वित्तीय सेवाएं",
+      "slug": "financial-services",
+      "priority": 2,
+      "status": "live",
+      "description": "Loans, insurance, government schemes, and financial products specifically for poultry farmers.",
+      "descriptionHi": "मुर्गी पालकों के लिए विशेष रूप से ऋण, बीमा, सरकारी योजनाएं और वित्तीय उत्पाद।",
+      "tools": [
+        {
+          "id": "nabard-loans",
+          "name": "NABARD Poultry Loans",
+          "nameHi": "NABARD मुर्गी ऋण",
+          "description": "NABARD offers subsidized loans for poultry farming under various schemes for shed construction and working capital.",
+          "descriptionHi": "NABARD शेड निर्माण और कार्यशील पूंजी के लिए विभिन्न योजनाओं के तहत मुर्गी पालन के लिए रियायती ऋण प्रदान करता है।",
+          "pricing": "Interest rates 4–7% (subsidized)",
+          "pricingHi": "ब्याज दर 4–7% (रियायती)",
+          "keyFeatures": [
+            "Subsidized interest rates",
+            "Long repayment tenure",
+            "Shed construction loans",
+            "Working capital loans",
+            "Government guarantee"
+          ],
+          "targetFarmSize": "5,000+ birds",
+          "languageSupport": ["Hindi", "English"],
+          "platform": ["Bank branches"],
+          "pros": [
+            "Low interest rates",
+            "Government backed",
+            "Long tenure",
+            "Multiple schemes"
+          ],
+          "cons": [
+            "Lengthy application process",
+            "Collateral required",
+            "Documentation heavy",
+            "Processing delays"
+          ],
+          "userRating": "4.0/5",
+          "url": "https://nabard.org",
+          "isOurProduct": false
+        },
+        {
+          "id": "poultry-insurance",
+          "name": "Poultry Insurance Schemes",
+          "nameHi": "मुर्गी बीमा योजनाएं",
+          "description": "Insurance products covering mortality, disease outbreaks, and price risks for poultry farms.",
+          "descriptionHi": "मुर्गी खेतों के लिए मृत्यु, बीमारी के प्रकोप और मूल्य जोखिमों को कवर करने वाले बीमा उत्पाद।",
+          "pricing": "2–5% of insured value annually",
+          "pricingHi": "बीमित मूल्य का 2–5% वार्षिक",
+          "keyFeatures": [
+            "Mortality coverage",
+            "Disease outbreak coverage",
+            "Parametric options",
+            "Quick claim settlement",
+            "Government schemes available"
+          ],
+          "targetFarmSize": "10,000+ birds",
+          "languageSupport": ["Hindi", "English"],
+          "platform": ["Insurance companies", "Bank tie-ups"],
+          "pros": [
+            "Risk protection",
+            "Government schemes available",
+            "Quick claims (some products)",
+            "Peace of mind"
+          ],
+          "cons": [
+            "Premium cost",
+            "Claim documentation",
+            "Exclusions apply",
+            "Limited availability"
+          ],
+          "userRating": "3.8/5",
+          "url": "Various insurers",
+          "isOurProduct": false
+        },
+        {
+          "id": "government-schemes",
+          "name": "Government Poultry Schemes",
+          "nameHi": "सरकारी मुर्गी योजनाएं",
+          "description": "Central and state government schemes providing subsidies, grants, and support for poultry farming.",
+          "descriptionHi": "मुर्गी पालन के लिए सब्सिडी, अनुदान और सहायता प्रदान करने वाली केंद्रीय और राज्य सरकारी योजनाएं।",
+          "pricing": "Free (subsidies available)",
+          "pricingHi": "मुफ्त (सब्सिडी उपलब्ध)",
+          "keyFeatures": [
+            "Capital subsidies",
+            "Back-ended subsidies",
+            "Interest subsidies",
+            "Training programs",
+            "Technical support"
+          ],
+          "targetFarmSize": "Varies by scheme",
+          "languageSupport": ["Hindi", "English"],
+          "platform": ["Government offices", "Online portals"],
+          "pros": [
+            "Financial support",
+            "Technical assistance",
+            "Training programs",
+            "Multiple schemes"
+          ],
+          "cons": [
+            "Complex application",
+            "Lengthy processing",
+            "Budget constraints",
+            "Documentation requirements"
+          ],
+          "userRating": "3.5/5",
+          "url": "Various government portals",
+          "isOurProduct": false
+        }
+      ],
+      "selectionCriteria": [
+        "Interest rate/subsidy level",
+        "Processing time",
+        "Collateral requirements",
+        "Repayment flexibility",
+        "Government backing"
+      ],
+      "ourRecommendation": "Start with NABARD loans for shed construction. Consider insurance for large farms (50,000+ birds). Research state-specific schemes for additional subsidies.",
+      "ourRecommendationHi": "शेड निर्माण के लिए NABARD ऋण से शुरू करें। बड़े खेतों (50,000+ पक्षी) के लिए बीमा पर विचार करें। अतिरिक्त सब्सिडी के लिए राज्य-विशिष्ट योजनाओं की जांच करें।"
+    },
+    {
+      "id": "equipment-infrastructure",
+      "name": "Equipment & Infrastructure",
+      "nameHi": "उपकरण और बुनियादी ढांचा",
+      "slug": "equipment-infrastructure",
+      "priority": 2,
+      "status": "live",
+      "description": "Climate control systems, feeding automation, water management, and housing solutions for poultry farms.",
+      "descriptionHi": "मुर्गी खेतों के लिए जलवायु नियंत्रण प्रणाली, फीडिंग स्वचालन, जल प्रबंधन और आवास समाधान।",
+      "tools": [
+        {
+          "id": "climate-control",
+          "name": "Climate Control Systems",
+          "nameHi": "जलवायु नियंत्रण प्रणाली",
+          "description": "Automated temperature and humidity control systems including evaporative cooling, tunnel ventilation, and controllers.",
+          "descriptionHi": "स्वचालित तापमान और आर्द्रता नियंत्रण प्रणाली जिसमें वाष्पीय शीतलन, सुरंग वेंटिलेशन और नियंत्रक शामिल हैं।",
+          "pricing": "₹2–10 lakh per shed",
+          "pricingHi": "प्रति शेड ₹2–10 लाख",
+          "keyFeatures": [
+            "Temperature automation",
+            "Humidity control",
+            "Energy efficiency",
+            "Remote monitoring",
+            "Alarm systems"
+          ],
+          "targetFarmSize": "10,000+ birds",
+          "languageSupport": ["English"],
+          "platform": ["Hardware"],
+          "pros": [
+            "Improved FCR",
+            "Reduced mortality",
+            "Labor savings",
+            "Better bird comfort"
+          ],
+          "cons": [
+            "High initial cost",
+            "Maintenance required",
+            "Power dependency",
+            "Technical expertise needed"
+          ],
+          "userRating": "4.5/5",
+          "url": "Various manufacturers",
+          "isOurProduct": false
+        },
+        {
+          "id": "feeding-automation",
+          "name": "Feeding Automation",
+          "nameHi": "फीडिंग स्वचालन",
+          "description": "Automatic feeding systems including silos, augers, and pan feeders to reduce labor and improve feed efficiency.",
+          "descriptionHi": "श्रम को कम करने और फीड दक्षता में सुधार के लिए स्वचालित फीडिंग सिस्टम जिसमें साइलो, ऑगर और पैन फीडर शामिल हैं।",
+          "pricing": "₹1–5 lakh per shed",
+          "pricingHi": "प्रति शेड ₹1–5 लाख",
+          "keyFeatures": [
+            "Automatic feed delivery",
+            "Reduced feed wastage",
+            "Labor savings",
+            "Precise ration control",
+            "Monitoring systems"
+          ],
+          "targetFarmSize": "5,000+ birds",
+          "languageSupport": ["English"],
+          "platform": ["Hardware"],
+          "pros": [
+            "Labor savings",
+            "Reduced feed wastage",
+            "Consistent feeding",
+            "Better FCR"
+          ],
+          "cons": [
+            "Initial investment",
+            "Maintenance costs",
+            "Power dependency",
+            "Repair complexity"
+          ],
+          "userRating": "4.3/5",
+          "url": "Various manufacturers",
+          "isOurProduct": false
+        },
+        {
+          "id": "water-management",
+          "name": "Water Management Systems",
+          "nameHi": "जल प्रबंधन प्रणाली",
+          "description": "Water filtration, medication dosing, and nipple drinking systems for clean water delivery.",
+          "descriptionHi": "स्वच्छ पानी वितरण के लिए जल निस्पंदन, दवा डोजिंग और निपल पीने की प्रणाली।",
+          "pricing": "₹50,000–₹2 lakh per shed",
+          "pricingHi": "प्रति शेड ₹50,000–₹2 लाख",
+          "keyFeatures": [
+            "Water filtration",
+            "Medication dosing",
+            "Nipple drinkers",
+            "Flow monitoring",
+            "Pressure regulation"
+          ],
+          "targetFarmSize": "All sizes",
+          "languageSupport": ["English"],
+          "platform": ["Hardware"],
+          "pros": [
+            "Clean water delivery",
+            "Reduced disease risk",
+            "Water savings",
+            "Medication efficiency"
+          ],
+          "cons": [
+            "Initial cost",
+            "Maintenance required",
+            "Clogging risks",
+            "Power backup needed"
+          ],
+          "userRating": "4.4/5",
+          "url": "Various manufacturers",
+          "isOurProduct": false
+        }
+      ],
+      "selectionCriteria": [
+        "Farm size suitability",
+        "Initial investment",
+        "Maintenance requirements",
+        "Energy efficiency",
+        "ROI potential",
+        "After-sales support"
+      ],
+      "ourRecommendation": "Prioritize climate control for summer months. Feeding automation for 10,000+ bird farms. Water management is essential for all sizes to prevent disease.",
+      "ourRecommendationHi": "गर्मी के महीनों के लिए जलवायु नियंत्रण प्राथमिकता दें। 10,000+ पक्षियों के खेतों के लिए फीडिंग स्वचालन। बीमारी रोकने के लिए सभी आकारों के लिए जल प्रबंधन आवश्यक है।"
+    }
+  ]
+}

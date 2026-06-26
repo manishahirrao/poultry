@@ -1,0 +1,43 @@
+{
+  "model_type": "ridge_regression",
+  "version": "1.0",
+  "created_at": "2026-05-25T08:23:57.593Z",
+  "parameters": {
+    "alpha": 1,
+    "intercept": 145,
+    "coefficients": {
+      "temperature": 0.8,
+      "humidity": -0.3,
+      "feed_intake": 0.5,
+      "light_hours": 0.2,
+      "bird_age": -0.1
+    },
+    "feature_means": {
+      "temperature": 25,
+      "humidity": 60,
+      "feed_intake": 120,
+      "light_hours": 16,
+      "bird_age": 30
+    },
+    "feature_stds": {
+      "temperature": 5,
+      "humidity": 10,
+      "feed_intake": 20,
+      "light_hours": 2,
+      "bird_age": 15
+    },
+    "weights": {
+      "arima": 0.15,
+      "prophet": 0.2,
+      "ridge": 0.15,
+      "lightgbm": 0.3,
+      "tft": 0.2
+    },
+    "bias_correction": -1
+  },
+  "metadata": {
+    "training_period": "2024-01-01 to 2024-12-31",
+    "target_variable": "egg_production",
+    "units": "eggs_per_day"
+  }
+}

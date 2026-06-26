@@ -1,0 +1,28 @@
+{
+  "model_type": "arima",
+  "version": "1.0",
+  "created_at": "2026-05-25T08:23:57.591Z",
+  "parameters": {
+    "order": [
+      1,
+      1,
+      1
+    ],
+    "seasonal_order": [
+      1,
+      1,
+      1,
+      7
+    ],
+    "trend": "c",
+    "base_prediction": 150,
+    "drift": 0.5,
+    "seasonality_amplitude": 20,
+    "noise_std": 5
+  },
+  "metadata": {
+    "training_period": "2024-01-01 to 2024-12-31",
+    "target_variable": "egg_production",
+    "units": "eggs_per_day"
+  }
+}

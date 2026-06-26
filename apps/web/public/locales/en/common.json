@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "overview": "Overview",
+    "price_intelligence": "Price Intelligence",
+    "district_map": "District Map",
+    "alerts": "Alerts",
+    "my_farms": "My Farms",
+    "feed_intelligence": "Feed Intelligence",
+    "settings": "Settings"
+  },
+  "dashboard": {
+    "todays_price": "Today's Price",
+    "sell_signal": "Sell Signal",
+    "sell_now": "Sell Today ✓",
+    "hold": "Hold",
+    "caution": "Caution",
+    "model_accuracy": "Model Accuracy",
+    "data_stale": "Data is outdated — pull to refresh"
+  },
+  "farms": {
+    "log_pending": "Today's log not submitted yet",
+    "log_submitted": "Log submitted",
+    "no_farms": "No farms added yet",
+    "add_farm": "Add Farm"
+  },
+  "errors": {
+    "load_failed": "Couldn't load data. Pull to refresh.",
+    "save_failed": "Couldn't save. Please try again.",
+    "network_offline": "No internet connection."
+  }
+}

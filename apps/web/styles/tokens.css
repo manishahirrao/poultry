@@ -1,0 +1,143 @@
+/* PoultryPulse AI — Design Tokens (Dashboard Enhancement v1.0) */
+/* File: apps/web/styles/tokens.css */
+/* Version: v2.0 | May 2026 */
+/* Design Reference: PoultryPulse_Dashboard_Design_v1.md §1.2, Website Design v1.0 §1.2 */
+/* Requirements Reference: PoultryPulse_Dashboard_Requirements_v1.md §SEC-005 (CSP compliance) */
+/* 
+ * CSP Compliance Notice: All design tokens are CSS custom properties.
+ * No inline styles or dynamic style injection. Safe for CSP headers.
+ */
+
+/* ============================================================================
+ * EXISTING TOKENS PRESERVED (from UI/UX Design v1.0)
+ * These tokens are defined in globals.css and are NOT modified here.
+ * This file only adds NEW dashboard-specific tokens.
+ * ============================================================================ */
+
+/* ============================================================================
+ * NEW: Website Marketing Tokens (TASK-WEB-002)
+ * ============================================================================ */
+
+:root {
+  /* Hero & Marketing Sections */
+  --hero-gradient-start: #FFFFFF;
+  --hero-gradient-end: #E8F5EE;          /* brand-green-50 */
+  --hero-headline-size: clamp(40px, 5vw, 72px);  /* Fluid typography */
+  --hero-sub-size: clamp(18px, 2vw, 24px);
+
+  /* Dark Sections (accuracy strip, CTAs) */
+  --section-dark-bg: #1C2B22;            /* neutral-900 */
+  --section-dark-text: #FFFFFF;
+  --section-dark-accent: #4CAF82;        /* lighter green for dark bg */
+
+  /* Card Variants */
+  --card-feature-bg: #FFFFFF;
+  --card-feature-border: rgba(26,107,60,0.12);
+  --card-feature-hover-border: #1A6B3C;
+  --card-problem-bg: #FFF8F8;
+  --card-problem-accent: #C0392B;        /* red-600 */
+
+  /* Testimonial Cards */
+  --card-testimonial-bg: #F7FDFB;
+  --card-testimonial-border: #E8F5EE;
+  --card-testimonial-quote-color: rgba(26,107,60,0.15);
+
+  /* Navigation */
+  --nav-height: 72px;
+  --nav-bg-transparent: rgba(255,255,255,0);
+  --nav-bg-scrolled: rgba(255,255,255,0.92);
+  --nav-backdrop-blur: blur(12px);
+  --nav-border-scrolled: rgba(26,107,60,0.1);
+
+  /* Section Spacing */
+  --section-padding-y: clamp(64px, 8vw, 120px);
+  --section-padding-x: clamp(20px, 5vw, 80px);
+  --section-max-width: 1280px;
+
+  /* Typography — Marketing Scale */
+  --text-display: clamp(48px, 6vw, 80px);   /* Hero headlines */
+  --text-h1: clamp(36px, 4vw, 56px);
+  --text-h2: clamp(28px, 3vw, 40px);
+  --text-h3: clamp(22px, 2.5vw, 32px);
+  --text-body-lg: clamp(17px, 1.5vw, 20px);
+  --text-body: 16px;
+  --text-caption: 14px;
+
+  /* Animation */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-standard: 250ms;
+  --duration-slow: 400ms;
+  --duration-feature-tab: 300ms;
+}
+
+/* ============================================================================
+ * NEW: Data Visualization Tokens (Dashboard Enhancement v1.0)
+ * ============================================================================ */
+
+:root {
+  /* Data Visualization Colors */
+  --color-viz-actual: #1A6B3C;          /* Solid green — historical/actual data lines */
+  --color-viz-forecast: #F5A623;         /* Amber — forecast/predicted data */
+  --color-viz-p10-p90: rgba(26, 107, 60, 0.12);  /* Low-opacity green — confidence bands */
+  --color-viz-p50: #1A6B3C;             /* Green — P50 median forecast line */
+  --color-viz-negative: #C0392B;         /* Red — price drops, losses */
+  --color-viz-neutral: #7A9C8A;          /* Neutral green-grey — reference lines */
+
+  /* Status Tokens */
+  --color-status-excellent: #1A6B3C;    /* MAPE <6%, directional >95% */
+  --color-status-good: #2ECC71;          /* Within acceptable range */
+  --color-status-warning: #F5A623;       /* MAPE 6–8%, approaching threshold */
+  --color-status-critical: #C0392B;      /* MAPE >8%, directional <90% */
+  --color-status-offline: #7A9C8A;       /* Stale data, offline mode */
+
+  /* Map Tokens */
+  --color-map-high-price: #1A6B3C;      /* Green — high sell opportunity */
+  --color-map-mid-price: #F5A623;        /* Amber — moderate opportunity */
+  --color-map-low-price: #C0392B;        /* Red — poor selling conditions */
+  --color-map-hpai-ring: #C0392B;        /* Red ring — disease zone */
+  --color-map-selected: #1C2B22;         /* Dark — selected district */
+
+  /* Chart Grid Tokens */
+  --color-chart-grid: rgba(122, 156, 138, 0.15);   /* Subtle grid lines */
+  --color-chart-axis: #7A9C8A;                   /* Axis labels */
+  --color-chart-tooltip-bg: #1C2B22;             /* Dark tooltip background */
+  --color-chart-tooltip-text: #FFFFFF;           /* White tooltip text */
+
+  /* Layout Tokens */
+  --sidebar-width: 240px;               /* Collapsed: 64px */
+  --header-height: 64px;
+  --widget-border-radius: 16px;          /* Slightly larger than card radius for dashboard feel */
+  --widget-padding: 24px;
+  --widget-gap: 20px;
+
+  /* Animation Tokens */
+  --animation-data-refresh: 0.3s ease-in-out;  /* Widget data update transition */
+  --animation-alert-pulse: 2s ease-in-out infinite;  /* Alert badge pulse */
+  --animation-hpai-ring: 3s ease-out infinite;        /* Disease zone ring animation */
+  --animation-skeleton: 1.5s ease-in-out infinite alternate;  /* Loading shimmer */
+}
+
+/* ============================================================================
+ * Marquee Animation for Footer Accuracy Strip
+ * ============================================================================ */
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ============================================================================
+ * Reduced Motion Support
+ * ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

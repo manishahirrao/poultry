@@ -1,0 +1,44 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirm": "Confirm"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "overview": "Portfolio Overview",
+    "alerts": "Alerts Feed",
+    "viewAll": "View all",
+    "todayPrice": "Today's Price"
+  },
+  "marketing": {
+    "nav": {
+      "signIn": "Sign in",
+      "activateBeta": "Activate Beta License →"
+    },
+    "hero": {
+      "badge": "🌍 Used in 15+ countries across 4 continents",
+      "headlinePrefix": "Run Your Poultry Operation",
+      "headlineHighlight": "Like a Fortune 500",
+      "headlineSuffix": "Company.",
+      "subheadline": "FlockIQ gives integrators and farm managers complete visibility over every batch — FCR, mortality, weight, health — with daily data collected automatically via WhatsApp. No spreadsheets. No manual calls.",
+      "activateBeta": "Activate Beta License",
+      "demo": "See a 3-Min Demo",
+      "trustBadge1": "Private Beta",
+      "trustBadge2": "Invite Only",
+      "trustBadge3": "Works on WhatsApp",
+      "trustBadge4": "Cancel anytime"
+    },
+    "pricing": {
+      "eyebrow": "SIMPLE PRICING",
+      "heading": "150+ farmers saving ₹50,000+ for just ₹167/day",
+      "body": "Every feature you need to make smarter selling decisions.",
+      "activateBeta": "Activate Beta License",
+      "monthly": "Monthly",
+      "annual": "Annual — Save 17%"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+
+> @poultrypulse/i18n@1.0.0 lint
+> tsc --noEmit
+

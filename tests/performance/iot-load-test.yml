@@ -1,0 +1,73 @@
+# Artillery Load Test for IoT Reading Endpoint
+# 
+# This test validates that POST /api/v1/iot/reading endpoint
+# meets the performance requirement: P95 ≤ 100ms under 100 concurrent requests/second
+#
+# Acceptance Criteria: TASK-057
+# - POST /api/v1/iot/reading P95 ≤ 100ms under load (100 concurrent device reads/second)
+
+config:
+  target: "http://localhost:3000"
+  phases:
+    # Warm-up phase
+    - duration: 30
+      arrivalRate: 10
+      name: "Warm up"
+    
+    # Ramp-up to target load
+    - duration: 60
+      arrivalRate: 50
+      name: "Ramp up"
+    
+    # Sustained load at 100 req/s (target requirement)
+    - duration: 120
+      arrivalRate: 100
+      name: "Sustained load (100 req/s)"
+    
+    # Peak load test (beyond requirement)
+    - duration: 30
+      arrivalRate: 150
+      name: "Peak load (150 req/s)"
+    
+    # Cool-down
+    - duration: 30
+      arrivalRate: 10
+      name: "Cool down"
+  
+  # Ensure the test fails if performance thresholds are not met
+  ensure:
+    p95: 100
+    p99: 200
+    maxErrorRate: 1
+  
+  # Processor for custom metrics
+  processor: "./iot-load-test-processor.js"
+
+scenarios:
+  - name: "IoT Device Reading Submission"
+    flow:
+      # Simulate IoT device sending reading
+      - post:
+          url: "/api/v1/iot/reading"
+          headers:
+            Content-Type: "application/json"
+            X-API-Key: "test-api-key-12345"
+          json:
+            device_id: "sensor-001"
+            device_type: "environment"
+            shed_id: "shed-1"
+            timestamp: "{{ $randomString() }}"
+            data:
+              temperature: 28.5
+              humidity: 65
+              ammonia: 8
+              water_flow: 12.3
+          capture:
+            - json: "$.success"
+              as: "success"
+            - json: "$.reading_id"
+              as: "reading_id"
+      
+      # Validate response
+      - think: 0.1
+      - log: "Reading ID: {{ reading_id }}, Success: {{ success }}"

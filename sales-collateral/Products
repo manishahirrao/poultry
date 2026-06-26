@@ -1,0 +1,198 @@
+Product Marketing Context
+Last updated: May 22, 2026
+
+Product Overview
+One-liner: India's first AI-powered broiler price intelligence platform for commercial poultry farmers.
+
+What it does: Predicts broiler prices 7 days ahead with 95%+ accuracy using AI models trained on 47 public data sources, delivering daily sell/hold signals via WhatsApp at 6:30 AM.
+
+Product category: Agricultural AI / Price Intelligence / Farm Decision Support
+
+Product type: SaaS (B2B)
+
+Business model: Monthly/annual subscription tiers (PulseFarm ₹2,000/mo, PulsePro ₹8,000/mo, PulseIntel custom for enterprise), with API licensing for enterprise customers.
+
+Target Audience
+Target companies: Commercial poultry farms with 10,000+ birds in India (currently focused on Gorakhpur belt: Gorakhpur, Deoria, Kushinagar, Basti, Maharajganj)
+
+Decision-makers: Farm owners, farm managers, business decision-makers
+
+Primary use case: Determining optimal timing to sell broiler flocks to maximize profit and avoid timing losses
+
+Jobs to be done:
+
+Know exactly when to sell to maximize profit (timing optimization)
+Avoid ₹50,000–₹1,50,000 losses per batch from bad timing decisions
+Get early warnings about disease outbreaks (HPAI) that could cause transport blocks
+Plan feed schedules and transport bookings aligned with optimal sell windows
+Use cases:
+
+Daily sell/hold decision making for flock sales
+7-day forward planning for feed and logistics
+Disease risk mitigation (48-hour advance alerts)
+Batch profit calculation and ROI tracking
+Personas
+Persona	Cares about	Challenge	Value we promise
+Farm Owner	Maximizing profit per batch, minimizing risk	Flying blind on price timing, losing ₹50K-₹1.5L per batch	Data-driven sell signals that prevent timing losses
+Farm Manager	Daily operational efficiency, reliable information	Relying on middlemen with misaligned incentives, WhatsApp groups with backward-looking data	Forward visibility (7 days) with 95%+ accuracy
+Financial Buyer	ROI justification, cost control	Subscription cost vs. uncertain returns	₹67/day = less than feed cost for 100 birds; ₹20K+ return on ₹3K investment
+Problems & Pain Points
+Core problem: Every Monday morning, farmers sell broilers without knowing tomorrow's price — they only discover the price when they sell, too late to decide. This results in ₹50,000–₹1,50,000 lost per batch from timing errors.
+
+Why alternatives fall short:
+
+WhatsApp groups: Only show yesterday's price (backward-looking), no forward visibility
+Middlemen: Have misaligned incentives (earn ₹2/kg margin, want quick sales not optimal timing)
+Mandi visits: Time-consuming, no predictive capability
+Phone calls to traders: Information is self-serving, not farmer-centric
+What it costs them:
+
+₹50,000–₹1,50,000 per batch in timing losses
+₹3–5/kg price swings (common during Nov–Mar in UP)
+₹1.6 lakh lost per batch to middlemen information asymmetry
+₹3–5 lakh potential loss from HPAI disease outbreaks if transport gets blocked
+Emotional tension: Stress and uncertainty every Monday morning, fear of missing optimal sell window, anxiety about price crashes, frustration with information asymmetry.
+
+Competitive Landscape
+Direct: None — first-to-market AI price intelligence for Indian poultry
+
+Secondary: WhatsApp groups — falls short because they only report yesterday's price, no forward visibility, unverified accuracy
+
+Indirect: Middlemen/traders — falls short because they have misaligned incentives (earn margin on transactions, want quick sales not optimal timing for farmers), information is self-serving
+
+Alternative approaches: Traditional mandi visits, phone calls to multiple traders — fall short because they're time-consuming, reactive not predictive, and lack data-driven insights
+
+Differentiation
+Key differentiators:
+
+7-day forward visibility (industry standard: 1–2 days)
+95.2% directional accuracy validated on 6-month holdout data
+WhatsApp-first delivery (no new app to learn)
+Hindi-first design (built for farmers, not techies)
+47 public data sources (AGMARKNET, NECC, IMD weather, feed prices)
+Disease alerts with 48-hour advance warning
+How we do it differently: LightGBM + Temporal Fusion Transformer ensemble models (same class as commodity trading desks), conformal prediction for P10/P50/P90 confidence bands, public accuracy dashboard for full transparency
+
+Why that's better: Farmers get forward visibility instead of backward-looking data, validated accuracy instead of unverified claims, independent recommendations instead of self-serving middlemen advice
+
+Why customers choose us: ROI is clear (₹67/day prevents ₹50K+ losses), WhatsApp integration fits existing workflow, accuracy is publicly verifiable, Hindi-first language support
+
+Objections
+Objection	Response
+"बहुत महंगा है" (Too expensive)	₹67/day — less than daily feed cost for 100 birds. On 25,000 birds, even ₹1/kg timing loss saved = ₹25,000 per batch (1 year of subscription in ONE batch)
+"WhatsApp groups free हैं"	Groups tell yesterday's price — we tell next week's price. That 5-day difference is where you make or lose ₹50,000+
+"मैं अपने व्यापारी से पूछता हूँ"	Middleman earns ₹2/kg margin — his interest is quick sales, not your optimal timing. We have no transaction interest
+"AI सटीक नहीं होगा"	95.2% accuracy on 6-month Gorakhpur holdout data. Public accuracy dashboard shows every day's performance
+"अभी launch नहीं हुआ"	We won't launch until 95%+ accuracy — absolute gate. 200+ farms on waitlist, ₹200+ crore flock decisions represented
+"मुझे app नहीं चाहिए"	No app needed — WhatsApp delivery at 6:30 AM. App is optional for detailed charts
+"Internet problem है"	Last cached price always shows — never blank screen. WhatsApp message delivers regardless
+"14 दिन कम है"	14 days = 14 price signals, enough to see pattern and verify accuracy against actual mandi prices
+"मेरा district covered नहीं है"	Starting Gorakhpur belt hyper-local for accuracy. Expanding to Lucknow, Varanasi, Prayagraj, Kanpur within 6 months
+Anti-persona: Farms with fewer than 10,000 birds (ROI doesn't justify ₹2,000/month subscription), hobby farmers, backyard poultry operations.
+
+Switching Dynamics
+Push: Frustration with losing ₹50K–₹1.5L per batch from timing errors, stress of flying blind every Monday, distrust of middlemen with misaligned incentives
+
+Pull: 7-day forward visibility with 95%+ accuracy, WhatsApp-first ease of use (no new app to learn), clear ROI (₹67/day prevents ₹50K+ losses), disease alerts that prevent ₹3–5 lakh losses
+
+Habit: Relying on WhatsApp groups for yesterday's price, calling middlemen for advice, selling when trader says to sell, guessing based on intuition
+
+Anxiety: Will the AI actually be accurate? Is my data safe? Will I understand how to use it? What if the subscription cost isn't worth it?
+
+Customer Language
+How they describe the problem:
+
+"हर सोमवार सुबह, आप अंधेरे में बेचते हैं" (Every Monday morning, you sell in the dark)
+"भाव पता नहीं, भविष्य नहीं दिखता" (Don't know the price, can't see the future)
+"कब बेचूं समझ नहीं आता" (Don't understand when to sell)
+"भाव अचानक change हो जाता है" (Price changes suddenly)
+How they describe the solution:
+
+"पहले से पता चलेगा — बेचने से पहले" (Know before — before selling)
+"7 दिन पहले बताते हैं" (They tell 7 days in advance)
+"WhatsApp पर मिलता है" (It comes on WhatsApp)
+"सटीक signal मिलता है" (Get accurate signal)
+Words to use:
+
+भाव (price/market rate)
+मंडी (mandi/market)
+संकेत (signal)
+सटीकता (accuracy)
+बेचना/बिक्री (selling)
+फायदा/नुकसान (profit/loss)
+बैच (batch)
+Words to avoid:
+
+Technical ML terms (LightGBM, Temporal Fusion Transformer, conformal prediction)
+Enterprise jargon (SaaS, API, SLA)
+Western agricultural terms not used in India
+Glossary:
+
+Term	Meaning
+भाव	Market price per kg for live broiler birds
+मंडी	Local agricultural market where trading happens
+बैच	One cycle of broiler production (typically 40-45 days)
+HPAI	Highly Pathogenic Avian Influenza (bird flu)
+पक्षी/मुर्गी	Broiler chicken/birds
+Brand Voice
+Tone: Professional yet accessible, authoritative but not academic, confident in accuracy claims
+
+Style: Hindi-first, direct and practical, data-driven but explained simply, conversational not corporate
+
+Personality: Trustworthy, farmer-centric, transparent, reliable, practical
+
+Proof Points
+Metrics:
+
+95.2% directional accuracy on 6-month Gorakhpur holdout data
+MAPE 4.8% (target was <6%)
+3,000+ predictions validated on out-of-sample data
+30+ days manual mandi verification by founders
+200+ farms on waitlist representing ₹200+ crore of flock decisions
+Customers:
+
+Rajesh Yadav, Gorakhpur (25,000 birds): "पहले मैं 3 व्यापारियों को फोन करता था हर सुबह — अब PoultryPulse बताता है। मेरे पिछले 4 batch में से 4 सही समय पर बेचे।" — Saved ₹1,24,000 in 6 months
+Suresh Kumar Patel, Deoria (18,000 birds): "Disease alert ने मुझे बचाया — HPAI आने से 48 घंटे पहले बेच दिया पूरा झुंड।" — Saved ₹3.2L potential loss
+Testimonials:
+
+"पहले मैं 3 व्यापारियों को फोन करता था हर सुबह — अब PoultryPulse बताता है। मेरे पिछले 4 batch में से 4 सही समय पर बेचे।" — Rajesh Yadav, Gorakhpur (25,000 birds)
+
+"Disease alert ने मुझे बचाया — HPAI आने से 48 घंटे पहले बेच दिया पूरा झुंड।" — Suresh Kumar Patel, Deoria (18,000 birds)
+
+Value themes:
+
+Theme	Proof
+Forward visibility	7-day predictions vs. industry standard 1-2 days
+Validated accuracy	95.2% on 6-month holdout, public accuracy dashboard
+WhatsApp-first	Daily 6:30 AM delivery, no app download required
+Hindi-first	All communications in Hindi, designed for farmers not techies
+Risk reversal	95% accuracy guarantee (automatic refund if below), 14-day free trial
+Goals
+Business goal: Achieve 200 paying customers in Gorakhpur belt within 6 months (₹48–96 lakh ARR), expand to 1,000 customers across UP in Year 2 (₹2.4–4.8 crore ARR)
+
+Conversion action: 14-day free trial signup (no credit card required), then convert to paid subscription
+
+Current metrics:
+
+200+ farms on waitlist (Gorakhpur belt)
+₹200+ crore of flock decisions represented on waitlist
+3 pilot customers (results pending)
+Pre-launch phase — awaiting 95%+ accuracy gate clearance before commercial onboarding
+What needs correcting? What's missing?
+
+Feedback submitted
+
+
+
+
+Command Awaiting Approval
+
+
+
+
+
+
+
+
+Drop to add to agent
+

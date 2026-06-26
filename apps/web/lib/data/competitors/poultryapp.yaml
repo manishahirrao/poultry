@@ -1,0 +1,127 @@
+# PoultryApp Competitor Profile
+# Centralized data for PoultryApp comparisons
+# Last Updated: May 2026
+
+competitor:
+  name: PoultryApp
+  nameHi: पोल्ट्रीऐप
+  website: https://poultryapp.com
+  category: poultry_management_software
+  tier: direct_competitor
+  
+positioning:
+  tagline: Complete poultry farm management software
+  valueProposition: Digital poultry farm management for broiler, layer, and breeder farms with daily rate tracking
+  targetAudience: Poultry farmers of all sizes (broiler, layer, breeder)
+  geographicFocus: India-wide
+  
+pricing:
+  model: Free
+  tiers:
+    - name: Free
+      price: ₹0
+      period: forever
+      features:
+        - Daily market prices
+        - Production tracking
+        - Feed management
+        - Bird health monitoring
+        - Vaccination schedules
+        - Mortality records
+        - Farm operations management
+  hiddenCosts: None (free forever)
+  enterprisePricing: Not available
+  
+features:
+  core:
+    - Daily poultry rates (broiler, egg, feed)
+    - Farm management dashboard
+    - Production tracking
+    - Feed inventory management
+    - Health monitoring
+    - Vaccination scheduling
+  prediction:
+    hasPricePrediction: false
+    predictionWindow: 0 days
+    accuracy: Not applicable
+    confidenceIntervals: false
+  data:
+    dataSources: "Public rate aggregation"
+    updateFrequency: Daily
+    historicalData: Yes
+    districtLevelGranularity: Limited
+  alerts:
+    hpaiAlerts: false
+    diseaseAlerts: false
+    weatherAlerts: false
+    priceAlerts: false
+  delivery:
+    channels: ["Mobile App", "Web"]
+    whatsappIntegration: false
+    automatedDelivery: false
+    languageSupport: ["English"]
+  
+strengths:
+  - Comprehensive farm management features
+  - Free to use
+  - Daily rate updates
+  - Production tracking capabilities
+  - Good for small to medium farms
+  
+weaknesses:
+  - No price prediction capability
+  - No forward visibility
+  - No AI-powered insights
+  - Limited to historical/current rates only
+  - No WhatsApp integration
+  - English-only interface
+  - No disease outbreak alerts
+  
+bestFor:
+  - Farmers wanting comprehensive farm management software
+  - Small to medium poultry operations
+  - Farmers who need production tracking more than price prediction
+  - Budget-conscious farmers
+  
+notIdealFor:
+  - Commercial farmers (10K+ birds) needing price intelligence
+  - Farmers requiring 7-day price forecasts
+  - Hindi-speaking farmers
+  - Farmers needing disease outbreak alerts
+  - Operations requiring WhatsApp-first delivery
+  
+commonComplaints:
+  - "No prediction - only shows yesterday's rates"
+  - "Can't plan ahead - only historical data"
+  - "English interface difficult for some farmers"
+  - "No alerts for disease outbreaks"
+  - "Limited district-specific data"
+  
+marketPosition:
+  marketShare: Unknown (niche player)
+  funding: Not publicly disclosed
+  launchYear: Unknown
+  customerCount: 500+ app ratings (Google Play)
+  
+comparisonNotes:
+  vsPoultryPulse:
+    keyDifference: "PoultryApp is farm management software with daily rates; PoultryPulse is AI-powered price intelligence with 7-day forecasts"
+    whyPoultryPulseWins: "95%+ accuracy, 7-day forward visibility, HPAI alerts, Hindi-first, WhatsApp delivery"
+    whyPoultryAppWins: "Free, comprehensive farm management features, production tracking"
+    switchDifficulty: "Low - different use cases (management vs intelligence)"
+    
+migrationNotes:
+  dataTransfer: "Not applicable - different product category"
+  learningCurve: "Low - PoultryPulse is simpler (price-focused)"
+  supportOffered: "Onboarding assistance for price intelligence features"
+  timeToValue: "Immediate - first prediction delivers value"
+  
+seoKeywords:
+  primary:
+    - "PoultryApp alternative"
+    - "PoultryApp vs PoultryPulse"
+    - "poultry price prediction app"
+  secondary:
+    - "poultry farm management software"
+    - "broiler price forecasting"
+    - "poultry rate app comparison"

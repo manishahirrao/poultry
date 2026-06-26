@@ -1,0 +1,478 @@
+{
+  "home": {
+    "problemSection": {
+      "title": "Why 80% of Gorakhpur farmers leave money on the table every batch",
+      "subtitle": "Three problems that cost you thousands every batch",
+      "cards": [
+        {
+          "title": "₹2–4/kg",
+          "subtitle": "Lost Every Batch",
+          "hindiQuote": "बेचते हैं भरोसे पर, और हर बार ₹2–4/kg का नुकसान होता है",
+          "financialImpact": "At 25K birds:",
+          "financialValue": "₹30K–80K/batch"
+        },
+        {
+          "title": "HPAI Alert",
+          "subtitle": "Reaches You Late",
+          "hindiQuote": "HPAI alert का पता लगता है जब ट्रांसपोर्ट पहले से बंद हो चुका होता है",
+          "financialImpact": "At 25K birds:",
+          "financialValue": "₹1L–5L total loss risk"
+        },
+        {
+          "title": "₹2/kg Stolen",
+          "subtitle": "By Middleman",
+          "hindiQuote": "बिचौलिया ₹8 देता है जब लखनऊ में ₹10 है — आपको नहीं पता",
+          "financialImpact": "At 25K birds × 4kg:",
+          "financialValue": "₹2L per batch lost to information gap"
+        }
+      ]
+    },
+    "featureGrid": {
+      "title": "57 features across 6 intelligence modules",
+      "subtitle": "Everything you need to run a profitable poultry farm",
+      "learnMore": "Learn more",
+      "features": [
+        {
+          "title": "Price Forecast",
+          "description": "7-day AI forecast with P10/P50/P90 confidence bands"
+        },
+        {
+          "title": "Sell Signal",
+          "description": "Daily SELL NOW / HOLD / CAUTION with ₹ impact"
+        },
+        {
+          "title": "Batch ROI Optimizer",
+          "description": "Exact ₹ profit comparison: sell today vs wait N days"
+        },
+        {
+          "title": "Middleman Check",
+          "description": "Is the trader's offer fair? Counter-offer in Hindi"
+        },
+        {
+          "title": "FCR Analytics",
+          "description": "Track feed efficiency, get daily allocation recommendations"
+        },
+        {
+          "title": "Mortality Tracking",
+          "description": "Log daily deaths, detect abnormal patterns automatically"
+        },
+        {
+          "title": "Vaccination Scheduler",
+          "description": "Auto-schedule UP broiler protocol, WhatsApp reminders"
+        },
+        {
+          "title": "Biosecurity Audit",
+          "description": "Fortnightly checklist with scoring and trend tracking"
+        },
+        {
+          "title": "HPAI + Disease Alerts",
+          "description": "Real-time outbreak alerts personalised to your district"
+        },
+        {
+          "title": "IoT Integration",
+          "description": "Connect weighing scales, water meters, environment sensors"
+        },
+        {
+          "title": "FSSAI Traceability",
+          "description": "One-click batch traceability PDF for compliance audits"
+        },
+        {
+          "title": "ERP Integration",
+          "description": "Sync with Tally, Zoho, SAP — zero double-entry"
+        }
+      ]
+    },
+    "featureTabPreview": {
+      "sectionTitle": "Everything you need. Nothing you don't.",
+      "tabs": {
+        "priceIntelligence": {
+          "label": "Price Intelligence",
+          "headline": "95%+ Accurate. Every Day.",
+          "description": "Our AI model predicts 7-day broiler price forecasts from 45 signals — for Gorakhpur mandi, every night at 06:00.",
+          "benefits": [
+            "P10/P50/P90 confidence bands — always know the range",
+            "Festival demand spikes predicted 7 days ahead",
+            "HPAI zone impact modelled automatically"
+          ],
+          "cta": "See Accuracy Report →"
+        },
+        "sellSignal": {
+          "label": "Sell Signal",
+          "headline": "SELL, HOLD, or CAUTION. Every morning.",
+          "description": "On WhatsApp every morning at 06:30: sell today or hold. Financial impact based on your flock size.",
+          "benefits": [
+            "SELL signal shows exact ₹ impact: \"Today ₹43.2L\"",
+            "HOLD signal shows: \"Wait 7 days = ₹2.8L more\"",
+            "Withdrawal period enforced — legal holds respected"
+          ],
+          "cta": "Try the Batch Calculator →"
+        },
+        "farmOperations": {
+          "label": "Farm Ops",
+          "headline": "DOC to harvest. Every data point.",
+          "description": "From batch registration to harvest — FCR, mortality, weight gain, vaccination — all in one place. 3× faster than manual entry. Works offline too.",
+          "benefits": [
+            "FCR auto-computed from daily feed logs",
+            "Abnormal mortality alert fires in 60 seconds",
+            "Vaccination reminders 24h before — WhatsApp + push"
+          ],
+          "cta": "Explore Farm Intelligence →"
+        },
+        "healthCompliance": {
+          "label": "Health",
+          "headline": "FSSAI-ready. One click.",
+          "description": "Vaccination schedule, medication records, FSSAI traceability report — all automatically generated. Antibiotic-free certification tracking built-in.",
+          "benefits": [
+            "FSSAI batch report PDF in < 5 seconds",
+            "Antibiotic-free badge automatically tracked",
+            "Biosecurity audit score with trend history"
+          ],
+          "cta": "See Compliance Features →"
+        },
+        "smartAlerts": {
+          "label": "Alerts",
+          "headline": "Alerts that know your farm's impact.",
+          "description": "HPAI alert is 200km away — that's fine. But respiratory symptoms in your flock + HPAI nearby = immediate Critical alert just for you.",
+          "benefits": [
+            "Financial impact on YOUR flock: \"~₹40K–₹80K risk\"",
+            "8 alert types: Disease, weather, price, feed, mortality...",
+            "Personalised thresholds — you decide what matters"
+          ],
+          "cta": ""
+        }
+      }
+    }
+  },
+  "accuracy": {
+    "hero": {
+      "title": "The Most Transparent AI in Indian Agri-Tech",
+      "subtitle": "We publish our accuracy live. Every day.",
+      "subtitle2": "Because we built this product for farmers, not for investors.",
+      "directionalAccuracy": "Directional Accuracy",
+      "directionalAccuracyTarget": "Target: 95%+",
+      "mape": "MAPE (30d)",
+      "mapeTarget": "< 6% target ✅",
+      "conformalCoverage": "Conformal Coverage",
+      "conformalCoverageTarget": "78-82% target",
+      "predictionsVerified": "Predictions Verified",
+      "predictionsVerifiedTarget": "Ground-truthed",
+      "updatedDaily": "Updated daily · Last:",
+      "ist": "IST"
+    },
+    "mapeChart": {
+      "title": "30-Day MAPE Trend",
+      "subtitle": "Daily MAPE performance over the last 30 days. Green zone indicates target performance (< 6%).",
+      "mape": "MAPE",
+      "mapeTrend": "MAPE Trend",
+      "target": "Target (6%)"
+    },
+    "predictionHistory": {
+      "title": "Prediction History",
+      "subtitle": "Showing",
+      "correct": "predictions —",
+      "correctDirection": "correct direction",
+      "date": "Date",
+      "district": "District",
+      "predictedP50": "Predicted P50",
+      "actualPrice": "Actual Price",
+      "direction": "Direction ✓?",
+      "mape": "MAPE"
+    },
+    "methodology": {
+      "title": "Methodology",
+      "subtitle": "How our model achieves 95%+ directional accuracy",
+      "questions": [
+        {
+          "question": "What is MAPE?",
+          "answer": "MAPE (Mean Absolute Percentage Error) measures the average percentage difference between our predicted prices and actual market prices. A MAPE below 6% means our predictions are, on average, within 6% of the actual price."
+        },
+        {
+          "question": "What is directional accuracy?",
+          "answer": "Directional accuracy measures whether we correctly predicted whether prices would go up or down. 96.2% directional accuracy means we got the direction right 96 out of 100 times. This is what matters most for sell timing decisions."
+        },
+        {
+          "question": "What data does the model use?",
+          "answer": "Our model uses 47 public data sources including AGMARKNET mandi prices, NECC poultry statistics, IMD weather forecasts, feed commodity prices (maize, soy), festival calendars, and HPAI outbreak data from government sources."
+        },
+        {
+          "question": "How often does the model retrain?",
+          "answer": "The model retrains weekly with a champion/challenger framework. We test new model versions against a 6-month holdout dataset before deployment. If a new version beats the current champion by 2%+ directional accuracy, we promote it."
+        },
+        {
+          "question": "What are conformal prediction intervals?",
+          "answer": "Conformal prediction gives us statistically valid confidence intervals. When we show P10-P90 ranges, there is a calibrated 80% probability that the actual price will fall within that range. This helps you understand uncertainty in the forecast."
+        }
+      ]
+    },
+    "featureImportance": {
+      "title": "Feature Importance",
+      "subtitle": "Top 5 factors that drive today's price forecast. This demystifies the AI and shows you what the model is actually looking at.",
+      "importance": "Importance"
+    },
+    "stressTests": {
+      "title": "Stress Test Results",
+      "subtitle": "How our model performed during historical market shocks",
+      "directionalAccuracy": "Directional accuracy during event:"
+    },
+    "validationAttestation": {
+      "title": "Manual Validation Attestation",
+      "description": "Our CTO and Data Head spent 10 days at Gorakhpur APMC in November 2025, recording actual broker prices manually. Our model predicted the correct direction 9 out of 10 days. This is our baseline before we take a single rupee from customers.",
+      "downloadButton": "Download Accuracy Certification Report"
+    },
+    "cta": {
+      "title": "See accuracy in your district — Start Free Trial",
+      "subtitle": "14 days free. No credit card required.",
+      "button": "Start Free Trial"
+    }
+  },
+  "features": {
+    "hero": {
+      "title": "All Features",
+      "subtitle": "57 features across 6 intelligence modules",
+      "description": "Everything you need to run a profitable poultry farm — from AI price forecasts to complete farm operations management."
+    },
+    "sidebar": {
+      "title": "Modules"
+    },
+    "comparison": {
+      "title": "FlockIQ vs Traditional Methods",
+      "description": "See how FlockIQ compares to manual spreadsheets and generic ERP systems",
+      "feature": "Feature",
+      "manual": "Manual/Spreadsheet",
+      "genericErp": "Generic ERP",
+      "FlockIQ": "FlockIQ",
+      "cta": "See Pricing Plans →"
+    }
+  },
+  "farmIntelligence": {
+    "hero": {
+      "title": "Beyond Price Intelligence — Complete Farm Operations in One Platform",
+      "description": "Price intelligence without operational data is an estimate. Price intelligence combined with your actual FCR, mortality, and weight gain is a precise business decision engine.",
+      "ctaPrimary": "Start Free Trial — 14 Days",
+      "ctaSecondary": "Request Demo"
+    },
+    "narrativeBox": {
+      "title": "How Operational Data Makes Price Intelligence Better",
+      "dataMoat": "The Data Moat: Every operational data point you log — FCR, mortality, weight gain, feed costs — strengthens our price prediction model for your specific farm.",
+      "compoundIntelligence": "Compound Intelligence: Farms with complete operational data see 12–18% higher price prediction accuracy because the model learns your farm's unique patterns.",
+      "precisionEngine": "Precision Decision Engine: When you combine market price forecasts with your actual batch performance, sell decisions become precise business calculations, not estimates.",
+      "footer": "The more you use FlockIQ for operations, the smarter your price intelligence becomes."
+    },
+    "segmentCTAs": {
+      "title": "Choose the Right Plan for Your Farm",
+      "pulsepro": {
+        "title": "PulsePro",
+        "subtitle": "For Commercial Farms (10K–50K birds)",
+        "price": "₹2,000–5,000/month",
+        "features": [
+          "All 6 farm intelligence modules",
+          "7-day price forecast",
+          "Daily sell signals (WhatsApp)",
+          "14-day free trial"
+        ],
+        "cta": "Start Free Trial"
+      },
+      "pulseenterprise": {
+        "title": "PulseEnterprise",
+        "subtitle": "For Integrators (50K+ birds)",
+        "price": "Custom pricing",
+        "popular": "Popular",
+        "features": [
+          "Everything in PulsePro",
+          "Multi-farm dashboard",
+          "IoT device integration",
+          "API access (10K calls/day)"
+        ],
+        "cta": "Request Demo"
+      }
+    },
+    "comparison": {
+      "title": "Time Comparison",
+      "manual": "Manual Process:",
+      "FlockIQ": "FlockIQ:",
+      "savings": "Savings:"
+    }
+  },
+  "compliance": {
+    "hero": {
+      "title": "FSSAI-Ready. HACCP-Compliant. One Click.",
+      "subtitle": "Complete compliance and traceability for poultry farms, processors, and integrators. Generate audit-ready reports in seconds.",
+      "cta": "Request Demo — See Traceability in Action"
+    },
+    "fssaiTraceability": {
+      "title": "FSSAI Batch Traceability",
+      "description": "One-click generation of complete batch traceability reports that meet FSSAI audit requirements. No manual compilation, no missing records.",
+      "features": [
+        "Complete batch lifecycle from DOC to harvest",
+        "Vaccination records with withdrawal period tracking",
+        "Medication logs with antibiotic usage tracking",
+        "Feed source and supplier documentation",
+        "Mortality records with cause analysis",
+        "Export-ready PDF format with digital signatures"
+      ],
+      "downloadSample": "Download Sample Report"
+    },
+    "abFreeCertification": {
+      "title": "Antibiotic-Free Certification",
+      "description": "Automatic tracking and certification of antibiotic-free batches. Build trust with buyers and premium markets.",
+      "badges": {
+        "abFree": {
+          "label": "AB-Free",
+          "status": "✅",
+          "description": "No antibiotics used in entire batch cycle"
+        },
+        "conventional": {
+          "label": "Conventional",
+          "status": "⚠️",
+          "description": "Antibiotics used with proper withdrawal period"
+        },
+        "abUsed": {
+          "label": "AB Used",
+          "status": "🚫",
+          "description": "Antibiotics used without proper withdrawal documentation"
+        }
+      },
+      "benefits": [
+        "Automatic badge assignment based on medication logs",
+        "Buyer portal for verification",
+        "Premium pricing for AB-Free certified batches",
+        "Export market eligibility"
+      ]
+    },
+    "haccpWorkflow": {
+      "title": "HACCP Compliance Workflow",
+      "description": "Streamlined HACCP compliance for processors. Critical control points monitored automatically with real-time alerts.",
+      "steps": [
+        "Hazard identification and risk assessment",
+        "Critical control point monitoring",
+        "Real-time temperature and environment tracking",
+        "Corrective action documentation",
+        "Verification and record-keeping"
+      ],
+      "features": [
+        "IoT sensor integration for automated monitoring",
+        "Alert system for CCP deviations",
+        "Digital audit trail for all corrective actions",
+        "Supplier risk assessment integration"
+      ]
+    },
+    "buyerQrPortal": {
+      "title": "Batch-to-Buyer QR Portal",
+      "description": "Give buyers instant access to complete batch history through QR codes. Transparency builds trust and commands premium prices.",
+      "features": [
+        "Unique QR code for each batch",
+        "Buyer-facing portal with batch history",
+        "Real-time verification of certifications",
+        "Mobile-first design for field access",
+        "White-label options for integrators"
+      ]
+    },
+    "exportRoadmap": {
+      "title": "Export Documentation Roadmap",
+      "description": "Prepare for international markets with export-ready documentation. Phase 3 feature for enterprise customers.",
+      "features": [
+        "Export compliance checklist",
+        "International standard mapping (GCC, EU, US)",
+        "Customs documentation support",
+        "Phytosanitary certificate integration",
+        "Multi-language report generation"
+      ],
+      "comingSoon": "Coming in Phase 3"
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "steps": [
+        {
+          "step": "1",
+          "title": "Log Daily Operations",
+          "description": "Record vaccinations, medications, feed, and mortality through the mobile app or web dashboard."
+        },
+        {
+          "step": "2",
+          "title": "Auto-Track Compliance",
+          "description": "System automatically tracks withdrawal periods, antibiotic usage, and critical control points."
+        },
+        {
+          "step": "3",
+          "title": "Generate Reports",
+          "description": "One-click generation of FSSAI traceability reports, HACCP documentation, and AB-Free certificates."
+        },
+        {
+          "step": "4",
+          "title": "Share with Buyers",
+          "description": "Share reports via QR code, email, or buyer portal. Build trust and command premium prices."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready for Compliance? Let's Show You How.",
+      "subtitle": "See the traceability system in action with a personalized demo.",
+      "button": "Request Demo"
+    }
+  },
+  "login": {
+    "title": "Login or Sign Up",
+    "subtitle": "Enter your WhatsApp number to get started",
+    "phoneLabel": "WhatsApp Number",
+    "phonePlaceholder": "XXXXX XXXXX",
+    "sendOtp": "Send OTP",
+    "sending": "Sending...",
+    "otpSent": "OTP Sent",
+    "otpSentDescription": "6-digit OTP sent to",
+    "otpLabel": "Enter 6-digit OTP",
+    "otpExpires": "OTP expires in",
+    "resendOtp": "Resend OTP →",
+    "maximumOtps": "Maximum OTPs sent — try again tomorrow",
+    "verifyOtp": "Verify OTP",
+    "verifying": "Verifying...",
+    "otpError": "Wrong OTP — please try again",
+    "otpErrorHindi": "गलत OTP। फिर से कोशिश करें।",
+    "otpAttemptsExceeded": "Maximum attempts exceeded. Please try again later.",
+    "backToPhone": "←",
+    "dpdpNotice": "Your data stays in India (AWS Mumbai) · DPDP Act 2023 compliant",
+    "dpdpNoticeHindi": "आपका डेटा भारत में सुरक्षित है (AWS Mumbai) · DPDP Act 2023 के अनुसार",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "consentText": "I agree to the",
+    "and": "and",
+    "newUser": "New user?",
+    "returningUser": "Returning user?",
+    "startFreeTrial": "Start 14-Day Free Trial",
+    "loginToAccount": "Login to your account"
+  },
+  "blog": {
+    "hero": {
+      "subtitle": "Knowledge & Insights",
+      "title": "Poultry Farming Insights",
+      "description": "Expert insights on Cobb 400, Ross 308, Hubbard broiler price trends, FCR optimization, and market intelligence"
+    },
+    "search": {
+      "placeholder": "Search articles...",
+      "noResults": "No articles found matching your search."
+    },
+    "categories": {
+      "all": "All",
+      "bhavVichar": "Bhav Vichar",
+      "khetiGyan": "Kheti Gyan",
+      "industryIntelligence": "Industry Intelligence",
+      "productUpdates": "Product Updates"
+    },
+    "post": {
+      "backToBlog": "Back to Blog",
+      "readTime": "min read",
+      "shareOnWhatsApp": "Share on WhatsApp",
+      "copyLink": "Copy Link",
+      "tableOfContents": "Table of Contents",
+      "relatedArticles": "Related Articles",
+      "readMore": "Read more",
+      "ctaTitle": "Apply These Insights Today",
+      "ctaDescription": "Start your 14-day free trial and get daily price predictions",
+      "ctaButton": "14 दिन मुफ़्त शुरू करें"
+    },
+    "cta": {
+      "title": "Stay Updated with Latest Insights",
+      "description": "Subscribe to our newsletter for weekly poultry farming tips",
+      "button": "14 दिन मुफ़्त शुरू करें"
+    }
+  }
+}

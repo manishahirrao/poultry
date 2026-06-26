@@ -1,0 +1,144 @@
+# Farmioc Competitor Profile
+# Centralized data for Farmioc comparisons
+# Last Updated: May 2026
+
+competitor:
+  name: Farmioc
+  nameHi: फार्मियोक
+  website: https://farmioc.com
+  category: agri_intelligence_platform
+  tier: broad_competitor
+  
+positioning:
+  tagline: The Leading Agri Intelligence & Commodity Trading Ecosystem
+  valueProposition: Agriculture data analytics platform with market intelligence, price forecasts, and commodity trading
+  targetAudience: Agri-businesses, traders, commodity buyers/sellers, large farmers
+  geographicFocus: India-wide with global data
+  
+pricing:
+  model: Paid (subscription-based)
+  tiers:
+    - name: PriceHub
+      price: Custom
+      period: monthly/yearly
+      features:
+        - Market prices & forecasts
+        - Price performance analysis
+        - Market trends, demand & supply
+        - Fundamental analysis
+        - Price discovery tools
+        - Agriculture news & insights
+        - Weather updates
+    - name: DataStore
+      price: Custom
+      period: monthly/yearly
+      features:
+        - Comprehensive data sources
+        - Predictive analytics
+        - Single ontology
+        - Intuitive visualizations
+    - name: MarketHub
+      price: Transaction-based
+      period: per transaction
+      features:
+        - Digital marketplace
+        - Buyer-seller matching
+        - Smarter crop marketing
+  hiddenCosts: Custom pricing requires sales contact
+  enterprisePricing: Available (custom quotes)
+  
+features:
+  core:
+    - Market price data (200+ crops)
+    - Price forecasts
+    - Market trends analysis
+    - Demand & supply insights
+    - Fundamental analysis
+    - Commodity trading marketplace
+  prediction:
+    hasPricePrediction: true
+    predictionWindow: Unknown (likely short-term)
+    accuracy: Not publicly disclosed
+    confidenceIntervals: Unknown
+  data:
+    dataSources: "Multiple public and private agricultural data sources"
+    updateFrequency: Daily
+    historicalData: Yes
+    districtLevelGranularity: Unknown
+  alerts:
+    hpaiAlerts: false
+    diseaseAlerts: false
+    weatherAlerts: true
+    priceAlerts: true
+  delivery:
+    channels: ["Web Platform", "API"]
+    whatsappIntegration: false
+    automatedDelivery: true
+    languageSupport: ["English"]
+  
+strengths:
+  - Comprehensive agricultural data (200+ crops)
+  - Price forecasting capabilities
+  - Marketplace for trading
+  - Advanced analytics and visualizations
+  - Suitable for agri-businesses and traders
+  
+weaknesses:
+  - Not poultry-specific
+  - Pricing not transparent (custom quotes)
+  - English-only interface
+  - No WhatsApp integration
+  - No HPAI/disease alerts
+  - Complex platform (not farmer-friendly)
+  - Targeted at businesses, not individual farmers
+  
+bestFor:
+  - Agri-businesses and traders
+  - Commodity buyers and sellers
+  - Large farmers with diverse crops
+  - Researchers and analysts
+  - Enterprises needing market intelligence
+  
+notIdealFor:
+  - Individual poultry farmers
+  - Commercial farmers (10K+ birds) needing specialized poultry intelligence
+  - Hindi-speaking farmers
+  - Farmers needing WhatsApp-first delivery
+  - Small to medium operations
+  
+commonComplaints:
+  - "Pricing is not transparent"
+  - "Too complex for individual farmers"
+  - "Not specialized for poultry"
+  - "English-only interface"
+  - "No mobile app for farmers"
+  - "Requires sales contact for pricing"
+  
+marketPosition:
+  marketShare: Growing in agri-tech space
+  funding: Funded (amount not publicly disclosed)
+  launchYear: Unknown
+  customerCount: Growing user base
+  
+comparisonNotes:
+  vsPoultryPulse:
+    keyDifference: "Farmioc is broad agri intelligence for 200+ crops; PoultryPulse is specialized AI-powered poultry price intelligence"
+    whyPoultryPulseWins: "Poultry-specific, 95%+ accuracy, Hindi-first, WhatsApp delivery, HPAI alerts, transparent pricing"
+    whyFarmiocWins: "Broad commodity coverage (200+ crops), marketplace for trading, advanced analytics"
+    switchDifficulty: "Medium - different target segments (farmers vs businesses)"
+    
+migrationNotes:
+  dataTransfer: "Not applicable - different product categories"
+  learningCurve: "Low - PoultryPulse is simpler and farmer-focused"
+  supportOffered: "Onboarding assistance for poultry farmers"
+  timeToValue: "Immediate - first prediction delivers value"
+  
+seoKeywords:
+  primary:
+    - "Farmioc alternative"
+    - "Farmioc vs PoultryPulse"
+    - "agri intelligence platform comparison"
+  secondary:
+    - "commodity price forecasting India"
+    - "agricultural market intelligence"
+    - "poultry price prediction vs general agri apps"

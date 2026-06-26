@@ -1,0 +1,14 @@
+[build]
+builder = "nixpacks"
+buildCommand = "pip install -r requirements.txt"
+
+[deploy]
+startCommand = "uvicorn main:app --host 0.0.0.0 --port $PORT"
+healthcheckPath = "/health"
+healthcheckTimeout = 100
+restartPolicyType = "on-failure"
+
+[env]
+PYTHON_VERSION = "3.11"
+MODEL_PATH = "models/champion/latest.onnx"
+# INT8 Quantization enables this to run on 1 vCPU and 512MB RAM

@@ -1,0 +1,513 @@
+{
+  "comparisons": [
+    {
+      "id": "whatsapp-groups",
+      "name": "WhatsApp Mandi Groups",
+      "nameHi": "WhatsApp मंडी ग्रुप",
+      "slug": "whatsapp-groups",
+      "category": "alternative",
+      "priority": 1,
+      "status": "live",
+      "description": "Farmer WhatsApp groups where people share yesterday's mandi prices",
+      "descriptionHi": "किसान WhatsApp ग्रुप जहाँ लोग कल के मंडी भाव शेयर करते हैं",
+      "features": {
+        "forwardVisibility": "0 days (yesterday's news)",
+        "accuracy": "Unverified rumour",
+        "hpaiAlerts": "When news spreads",
+        "timeToSignal": "Whenever someone posts",
+        "hindiSupport": "Mixed",
+        "dataSources": "Unknown",
+        "cost": "Free",
+        "p10p50p90": false,
+        "automation": false
+      },
+      "pros": [
+        "Free to use",
+        "Community connection",
+        "Local knowledge sharing",
+        "No technology barrier"
+      ],
+      "cons": [
+        "No forward visibility",
+        "Unverified information",
+        "Dependent on others posting",
+        "No analysis or prediction",
+        "Information delay"
+      ],
+      "pricing": {
+        "type": "Free",
+        "description": "No monetary cost, but time cost of monitoring groups"
+      },
+      "bestFor": [
+        "Farmers with < 10,000 birds",
+        "Farmers who value community over accuracy",
+        "Areas with no other alternatives"
+      ],
+      "verdict": "Good for community connection, but not for price intelligence. Use FlockIQ for accurate 7-day forecasts.",
+      "verdictHi": "समुदाय के लिए अच्छा है, लेकिन भाव जानकारी के लिए नहीं। सटीक 7-दिन के अनुमान के लिए FlockIQ का उपयोग करें।"
+    },
+    {
+      "id": "manual-mandi-calling",
+      "name": "Manual Mandi Calling",
+      "nameHi": "मंडी कॉल करना",
+      "slug": "manual-mandi-calling",
+      "category": "alternative",
+      "priority": 1,
+      "status": "live",
+      "description": "Calling 2-3 traders or contractors every morning to get price information",
+      "descriptionHi": "हर सुबह 2-3 व्यापारियों या ठेकेदारों को कॉल करके भाव जानकारी लेना",
+      "features": {
+        "forwardVisibility": "1 day max",
+        "accuracy": "Varies by source",
+        "hpaiAlerts": "When you hear",
+        "timeToSignal": "30+ minutes calling",
+        "hindiSupport": "Depends on contact",
+        "dataSources": "1-2 contacts",
+        "cost": "30 min/day time cost",
+        "p10p50p90": false,
+        "automation": false
+      },
+      "pros": [
+        "Direct human contact",
+        "Can ask follow-up questions",
+        "Builds relationships",
+        "No technology learning curve"
+      ],
+      "cons": [
+        "Time-consuming (30+ min/day)",
+        "Limited to 1-2 sources",
+        "No forward prediction",
+        "Dependent on contact availability",
+        "Subject to manipulation"
+      ],
+      "pricing": {
+        "type": "Time Cost",
+        "description": "30 minutes daily = ~18 hours/month = valuable farmer time"
+      },
+      "bestFor": [
+        "Farmers with strong trader relationships",
+        "Small farms (< 5,000 birds)",
+        "Farmers who prefer personal contact"
+      ],
+      "verdict": "Time-intensive with limited value. FlockIQ saves 30 minutes daily and provides 7-day forecasts.",
+      "verdictHi": "समय लेने वाला और सीमित मूल्य। FlockIQ रोज़ाना 30 मिनट बचाता है और 7-दिन का अनुमान देता है।"
+    },
+    {
+      "id": "no-tool",
+      "name": "No Tool (Status Quo)",
+      "nameHi": "कोई टूल नहीं (वर्तमान स्थिति)",
+      "slug": "no-tool",
+      "category": "alternative",
+      "priority": 1,
+      "status": "live",
+      "description": "Selling based on gut feeling, contractor pressure, or waiting for buyer to come",
+      "descriptionHi": "अंदाजे से बेचना, ठेकेदार के दबाव में, या खरीदार के आने का इंतजार करना",
+      "features": {
+        "forwardVisibility": "None",
+        "accuracy": "N/A",
+        "hpaiAlerts": "Never (until too late)",
+        "timeToSignal": "N/A",
+        "hindiSupport": "N/A",
+        "dataSources": "None",
+        "cost": "₹0 (but ₹50K+ losses)",
+        "p10p50p90": false,
+        "automation": false
+      },
+      "pros": [
+        "No cost",
+        "No technology needed",
+        "Simple (no learning)",
+        "No dependency on systems"
+      ],
+      "cons": [
+        "₹50,000–₹1,50,000 loss per batch",
+        "No disease alerts",
+        "Middleman exploitation",
+        "Stress and uncertainty",
+        "No data for decisions"
+      ],
+      "pricing": {
+        "type": "Hidden Cost",
+        "description": "₹2–4/kg timing loss × 20,000 birds × 4 batches = ₹1.6L–₹3.2L annual loss"
+      },
+      "bestFor": [
+        "None - this is the problem we solve"
+      ],
+      "verdict": "The most expensive option. ₹50,000+ loss per batch is far costlier than ₹2,000/month for FlockIQ.",
+      "verdictHi": "सबसे महंगा विकल्प। हर बैच में ₹50,000+ का नुकसान FlockIQ के ₹2,000/माह से कहीं ज्यादा है।"
+    },
+    {
+      "id": "necc-subscription",
+      "name": "NECC Rate Subscription",
+      "nameHi": "NECC रेट सब्सक्रिप्शन",
+      "slug": "necc-subscription",
+      "category": "competitor",
+      "priority": 2,
+      "status": "live",
+      "description": "National Egg Coordination Committee weekly/monthly rate reports",
+      "descriptionHi": "नेशनल एग कोऑर्डिनेशन कमेटी की साप्ताहिक/मासिक रेट रिपोर्ट",
+      "features": {
+        "forwardVisibility": "0 days (historical)",
+        "accuracy": "Verified historical data",
+        "hpaiAlerts": "None",
+        "timeToSignal": "Weekly/Monthly delay",
+        "hindiSupport": "English only",
+        "dataSources": "NECC member reporting",
+        "cost": "Membership fee",
+        "p10p50p90": false,
+        "automation": false
+      },
+      "pros": [
+        "Verified industry data",
+        "National coverage",
+        "Historical trends",
+        "Industry standard"
+      ],
+      "cons": [
+        "No prediction capability",
+        "Weekly/monthly (not daily)",
+        "English only",
+        "No district-level granularity",
+        "No sell signals"
+      ],
+      "pricing": {
+        "type": "Membership",
+        "description": "Requires NECC membership, annual fee"
+      },
+      "bestFor": [
+        "Large integrators",
+        "Researchers",
+        "Policy makers"
+      ],
+      "verdict": "Excellent for historical data, but no prediction. Use NECC for research, FlockIQ for daily decisions.",
+      "verdictHi": "ऐतिहासिक डेटा के लिए बेहतरीन, लेकिन कोई भविष्यवाणी नहीं। शोध के लिए NECC, रोज़ के फैसले के लिए FlockIQ।"
+    },
+    {
+      "id": "feed-company-advisory",
+      "name": "Feed Company Advisory",
+      "nameHi": "फीड कंपनी की सलाह",
+      "slug": "feed-company-advisory",
+      "category": "competitor",
+      "priority": 2,
+      "status": "live",
+      "description": "Price guidance from feed company sales representatives",
+      "descriptionHi": "फीड कंपनी के सेल्स रिप्रेजेंटेटिव से मिलने वाली भाव सलाह",
+      "features": {
+        "forwardVisibility": "1-2 days",
+        "accuracy": "Varies, potential bias",
+        "hpaiAlerts": "Sometimes",
+        "timeToSignal": "When sales rep visits",
+        "hindiSupport": "Usually yes",
+        "dataSources": "Company network",
+        "cost": "Free (with feed purchase)",
+        "p10p50p90": false,
+        "automation": false
+      },
+      "pros": [
+        "Free with feed purchase",
+        "Local knowledge",
+        "Personal relationship",
+        "Hindi support"
+      ],
+      "cons": [
+        "Potential bias (sell more feed)",
+        "Infrequent updates",
+        "No AI prediction",
+        "Conflict of interest",
+        "Dependent on sales rep"
+      ],
+      "pricing": {
+        "type": "Free with Feed",
+        "description": "No direct cost, but implicit in feed pricing"
+      },
+      "bestFor": [
+        "Farmers loyal to one feed company",
+        "Small to medium farms"
+      ],
+      "verdict": "Convenient but biased. FlockIQ provides independent, AI-driven predictions without sales pressure.",
+      "verdictHi": "सुविधाजनक लेकिन पक्षपातपूर्ण। FlockIQ बिना बिक्री दबाव के स्वतंत्र, AI-संचालित भविष्यवाणी देता है।"
+    },
+    {
+      "id": "traditional-market-analyst",
+      "name": "Traditional Market Analyst",
+      "nameHi": "पारंपरिक बाजार विश्लेषक",
+      "slug": "traditional-market-analyst",
+      "category": "competitor",
+      "priority": 3,
+      "status": "live",
+      "description": "Human market analysts who provide price insights based on experience and contacts",
+      "descriptionHi": "अनुभव और संपर्कों के आधार पर भाव अंतर्दृष्टि प्रदान करने वाले मानव बाजार विश्लेषक",
+      "features": {
+        "forwardVisibility": "1-3 days",
+        "accuracy": "70-80% (experience-based)",
+        "hpaiAlerts": "When they hear news",
+        "timeToSignal": "When available",
+        "hindiSupport": "Usually yes",
+        "dataSources": "Personal network",
+        "cost": "₹5,000-15,000/month",
+        "p10p50p90": false,
+        "automation": false
+      },
+      "pros": [
+        "Human judgment and experience",
+        "Can explain reasoning",
+        "Personal relationship",
+        "Local market knowledge"
+      ],
+      "cons": [
+        "Expensive (₹5K-15K/month)",
+        "Subject to human bias",
+        "Limited data processing",
+        "No 24/7 availability",
+        "Scalability issues"
+      ],
+      "pricing": {
+        "type": "Paid Service",
+        "description": "₹5,000-15,000/month for advisory services"
+      },
+      "bestFor": [
+        "Large integrators",
+        "Farmers who value human judgment",
+        "Those with budget for premium services"
+      ],
+      "verdict": "Good for human insights but expensive and limited. FlockIQ provides 95% accuracy at ₹2,000/month with 24/7 availability.",
+      "verdictHi": "मानवीय अंतर्दृष्टि के लिए अच्छा लेकिन महंगा और सीमित। FlockIQ ₹2,000/माह में 95% सटीकता और 24/7 उपलब्धता प्रदान करता है।"
+    },
+    {
+      "id": "generic-agriculture-app",
+      "name": "Generic Agriculture App",
+      "nameHi": "सामान्य कृषि ऐप",
+      "slug": "generic-agriculture-app",
+      "category": "competitor",
+      "priority": 3,
+      "status": "live",
+      "description": "General agriculture apps that include poultry prices among many other commodities",
+      "descriptionHi": "सामान्य कृषि ऐप जो कई अन्य वस्तुओं के साथ मुर्गी की कीमतों को शामिल करते हैं",
+      "features": {
+        "forwardVisibility": "0 days",
+        "accuracy": "Varies (not poultry-specific)",
+        "hpaiAlerts": "None or generic",
+        "timeToSignal": "Daily update",
+        "hindiSupport": "Sometimes",
+        "dataSources": "Generic agricultural data",
+        "cost": "Free or Freemium",
+        "p10p50p90": false,
+        "automation": true
+      },
+      "pros": [
+        "Multiple commodities in one app",
+        "Often free or cheap",
+        "General agricultural news",
+        "Wide user base"
+      ],
+      "cons": [
+        "Not poultry-specific",
+        "No AI prediction",
+        "Generic data (not district-specific)",
+        "No HPAI alerts",
+        "Less accurate for poultry"
+      ],
+      "pricing": {
+        "type": "Free/Freemium",
+        "description": "Free basic version, premium features available"
+      },
+      "bestFor": [
+        "Farmers with diverse crops",
+        "Those wanting general agricultural info",
+        "Budget-conscious farmers"
+      ],
+      "verdict": "Good for general agriculture but lacks poultry-specific intelligence. FlockIQ is specialized for broiler price forecasting.",
+      "verdictHi": "सामान्य कृषि के लिए अच्छा लेकिन मुर्गी-विशिष्ट बुद्धि की कमी। FlockIQ ब्रॉयलर मूल्य भविष्यवाणी के लिए विशेष है।"
+    },
+    {
+      "id": "spreadsheet-tracking",
+      "name": "Spreadsheet-Based Tracking",
+      "nameHi": "स्प्रेडशीट-आधारित ट्रैकिंग",
+      "slug": "spreadsheet-tracking",
+      "category": "alternative",
+      "priority": 3,
+      "status": "live",
+      "description": "Manual tracking of prices in Excel or Google Sheets with manual analysis",
+      "descriptionHi": "Excel या Google Sheets में मैनुअल विश्लेषण के साथ कीमतों का मैनुअल ट्रैकिंग",
+      "features": {
+        "forwardVisibility": "0 days (historical only)",
+        "accuracy": "Depends on analysis skill",
+        "hpaiAlerts": "Manual research required",
+        "timeToSignal": "When you update",
+        "hindiSupport": "Yes (self-managed)",
+        "dataSources": "Manual data entry",
+        "cost": "Time-intensive",
+        "p10p50p90": false,
+        "automation": false
+      },
+      "pros": [
+        "Full control over data",
+        "Customizable",
+        "No subscription cost",
+        "Can track anything you want"
+      ],
+      "cons": [
+        "Very time-intensive",
+        "Requires data entry daily",
+        "No AI prediction",
+        "Analysis skill required",
+        "No automated alerts"
+      ],
+      "pricing": {
+        "type": "Time Cost",
+        "description": "30-60 minutes daily for data entry and analysis"
+      },
+      "bestFor": [
+        "Data-savvy farmers",
+        "Those who want full control",
+        "Very small operations"
+      ],
+      "verdict": "Time-intensive with no prediction capability. FlockIQ automates data collection and provides AI-powered forecasts.",
+      "verdictHi": "भविष्यवाणी क्षमता के बिना समय-गहन। FlockIQ डेटा संग्रह को स्वचालित करता है और AI-संचालित पूर्वानुमान प्रदान करता है।"
+    },
+    {
+      "id": "poultryapp",
+      "name": "PoultryApp",
+      "nameHi": "पोल्ट्रीऐप",
+      "slug": "poultryapp",
+      "category": "competitor",
+      "priority": 2,
+      "status": "live",
+      "description": "Digital poultry farm management software with daily rate tracking",
+      "descriptionHi": "दैनिक दर ट्रैकिंग के साथ डिजिटल पोल्ट्री फार्म प्रबंधन सॉफ्टवेयर",
+      "features": {
+        "forwardVisibility": "0 days (current rates only)",
+        "accuracy": "Verified current rates",
+        "hpaiAlerts": "None",
+        "timeToSignal": "Daily update",
+        "hindiSupport": "English only",
+        "dataSources": "Public rate aggregation",
+        "cost": "Free",
+        "p10p50p90": false,
+        "automation": true
+      },
+      "pros": [
+        "Free to use",
+        "Comprehensive farm management features",
+        "Daily rate updates",
+        "Production tracking",
+        "Good for small to medium farms"
+      ],
+      "cons": [
+        "No price prediction capability",
+        "No forward visibility",
+        "English-only interface",
+        "No HPAI alerts",
+        "No WhatsApp integration",
+        "Limited district-specific data"
+      ],
+      "pricing": {
+        "type": "Free",
+        "description": "Forever free with no subscription"
+      },
+      "bestFor": [
+        "Farmers wanting farm management software",
+        "Small to medium poultry operations",
+        "Farmers needing production tracking"
+      ],
+      "verdict": "Excellent for farm management but no price intelligence. Use PoultryApp for management, FlockIQ for price predictions.",
+      "verdictHi": "फार्म प्रबंधन के लिए बेहतरीन लेकिन कोई मूल्य बुद्धि नहीं। प्रबंधन के लिए PoultryApp, मूल्य भविष्यवाणी के लिए FlockIQ।"
+    },
+    {
+      "id": "farmioc",
+      "name": "Farmioc",
+      "nameHi": "फार्मियोक",
+      "slug": "farmioc",
+      "category": "competitor",
+      "priority": 2,
+      "status": "live",
+      "description": "Agriculture data analytics platform with market intelligence and price forecasts for 200+ crops",
+      "descriptionHi": "200+ फसलों के लिए बाजार खुफिया और मूल्य पूर्वानुमान के साथ कृषि डेटा विश्लेषण मंच",
+      "features": {
+        "forwardVisibility": "Short-term forecasts",
+        "accuracy": "Not publicly disclosed",
+        "hpaiAlerts": "None",
+        "timeToSignal": "Daily update",
+        "hindiSupport": "English only",
+        "dataSources": "Multiple agri data sources",
+        "cost": "Custom pricing",
+        "p10p50p90": false,
+        "automation": true
+      },
+      "pros": [
+        "200+ crops coverage",
+        "Price forecasting capabilities",
+        "Advanced analytics",
+        "Marketplace for trading",
+        "Comprehensive data"
+      ],
+      "cons": [
+        "Not poultry-specific",
+        "Pricing not transparent",
+        "English-only interface",
+        "No HPAI alerts",
+        "Complex platform",
+        "Targeted at businesses, not farmers"
+      ],
+      "pricing": {
+        "type": "Custom",
+        "description": "Subscription-based, requires sales contact for pricing"
+      },
+      "bestFor": [
+        "Agri-businesses and traders",
+        "Large farmers with diverse crops",
+        "Researchers and analysts"
+      ],
+      "verdict": "Powerful for broad agri intelligence but not poultry-specific. FlockIQ is specialized for broiler price forecasting.",
+      "verdictHi": "व्यापक कृषि खुफिया के लिए शक्तिशाली लेकिन पोल्ट्री-विशिष्ट नहीं। FlockIQ ब्रॉयलर मूल्य भविष्यवाणी के लिए विशेष है।"
+    },
+    {
+      "id": "poultry-rate-apps",
+      "name": "Poultry Rate Apps",
+      "nameHi": "पोल्ट्री रेट ऐप्स",
+      "slug": "poultry-rate-apps",
+      "category": "competitor",
+      "priority": 3,
+      "status": "live",
+      "description": "Free mobile apps providing daily egg, broiler, and feed rates from major markets",
+      "descriptionHi": "प्रमुख बाजारों से दैनिक अंडे, ब्रॉयलर और फीड दर प्रदान करने वाले मुफ्त मोबाइल ऐप",
+      "features": {
+        "forwardVisibility": "0 days (current rates only)",
+        "accuracy": "Varies by app",
+        "hpaiAlerts": "None",
+        "timeToSignal": "Daily update",
+        "hindiSupport": "Varies by app",
+        "dataSources": "Public rate aggregation (NECC, VenCobb)",
+        "cost": "Free (ad-supported)",
+        "p10p50p90": false,
+        "automation": true
+      },
+      "pros": [
+        "Free to use",
+        "Simple interface",
+        "Daily rate updates",
+        "Works offline (some apps)",
+        "Lightweight apps"
+      ],
+      "cons": [
+        "No price prediction",
+        "No forward visibility",
+        "Ad-supported",
+        "No analysis or trends",
+        "No disease alerts",
+        "Limited market coverage"
+      ],
+      "pricing": {
+        "type": "Free",
+        "description": "Free with ads in some apps"
+      },
+      "bestFor": [
+        "Farmers wanting quick rate checks",
+        "Farmers with basic smartphones",
+        "Budget-conscious farmers"
+      ],
+      "verdict": "Good for quick rate checks but no prediction. FlockIQ provides 7-day forecasts with 95% accuracy.",
+      "verdictHi": "त्वरित दर जांच के लिए अच्छा लेकिन कोई भविष्यवाणी नहीं। FlockIQ 95% सटीकता के साथ 7-दिन का पूर्वानुमान प्रदान करता है।"
+    }
+  ]
+}

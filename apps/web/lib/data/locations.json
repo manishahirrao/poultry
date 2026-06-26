@@ -1,0 +1,285 @@
+{
+  "locations": [
+    {
+      "id": "gorakhpur",
+      "name": "Gorakhpur",
+      "nameHi": "गोरखपुर",
+      "slug": "gorakhpur",
+      "state": "Uttar Pradesh",
+      "stateHi": "उत्तर प्रदेश",
+      "lat": 26.7606,
+      "lng": 83.3732,
+      "mandis": ["Gorakhpur APMC", "Gorakhpur Mandi", "Rustampur Mandi"],
+      "farmCount": 2000,
+      "priceRange": {
+        "min": 155,
+        "max": 195,
+        "avg": 172
+      },
+      "seasonalPattern": "Oct-Jan high (festivals), Feb-Mar low, Apr-Jun heat",
+      "transportRoutes": ["Delhi-Kolkata Highway", "Gorakhpur-Lucknow Road"],
+      "imdStation": "Gorakhpur",
+      "neccCoverage": true,
+      "agmarknetAvailable": true,
+      "testimonials": [
+        {
+          "name": "राजेश यादव",
+          "location": "गोरखपुर",
+          "quote": "पहले मैं 3 व्यापारियों को फोन करता था हर सुबह — अब FlockIQ बताता है।",
+          "savings": "₹1,24,000"
+        }
+      ],
+      "neighboringDistricts": ["deoria", "kushinagar", "basti", "maharajganj"],
+      "priority": 1,
+      "status": "live"
+    },
+    {
+      "id": "deoria",
+      "name": "Deoria",
+      "nameHi": "देवरिया",
+      "slug": "deoria",
+      "state": "Uttar Pradesh",
+      "stateHi": "उत्तर प्रदेश",
+      "lat": 26.2311,
+      "lng": 83.7654,
+      "mandis": ["Deoria APMC", "Bhatpar Rani Mandi", "Salempur Mandi"],
+      "farmCount": 1200,
+      "priceRange": {
+        "min": 152,
+        "max": 192,
+        "avg": 170
+      },
+      "seasonalPattern": "Similar to Gorakhpur, 2-3 day lag in price movements",
+      "transportRoutes": ["Gorakhpur-Deoria Road", "NH-27"],
+      "imdStation": "Gorakhpur",
+      "neccCoverage": true,
+      "agmarknetAvailable": true,
+      "testimonials": [
+        {
+          "name": "सुरेश कुमार पटेल",
+          "location": "देवरिया",
+          "quote": "Disease alert ने मुझे बचाया — HPAI आने से 48 घंटे पहले बेच दिया पूरा झुंड।",
+          "savings": "₹3,20,000"
+        }
+      ],
+      "neighboringDistricts": ["gorakhpur", "kushinagar", "ballia"],
+      "priority": 2,
+      "status": "live"
+    },
+    {
+      "id": "kushinagar",
+      "name": "Kushinagar",
+      "nameHi": "कुशीनगर",
+      "slug": "kushinagar",
+      "state": "Uttar Pradesh",
+      "stateHi": "उत्तर प्रदेश",
+      "lat": 26.7455,
+      "lng": 83.8920,
+      "mandis": ["Kushinagar APMC", "Padrauna Mandi", "Kasya Mandi"],
+      "farmCount": 900,
+      "priceRange": {
+        "min": 150,
+        "max": 190,
+        "avg": 168
+      },
+      "seasonalPattern": "Price sensitivity to Nepal border trade",
+      "transportRoutes": ["NH-28", "Kushinagar-Gorakhpur Road"],
+      "imdStation": "Gorakhpur",
+      "neccCoverage": true,
+      "agmarknetAvailable": true,
+      "testimonials": [
+        {
+          "name": "मनोज सिंह",
+          "location": "कुशीनगर",
+          "quote": "मेरे बेटे ने कहा 'App चलाओ' — मैंने कहा 'App नहीं चाहिए'। 1 महीने में मेरा मन बदल गया।",
+          "savings": "₹68,000"
+        }
+      ],
+      "neighboringDistricts": ["gorakhpur", "deoria", "maharajganj"],
+      "priority": 2,
+      "status": "live"
+    },
+    {
+      "id": "basti",
+      "name": "Basti",
+      "nameHi": "बस्ती",
+      "slug": "basti",
+      "state": "Uttar Pradesh",
+      "stateHi": "उत्तर प्रदेश",
+      "lat": 26.8149,
+      "lng": 82.7347,
+      "mandis": ["Basti APMC", "Harraiya Mandi", "Captainganj Mandi"],
+      "farmCount": 800,
+      "priceRange": {
+        "min": 148,
+        "max": 188,
+        "avg": 166
+      },
+      "seasonalPattern": "Lower prices due to distance from major markets",
+      "transportRoutes": ["NH-28", "Basti-Gorakhpur Road"],
+      "imdStation": "Gorakhpur",
+      "neccCoverage": true,
+      "agmarknetAvailable": true,
+      "testimonials": [],
+      "neighboringDistricts": ["gorakhpur", "sant-kabir-nagar", "siddharthnagar"],
+      "priority": 3,
+      "status": "live"
+    },
+    {
+      "id": "maharajganj",
+      "name": "Maharajganj",
+      "nameHi": "महाराजगंज",
+      "slug": "maharajganj",
+      "state": "Uttar Pradesh",
+      "stateHi": "उत्तर प्रदेश",
+      "lat": 27.1348,
+      "lng": 83.5679,
+      "mandis": ["Maharajganj APMC", "Nautanwa Mandi", "Phephna Mandi"],
+      "farmCount": 600,
+      "priceRange": {
+        "min": 148,
+        "max": 188,
+        "avg": 166
+      },
+      "seasonalPattern": "Nepal border influence on demand",
+      "transportRoutes": ["NH-28", "Maharajganj-Gorakhpur Road"],
+      "imdStation": "Gorakhpur",
+      "neccCoverage": true,
+      "agmarknetAvailable": true,
+      "testimonials": [],
+      "neighboringDistricts": ["gorakhpur", "kushinagar", "siddharthnagar"],
+      "priority": 3,
+      "status": "live"
+    },
+    {
+      "id": "sant-kabir-nagar",
+      "name": "Sant Kabir Nagar",
+      "nameHi": "संत कबीर नगर",
+      "slug": "sant-kabir-nagar",
+      "state": "Uttar Pradesh",
+      "stateHi": "उत्तर प्रदेश",
+      "lat": 26.7924,
+      "lng": 83.0639,
+      "mandis": ["Khalilabad APMC", "Mehdawal Mandi", "Belhar Mandi"],
+      "farmCount": 500,
+      "priceRange": {
+        "min": 150,
+        "max": 190,
+        "avg": 167
+      },
+      "seasonalPattern": "Follows Gorakhpur trends with slight lag",
+      "transportRoutes": ["NH-28", "Khalilabad-Gorakhpur Road"],
+      "imdStation": "Gorakhpur",
+      "neccCoverage": true,
+      "agmarknetAvailable": true,
+      "testimonials": [],
+      "neighboringDistricts": ["basti", "gorakhpur", "siddharthnagar"],
+      "priority": 4,
+      "status": "coming-soon"
+    },
+    {
+      "id": "siddharthnagar",
+      "name": "Siddharthnagar",
+      "nameHi": "सिद्धार्थनगर",
+      "slug": "siddharthnagar",
+      "state": "Uttar Pradesh",
+      "stateHi": "उत्तर प्रदेश",
+      "lat": 27.3789,
+      "lng": 82.6534,
+      "mandis": ["Naugarh APMC", "Bansi Mandi", "Itwa Mandi"],
+      "farmCount": 450,
+      "priceRange": {
+        "min": 148,
+        "max": 188,
+        "avg": 165
+      },
+      "seasonalPattern": "Lower farm density, price follows regional trends",
+      "transportRoutes": ["NH-28", "Siddharthnagar-Basti Road"],
+      "imdStation": "Gorakhpur",
+      "neccCoverage": true,
+      "agmarknetAvailable": true,
+      "testimonials": [],
+      "neighboringDistricts": ["basti", "maharajganj", "balrampur"],
+      "priority": 4,
+      "status": "coming-soon"
+    },
+    {
+      "id": "ballia",
+      "name": "Ballia",
+      "nameHi": "बलिया",
+      "slug": "ballia",
+      "state": "Uttar Pradesh",
+      "stateHi": "उत्तर प्रदेश",
+      "lat": 25.7635,
+      "lng": 84.1476,
+      "mandis": ["Ballia APMC", "Bansdih Mandi", "Rasra Mandi"],
+      "farmCount": 700,
+      "priceRange": {
+        "min": 152,
+        "max": 192,
+        "avg": 169
+      },
+      "seasonalPattern": "Influenced by Bihar market proximity",
+      "transportRoutes": ["NH-31", "Ballia-Ghazipur Road"],
+      "imdStation": "Varanasi",
+      "neccCoverage": true,
+      "agmarknetAvailable": true,
+      "testimonials": [],
+      "neighboringDistricts": ["deoria", "ghazipur", "buxar"],
+      "priority": 4,
+      "status": "coming-soon"
+    },
+    {
+      "id": "azamgarh",
+      "name": "Azamgarh",
+      "nameHi": "आजमगढ़",
+      "slug": "azamgarh",
+      "state": "Uttar Pradesh",
+      "stateHi": "उत्तर प्रदेश",
+      "lat": 26.0589,
+      "lng": 83.1849,
+      "mandis": ["Azamgarh APMC", "Mubarakpur Mandi", "Phoolpur Mandi"],
+      "farmCount": 850,
+      "priceRange": {
+        "min": 150,
+        "max": 190,
+        "avg": 168
+      },
+      "seasonalPattern": "Strong local demand, stable prices",
+      "transportRoutes": ["NH-28", "Azamgarh-Gorakhpur Road"],
+      "imdStation": "Varanasi",
+      "neccCoverage": true,
+      "agmarknetAvailable": true,
+      "testimonials": [],
+      "neighboringDistricts": ["gorakhpur", "mau", "jaunpur"],
+      "priority": 4,
+      "status": "coming-soon"
+    },
+    {
+      "id": "mau",
+      "name": "Mau",
+      "nameHi": "मऊ",
+      "slug": "mau",
+      "state": "Uttar Pradesh",
+      "stateHi": "उत्तर प्रदेश",
+      "lat": 25.9414,
+      "lng": 83.8827,
+      "mandis": ["Mau APMC", "Ghosi Mandi", "Madhuban Mandi"],
+      "farmCount": 550,
+      "priceRange": {
+        "min": 150,
+        "max": 190,
+        "avg": 167
+      },
+      "seasonalPattern": "Textile town influence on demand patterns",
+      "transportRoutes": ["NH-29", "Mau-Azamgarh Road"],
+      "imdStation": "Varanasi",
+      "neccCoverage": true,
+      "agmarknetAvailable": true,
+      "testimonials": [],
+      "neighboringDistricts": ["azamgarh", "ballia", "ghazipur"],
+      "priority": 4,
+      "status": "coming-soon"
+    }
+  ]
+}

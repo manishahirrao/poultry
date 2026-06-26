@@ -1,0 +1,89 @@
+/* PoultryPulse AI — Skeleton Loading States */
+/* File: apps/web/styles/skeleton.css */
+/* Version: v1.0 | May 2026 */
+/* Design Reference: PoultryPulse_Dashboard_Design_v1.md §1.2 */
+/* Requirements Reference: PoultryPulse_Dashboard_Tasks_v1.md TASK-001 */
+
+/* ============================================================================
+ * Skeleton Shimmer Animation
+ * Uses background-size trick for GPU compositing efficiency
+ * ============================================================================ */
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Base skeleton class - targets all skeleton elements */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #f0f4f1 0%,
+    #e0ede5 20%,
+    #f0f4f1 40%,
+    #f0f4f1 100%
+  );
+  background-size: 1000px 100%;
+  animation: skeleton-shimmer var(--animation-skeleton, 1.5s ease-in-out infinite alternate);
+  border-radius: 4px;
+  color: transparent !important;
+  user-select: none;
+}
+
+/* Skeleton variants for different widget types */
+.skeleton-text {
+  height: 1em;
+  width: 100%;
+}
+
+.skeleton-heading {
+  height: 1.5em;
+  width: 80%;
+}
+
+.skeleton-hero-number {
+  height: 64px;
+  width: 200px;
+  border-radius: 8px;
+}
+
+.skeleton-card {
+  height: 120px;
+  width: 100%;
+  border-radius: var(--widget-border-radius, 16px);
+}
+
+.skeleton-chart {
+  height: 220px;
+  width: 100%;
+  border-radius: var(--widget-border-radius, 16px);
+}
+
+.skeleton-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* ============================================================================
+ * Reduced Motion Support
+ * Collapses all animations to 0ms for users who prefer reduced motion
+ * ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation-duration: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0ms !important;
+  }
+  
+  @keyframes skeleton-shimmer {
+    0%, 100% {
+      background-position: 0 0;
+    }
+  }
+}

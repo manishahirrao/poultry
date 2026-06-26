@@ -1,0 +1,239 @@
+{
+  "data_asset_type": "Dataset",
+  "expectation_suite_name": "daily_completeness",
+  "expectations": [
+    {
+      "expectation_type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "min_value": 1,
+        "max_value": 10000
+      },
+      "meta": {
+        "description": "Table should have at least 1 row and at most 10000 rows"
+      }
+    },
+    {
+      "expectation_type": "expect_column_to_exist",
+      "kwargs": {
+        "column": "broiler_price_per_kg"
+      },
+      "meta": {
+        "description": "broiler_price_per_kg column must exist"
+      }
+    },
+    {
+      "expectation_type": "expect_column_to_exist",
+      "kwargs": {
+        "column": "mandi_name"
+      },
+      "meta": {
+        "description": "mandi_name column must exist"
+      }
+    },
+    {
+      "expectation_type": "expect_column_to_exist",
+      "kwargs": {
+        "column": "date"
+      },
+      "meta": {
+        "description": "date column must exist"
+      }
+    },
+    {
+      "expectation_type": "expect_column_to_exist",
+      "kwargs": {
+        "column": "source"
+      },
+      "meta": {
+        "description": "source column must exist"
+      }
+    },
+    {
+      "expectation_type": "expect_column_to_exist",
+      "kwargs": {
+        "column": "validated"
+      },
+      "meta": {
+        "description": "validated column must exist"
+      }
+    },
+    {
+      "expectation_type": "expect_column_to_exist",
+      "kwargs": {
+        "column": "staleness_flag"
+      },
+      "meta": {
+        "description": "staleness_flag column must exist"
+      }
+    },
+    {
+      "expectation_type": "expect_column_to_exist",
+      "kwargs": {
+        "column": "completeness_overall"
+      },
+      "meta": {
+        "description": "completeness_overall column must exist"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "broiler_price_per_kg"
+      },
+      "meta": {
+        "description": "broiler_price_per_kg should not contain null values"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "mandi_name"
+      },
+      "meta": {
+        "description": "mandi_name should not contain null values"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "date"
+      },
+      "meta": {
+        "description": "date should not contain null values"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "source"
+      },
+      "meta": {
+        "description": "source should not contain null values"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_in_set",
+      "kwargs": {
+        "column": "mandi_name",
+        "value_set": [
+          "Gorakhpur",
+          "Deoria",
+          "Basti",
+          "Kushinagar",
+          "Maharajganj"
+        ]
+      },
+      "meta": {
+        "description": "mandi_name should be one of the target mandis in Gorakhpur belt"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_in_set",
+      "kwargs": {
+        "column": "source",
+        "value_set": [
+          "agmarknet",
+          "necc",
+          "imd",
+          "ncdex",
+          "mcx"
+        ]
+      },
+      "meta": {
+        "description": "source should be one of the valid data sources"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "broiler_price_per_kg",
+        "min_value": 100,
+        "max_value": 250
+      },
+      "meta": {
+        "description": "broiler_price_per_kg should be between ₹100 and ₹250 (sanity check)"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_match_regex",
+      "kwargs": {
+        "column": "date",
+        "regex": "^\\d{4}-\\d{2}-\\d{2}$"
+      },
+      "meta": {
+        "description": "date should be in YYYY-MM-DD format"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_in_set",
+      "kwargs": {
+        "column": "validated",
+        "value_set": [
+          true,
+          false
+        ]
+      },
+      "meta": {
+        "description": "validated should be boolean"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_in_set",
+      "kwargs": {
+        "column": "staleness_flag",
+        "value_set": [
+          true,
+          false
+        ]
+      },
+      "meta": {
+        "description": "staleness_flag should be boolean"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "completeness_overall",
+        "min_value": 0,
+        "max_value": 100
+      },
+      "meta": {
+        "description": "completeness_overall should be between 0 and 100"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "completeness_overall",
+        "min_value": 95,
+        "max_value": 100
+      },
+      "meta": {
+        "description": "completeness_overall should be >= 95% (critical threshold)"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_unique",
+      "kwargs": {
+        "column": "date"
+      },
+      "meta": {
+        "description": "date values should be unique (no duplicates)"
+      }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "0.18.12",
+    "poultrypulse_version": "1.0.0",
+    "description": "Great Expectations suite for daily data completeness validation. Validates all 7 critical fields per TRD §3.3. Blocks downstream DAGs if completeness < 95%.",
+    "validation_threshold": {
+      "completeness_overall": 95,
+      "critical_fields": [
+        "broiler_price_per_kg",
+        "mandi_name",
+        "date",
+        "completeness_overall"
+      ]
+    }
+  }
+}

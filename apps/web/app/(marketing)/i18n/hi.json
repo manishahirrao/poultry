@@ -1,0 +1,478 @@
+{
+  "home": {
+    "problemSection": {
+      "title": "गोरखपुर के 80% किसान हर बैच में पैसे गंवाते हैं",
+      "subtitle": "तीन समस्याएं जो हर बैच में आपको हजारों का नुकसान देती हैं",
+      "cards": [
+        {
+          "title": "₹2–4/kg",
+          "subtitle": "हर बैच में नुकसान",
+          "hindiQuote": "बेचते हैं भरोसे पर, और हर बार ₹2–4/kg का नुकसान होता है",
+          "financialImpact": "25,000 पक्षियों पर:",
+          "financialValue": "₹30K–80K/बैच"
+        },
+        {
+          "title": "HPAI Alert",
+          "subtitle": "देर से पता चलता है",
+          "hindiQuote": "HPAI alert का पता लगता है जब ट्रांसपोर्ट पहले से बंद हो चुका होता है",
+          "financialImpact": "25,000 पक्षियों पर:",
+          "financialValue": "₹1L–5L कुल नुकसान का जोखिम"
+        },
+        {
+          "title": "₹2/kg चोरी",
+          "subtitle": "बिचौलिये द्वारा",
+          "hindiQuote": "बिचौलिया ₹8 देता है जब लखनऊ में ₹10 है — आपको नहीं पता",
+          "financialImpact": "25,000 पक्षियों × 4kg पर:",
+          "financialValue": "₹2L प्रति बैच सूचना अंतर से गंवाएं"
+        }
+      ]
+    },
+    "featureGrid": {
+      "title": "57 features — 6 intelligence modules में",
+      "subtitle": "मुनाफे का पालन करने के लिए आपको जो कुछ भी चाहिए",
+      "learnMore": "और जानें",
+      "features": [
+        {
+          "title": "Price Forecast",
+          "description": "7-day AI forecast with P10/P50/P90 confidence bands"
+        },
+        {
+          "title": "Sell Signal",
+          "description": "Daily SELL NOW / HOLD / CAUTION with ₹ impact"
+        },
+        {
+          "title": "Batch ROI Optimizer",
+          "description": "Exact ₹ profit comparison: sell today vs wait N days"
+        },
+        {
+          "title": "Middleman Check",
+          "description": "Is the trader's offer fair? Counter-offer in Hindi"
+        },
+        {
+          "title": "FCR Analytics",
+          "description": "Track feed efficiency, get daily allocation recommendations"
+        },
+        {
+          "title": "Mortality Tracking",
+          "description": "Log daily deaths, detect abnormal patterns automatically"
+        },
+        {
+          "title": "Vaccination Scheduler",
+          "description": "Auto-schedule UP broiler protocol, WhatsApp reminders"
+        },
+        {
+          "title": "Biosecurity Audit",
+          "description": "Fortnightly checklist with scoring and trend tracking"
+        },
+        {
+          "title": "HPAI + Disease Alerts",
+          "description": "Real-time outbreak alerts personalised to your district"
+        },
+        {
+          "title": "IoT Integration",
+          "description": "Connect weighing scales, water meters, environment sensors"
+        },
+        {
+          "title": "FSSAI Traceability",
+          "description": "One-click batch traceability PDF for compliance audits"
+        },
+        {
+          "title": "ERP Integration",
+          "description": "Sync with Tally, Zoho, SAP — zero double-entry"
+        }
+      ]
+    },
+    "featureTabPreview": {
+      "sectionTitle": "सब कुछ जो चाहिए। कुछ भी फालतू नहीं।",
+      "tabs": {
+        "priceIntelligence": {
+          "label": "भाव बुद्धि",
+          "headline": "95%+ सटीक। हर दिन।",
+          "description": "हमारा AI मॉडल 45 signals से आने वाले 7 दिन का ब्रॉयलर भाव predict करता है — Gorakhpur मंडी के लिए, हर रात 06:00 बजे।",
+          "benefits": [
+            "P10/P50/P90 confidence bands — हमेशा range पता होता है",
+            "त्योहारी मांग की उछाल 7 दिन पहले predict होती है",
+            "HPAI zone impact automatically modelled होता है"
+          ],
+          "cta": "Accuracy Report देखें →"
+        },
+        "sellSignal": {
+          "label": "Sell Signal",
+          "headline": "SELL, HOLD, या CAUTION। हर सुबह।",
+          "description": "WhatsApp पर रोज़ सुबह 06:30 बजे: आज बेचें या रुकें। Financial impact आपके झुंड के size के हिसाब से।",
+          "benefits": [
+            "SELL signal exact ₹ impact दिखाता है: \"आज ₹43.2L\"",
+            "HOLD signal दिखाता है: \"7 दिन रुकें = ₹2.8L ज़्यादा\"",
+            "Withdrawal period enforced — legal holds respected"
+          ],
+          "cta": "Batch Calculator try करें →"
+        },
+        "farmOperations": {
+          "label": "Farm Ops",
+          "headline": "DOC से harvest तक। हर data point।",
+          "description": "बैच registration से harvest तक — FCR, mortality, weight gain, vaccination — सब एक जगह। Manual entry से 3× तेज़। Offline भी काम करता है।",
+          "benefits": [
+            "FCR auto-computed daily feed logs से",
+            "Abnormal mortality alert 60 seconds में fire होता है",
+            "Vaccination reminders 24h पहले — WhatsApp + push"
+          ],
+          "cta": "Farm Intelligence explore करें →"
+        },
+        "healthCompliance": {
+          "label": "Health",
+          "headline": "FSSAI-ready। One click।",
+          "description": "Vaccination schedule, medication records, FSSAI traceability report — सब automatically generate होता है। Antibiotic-free certification tracking built-in।",
+          "benefits": [
+            "FSSAI batch report PDF < 5 seconds में",
+            "Antibiotic-free badge automatically tracked",
+            "Biosecurity audit score with trend history"
+          ],
+          "cta": "Compliance Features देखें →"
+        },
+        "smartAlerts": {
+          "label": "Alerts",
+          "headline": "Alerts जो आपके farm के impact को जानते हैं।",
+          "description": "HPAI alert 200km दूर है — ठीक है। लेकिन आपके झुंड में respiratory symptoms + HPAI nearby = तुरंत Critical alert सिर्फ आपके लिए।",
+          "benefits": [
+            "आपके झुंड पर financial impact: \"~₹40K–₹80K risk\"",
+            "8 alert types: Disease, weather, price, feed, mortality...",
+            "Personalised thresholds — आप decide करते हैं क्या matter करता है"
+          ],
+          "cta": ""
+        }
+      }
+    }
+  },
+  "accuracy": {
+    "hero": {
+      "title": "भारतीय कृषि-तकनीक में सबसे पारदर्शी AI",
+      "subtitle": "हम अपनी सटीकता लाइव प्रकाशित करते हैं। हर दिन।",
+      "subtitle2": "क्योंकि हमने यह उत्पाद किसानों के लिए बनाया है, निवेशकों के लिए नहीं।",
+      "directionalAccuracy": "दिशात्मक सटीकता",
+      "directionalAccuracyTarget": "लक्ष्य: 95%+",
+      "mape": "MAPE (30 दिन)",
+      "mapeTarget": "< 6% लक्ष्य ✅",
+      "conformalCoverage": "Conformal कवरेज",
+      "conformalCoverageTarget": "78-82% लक्ष्य",
+      "predictionsVerified": "पूर्वानुमान सत्यापित",
+      "predictionsVerifiedTarget": "Ground-truthed",
+      "updatedDaily": "रोज़ अपडेट किया गया · अंतिम:",
+      "ist": "IST"
+    },
+    "mapeChart": {
+      "title": "30-दिन MAPE ट्रेंड",
+      "subtitle": "पिछले 30 दिनों में दैनिक MAPE प्रदर्शन। हरा क्षेत्र लक्ष्य प्रदर्शन को दर्शाता है (< 6%)।",
+      "mape": "MAPE",
+      "mapeTrend": "MAPE ट्रेंड",
+      "target": "लक्ष्य (6%)"
+    },
+    "predictionHistory": {
+      "title": "पूर्वानुमान इतिहास",
+      "subtitle": "दिखा रहा है",
+      "correct": "पूर्वानुमान —",
+      "correctDirection": "सही दिशा",
+      "date": "दिनांक",
+      "district": "जिला",
+      "predictedP50": "पूर्वानुमित P50",
+      "actualPrice": "वास्तविक मूल्य",
+      "direction": "दिशा ✓?",
+      "mape": "MAPE"
+    },
+    "methodology": {
+      "title": "पद्धति",
+      "subtitle": "हमारा मॉडल 95%+ दिशात्मक सटीकता कैसे प्राप्त करता है",
+      "questions": [
+        {
+          "question": "MAPE क्या है?",
+          "answer": "MAPE (Mean Absolute Percentage Error) हमारे पूर्वानुमान कीमतों और वास्तविक बाजार कीमतों के बीच औसत प्रतिशत अंतर मापता है। 6% से कम MAPE का मतलब है कि हमारे पूर्वानुमान औसतन वास्तविक कीमत के 6% के भीतर हैं।"
+        },
+        {
+          "question": "दिशात्मक सटीकता क्या है?",
+          "answer": "दिशात्मक सटीकता मापती है कि क्या हमने सही ढंग से भविष्यवाणी की कि कीमतें बढ़ेंगी या घटेंगी। 96.2% दिशात्मक सटीकता का मतलब है कि हमने 100 में से 96 बार सही दिशा पकड़ी। यह बिक्री समय निर्णयों के लिए सबसे महत्वपूर्ण है।"
+        },
+        {
+          "question": "मॉडल किस डेटा का उपयोग करता है?",
+          "answer": "हमारा मॉडल 47 सार्वजनिक डेटा स्रोतों का उपयोग करता है जिसमें AGMARKNET मंडी कीमतें, NECC पोल्ट्री आंकड़े, IMD मौसम पूर्वानुमान, फ़ीड कमोडिटी कीमतें (मक्का, सोया), त्योहारी कैलेंडर, और सरकारी स्रोतों से HPAI प्रकोप डेटा शामिल है।"
+        },
+        {
+          "question": "मॉडल कितनी बार retrain होता है?",
+          "answer": "मॉडल साप्ताहिक champion/challenger फ्रेमवर्क के साथ retrain होता है। हम नए मॉडल संस्करणों को 6-महीने की holdout डेटासेट के खिलाफ तैनाती से पहले परीक्षण करते हैं। यदि नया संस्करण वर्तमान champion को 2%+ दिशात्मक सटीकता से हरा देता है, तो हम इसे promote करते हैं।"
+        },
+        {
+          "question": "Conformal prediction intervals क्या हैं?",
+          "answer": "Conformal prediction हमें सांख्यिकीय रूप से मान्य confidence intervals देता है। जब हम P10-P90 रेंज दिखाते हैं, तो वास्तविक कीमत के उस रेंज में गिरने की 80% संभावना होती है। यह आपको पूर्वानुमान में अनिश्चितता को समझने में मदद करता है।"
+        }
+      ]
+    },
+    "featureImportance": {
+      "title": "Feature महत्व",
+      "subtitle": "आज की कीमत पूर्वानुमान को चलाने वाले शीर्ष 5 कारक। यह AI को स्पष्ट करता है और आपको दिखाता है कि मॉडल वास्तव में क्या देख रहा है।",
+      "importance": "महत्व"
+    },
+    "stressTests": {
+      "title": "Stress Test परिणाम",
+      "subtitle": "ऐतिहासिक बाजार झटकों के दौरान हमारे मॉडल ने कैसा प्रदर्शन किया",
+      "directionalAccuracy": "घटना के दौरान दिशात्मक सटीकता:"
+    },
+    "validationAttestation": {
+      "title": "मैनुअल सत्यापन प्रमाणन",
+      "description": "हमारे CTO और डेटा हेड ने नवंबर 2025 में गोरखपुर APMC में 10 दिन बिताए, वास्तविक ब्रोकर कीमतों को मैनुअल रूप से रिकॉर्ड किया। हमारे मॉडल ने 10 में से 9 दिन सही दिशा की भविष्यवाणी की। यह हमारा आधार है इससे पहले कि हम ग्राहकों से एक भी रुपया लें।",
+      "downloadButton": "Accuracy Certification Report डाउनलोड करें"
+    },
+    "cta": {
+      "title": "अपने जिले में सटीकता देखें — मुफ़्त ट्रायल शुरू करें",
+      "subtitle": "14 दिन मुफ़्त। कोई क्रेडिट कार्ड की आवश्यकता नहीं।",
+      "button": "मुफ़्त ट्रायल शुरू करें"
+    }
+  },
+  "features": {
+    "hero": {
+      "title": "सभी Features",
+      "subtitle": "57 features — 6 intelligence modules में",
+      "description": "मुनाफे का पालन करने के लिए आपको जो कुछ भी चाहिए — AI price forecasts से लेकर पूरे farm operations management तक।"
+    },
+    "sidebar": {
+      "title": "Modules"
+    },
+    "comparison": {
+      "title": "FlockIQ vs Traditional Methods",
+      "description": "देखें कि FlockIQ manual spreadsheets और generic ERP systems से कैसे भिन्न है",
+      "feature": "Feature",
+      "manual": "Manual/Spreadsheet",
+      "genericErp": "Generic ERP",
+      "FlockIQ": "FlockIQ",
+      "cta": "Pricing Plans देखें →"
+    }
+  },
+  "farmIntelligence": {
+    "hero": {
+      "title": "Price Intelligence से परे — पूरे Farm Operations एक Platform में",
+      "description": "बिना operational data के price intelligence एक अनुमान है। जब price intelligence को आपके वास्तविक FCR, mortality, और weight gain के साथ जोड़ा जाता है, तो यह एक सटीक business decision engine बन जाता है।",
+      "ctaPrimary": "14 दिन मुफ़्त शुरू करें",
+      "ctaSecondary": "डेमो अनुरोध करें"
+    },
+    "narrativeBox": {
+      "title": "Operational Data Price Intelligence को कैसे बेहतर बनाता है",
+      "dataMoat": "Data Moat: आपके द्वारा लॉग किया गया हर operational data point — FCR, mortality, weight gain, feed costs — आपके specific farm के लिए हमारे price prediction model को मजबूत करता है।",
+      "compoundIntelligence": "Compound Intelligence: पूर्ण operational data वाले farms 12–18% अधिक price prediction accuracy देखते हैं क्योंकि model आपके farm की unique patterns सीखता है।",
+      "precisionEngine": "Precision Decision Engine: जब आप market price forecasts को अपने actual batch performance के साथ जोड़ते हैं, तो sell decisions precise business calculations बन जाते हैं, अनुमान नहीं।",
+      "footer": "जितना अधिक आप FlockIQ का operations के लिए उपयोग करते हैं, आपकी price intelligence उतनी ही स्मार्ट होती जाती है।"
+    },
+    "segmentCTAs": {
+      "title": "अपने Farm के लिए सही Plan चुनें",
+      "pulsepro": {
+        "title": "PulsePro",
+        "subtitle": "Commercial Farms के लिए (10K–50K पक्षी)",
+        "price": "₹2,000–5,000/माह",
+        "features": [
+          "सभी 6 farm intelligence modules",
+          "7-दिन price forecast",
+          "Daily sell signals (WhatsApp)",
+          "14-दिन मुफ़्त ट्रायल"
+        ],
+        "cta": "मुफ़्त ट्रायल शुरू करें"
+      },
+      "pulseenterprise": {
+        "title": "PulseEnterprise",
+        "subtitle": "Integrators के लिए (50K+ पक्षी)",
+        "price": "Custom pricing",
+        "popular": "लोकप्रिय",
+        "features": [
+          "PulsePro में सब कुछ",
+          "Multi-farm dashboard",
+          "IoT device integration",
+          "API access (10K calls/day)"
+        ],
+        "cta": "डेमो अनुरोध करें"
+      }
+    },
+    "comparison": {
+      "title": "समय तुलना",
+      "manual": "Manual Process:",
+      "FlockIQ": "FlockIQ:",
+      "savings": "बचत:"
+    }
+  },
+  "compliance": {
+    "hero": {
+      "title": "FSSAI-Ready। HACCP-Compliant। One Click।",
+      "subtitle": "poultry farms, processors, और integrators के लिए पूर्ण compliance और traceability। सेकंड में audit-ready reports generate करें।",
+      "cta": "डेमो अनुरोध करें — Traceability देखें"
+    },
+    "fssaiTraceability": {
+      "title": "FSSAI Batch Traceability",
+      "description": "FSSAI audit requirements को पूरा करने वाली complete batch traceability reports का one-click generation। कोई manual compilation नहीं, कोई missing records नहीं।",
+      "features": [
+        "DOC से harvest तक complete batch lifecycle",
+        "withdrawal period tracking के साथ vaccination records",
+        "antibiotic usage tracking के साथ medication logs",
+        "feed source और supplier documentation",
+        "cause analysis के साथ mortality records",
+        "digital signatures के साथ export-ready PDF format"
+      ],
+      "downloadSample": "Sample Report डाउनलोड करें"
+    },
+    "abFreeCertification": {
+      "title": "Antibiotic-Free Certification",
+      "description": "antibiotic-free batches की automatic tracking और certification। buyers और premium markets के साथ trust बनाएं।",
+      "badges": {
+        "abFree": {
+          "label": "AB-Free",
+          "status": "✅",
+          "description": "पूरे batch cycle में कोई antibiotics नहीं"
+        },
+        "conventional": {
+          "label": "Conventional",
+          "status": "⚠️",
+          "description": "proper withdrawal period के साथ antibiotics का उपयोग"
+        },
+        "abUsed": {
+          "label": "AB Used",
+          "status": "🚫",
+          "description": "proper withdrawal documentation के बिना antibiotics का उपयोग"
+        }
+      },
+      "benefits": [
+        "medication logs के आधार पर automatic badge assignment",
+        "verification के लिए buyer portal",
+        "AB-Free certified batches के लिए premium pricing",
+        "export market eligibility"
+      ]
+    },
+    "haccpWorkflow": {
+      "title": "HACCP Compliance Workflow",
+      "description": "processors के लिए streamlined HACCP compliance। real-time alerts के साथ critical control points automatically monitored।",
+      "steps": [
+        "hazard identification और risk assessment",
+        "critical control point monitoring",
+        "real-time temperature और environment tracking",
+        "corrective action documentation",
+        "verification और record-keeping"
+      ],
+      "features": [
+        "automated monitoring के लिए IoT sensor integration",
+        "CCP deviations के लिए alert system",
+        "सभी corrective actions के लिए digital audit trail",
+        "supplier risk assessment integration"
+      ]
+    },
+    "buyerQrPortal": {
+      "title": "Batch-to-Buyer QR Portal",
+      "description": "QR codes के माध्यम से buyers को complete batch history तक instant access दें। Transparency trust बनाती है और premium prices command करती है।",
+      "features": [
+        "हर batch के लिए unique QR code",
+        "batch history के साथ buyer-facing portal",
+        "certifications का real-time verification",
+        "field access के लिए mobile-first design",
+        "integrators के लिए white-label options"
+      ]
+    },
+    "exportRoadmap": {
+      "title": "Export Documentation Roadmap",
+      "description": "export-ready documentation के साथ international markets के लिए तैयार हों। enterprise customers के लिए Phase 3 feature।",
+      "features": [
+        "export compliance checklist",
+        "international standard mapping (GCC, EU, US)",
+        "customs documentation support",
+        "phytosanitary certificate integration",
+        "multi-language report generation"
+      ],
+      "comingSoon": "Phase 3 में आ रहा है"
+    },
+    "howItWorks": {
+      "title": "यह कैसे काम करता है",
+      "steps": [
+        {
+          "step": "1",
+          "title": "Daily Operations Log करें",
+          "description": "mobile app या web dashboard के माध्यम से vaccinations, medications, feed, और mortality record करें।"
+        },
+        {
+          "step": "2",
+          "title": "Compliance Auto-Track करें",
+          "description": "system automatically withdrawal periods, antibiotic usage, और critical control points track करता है।"
+        },
+        {
+          "step": "3",
+          "title": "Reports Generate करें",
+          "description": "FSSAI traceability reports, HACCP documentation, और AB-Free certificates का one-click generation।"
+        },
+        {
+          "step": "4",
+          "title": "Buyers के साथ Share करें",
+          "description": "QR code, email, या buyer portal के माध्यम से reports share करें। Trust बनाएं और premium prices command करें।"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Compliance के लिए तैयार हैं? हम आपको दिखाते हैं कैसे।",
+      "subtitle": "personalized demo के साथ traceability system को action में देखें।",
+      "button": "डेमो अनुरोध करें"
+    }
+  },
+  "login": {
+    "title": "Login या Sign Up",
+    "subtitle": "शुरू करने के लिए अपना WhatsApp number डालें",
+    "phoneLabel": "WhatsApp Number",
+    "phonePlaceholder": "XXXXX XXXXX",
+    "sendOtp": "OTP भेजें",
+    "sending": "भेज रहे हैं...",
+    "otpSent": "OTP भेजा गया",
+    "otpSentDescription": "पर 6-digit OTP भेजा गया",
+    "otpLabel": "6-digit OTP डालें",
+    "otpExpires": "OTP expire होगा",
+    "resendOtp": "OTP फिर भेजें →",
+    "maximumOtps": "अधिकतम OTP भेज दिए — कल try करें",
+    "verifyOtp": "OTP verify करें",
+    "verifying": "verify कर रहे हैं...",
+    "otpError": "गलत OTP — दोबारा try करें",
+    "otpErrorHindi": "गलत OTP। फिर से कोशिश करें।",
+    "otpAttemptsExceeded": "अधिकतम प्रयास पूरे हो गए। कृपया बाद में try करें।",
+    "backToPhone": "←",
+    "dpdpNotice": "Your data stays in India (AWS Mumbai) · DPDP Act 2023 compliant",
+    "dpdpNoticeHindi": "आपका डेटा भारत में सुरक्षित है (AWS Mumbai) · DPDP Act 2023 के अनुसार",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "consentText": "मैं सहमत हूँ",
+    "and": "और",
+    "newUser": "नया user?",
+    "returningUser": "पुराना user?",
+    "startFreeTrial": "14 दिन मुफ़्त शुरू करें",
+    "loginToAccount": "अपने account में login करें"
+  },
+  "blog": {
+    "hero": {
+      "subtitle": "ज्ञान और अंतर्दृष्टि",
+      "title": "पोल्ट्री फार्मिंग अंतर्दृष्टि",
+      "description": "Cobb 400, Ross 308, Hubbard ब्रॉयलर भाव रुझान, FCR अनुकूलन, और बाजार बुद्धिमत्ता पर विशेषज्ञ अंतर्दृष्टि"
+    },
+    "search": {
+      "placeholder": "लेख खोजें...",
+      "noResults": "आपकी खोज से मेल खाने वाला कोई लेख नहीं मिला।"
+    },
+    "categories": {
+      "all": "सभी",
+      "bhavVichar": "भाव विचार",
+      "khetiGyan": "खेती ज्ञान",
+      "industryIntelligence": "उद्योग बुद्धिमत्ता",
+      "productUpdates": "उत्पाद अपडेट"
+    },
+    "post": {
+      "backToBlog": "ब्लॉग पर वापस",
+      "readTime": "मिनट पढ़ें",
+      "shareOnWhatsApp": "WhatsApp पर शेयर करें",
+      "copyLink": "लिंक कॉपी करें",
+      "tableOfContents": "विषय सूची",
+      "relatedArticles": "संबंधित लेख",
+      "readMore": "और पढ़ें",
+      "ctaTitle": "आज इन अंतर्दृष्टि को लागू करें",
+      "ctaDescription": "अपना 14-दिन का मुफ्त परीक्षण शुरू करें और दैनिक मूल्य पूर्वानुमान प्राप्त करें",
+      "ctaButton": "14 दिन मुफ़्त शुरू करें"
+    },
+    "cta": {
+      "title": "नवीनतम अंतर्दृष्टि के साथ अपडेट रहें",
+      "description": "साप्ताहिक पोल्ट्री फार्मिंग टिप्स के लिए हमारे न्यूज़लेटर की सदस्यता लें",
+      "button": "14 दिन मुफ़्त शुरू करें"
+    }
+  }
+}

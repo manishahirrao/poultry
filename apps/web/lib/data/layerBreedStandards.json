@@ -1,0 +1,219 @@
+{
+  "breeds": [
+    {
+      "name": "Lohmann Brown",
+      "target_peak_age_weeks": 28,
+      "target_peak_hdp_percentage": 96,
+      "production_duration_weeks": 74,
+      "target_egg_weight_g": 63,
+      "hdp_curve": {
+        "week_20": 85,
+        "week_24": 92,
+        "week_28": 96,
+        "week_32": 94,
+        "week_40": 90,
+        "week_48": 86,
+        "week_56": 82,
+        "week_64": 78,
+        "week_72": 74
+      },
+      "egg_weight_curve_g": {
+        "week_20": 58,
+        "week_24": 61,
+        "week_28": 63,
+        "week_32": 64,
+        "week_40": 65,
+        "week_48": 66,
+        "week_56": 67,
+        "week_64": 68,
+        "week_72": 69
+      },
+      "feed_conversion_ratio": {
+        "week_20": 2.1,
+        "week_28": 2.0,
+        "week_40": 2.2,
+        "week_52": 2.4,
+        "week_64": 2.6,
+        "week_72": 2.8
+      },
+      "mortality_rate_percent": 0.15
+    },
+    {
+      "name": "HH-260",
+      "target_peak_age_weeks": 26,
+      "target_peak_hdp_percentage": 94,
+      "production_duration_weeks": 72,
+      "target_egg_weight_g": 62,
+      "hdp_curve": {
+        "week_18": 82,
+        "week_22": 90,
+        "week_26": 94,
+        "week_30": 92,
+        "week_38": 88,
+        "week_46": 84,
+        "week_54": 80,
+        "week_62": 76,
+        "week_70": 72
+      },
+      "egg_weight_curve_g": {
+        "week_18": 56,
+        "week_22": 59,
+        "week_26": 62,
+        "week_30": 63,
+        "week_38": 64,
+        "week_46": 65,
+        "week_54": 66,
+        "week_62": 67,
+        "week_70": 68
+      },
+      "feed_conversion_ratio": {
+        "week_18": 2.0,
+        "week_26": 1.9,
+        "week_38": 2.1,
+        "week_50": 2.3,
+        "week_62": 2.5,
+        "week_70": 2.7
+      },
+      "mortality_rate_percent": 0.18
+    },
+    {
+      "name": "BV-300",
+      "target_peak_age_weeks": 27,
+      "target_peak_hdp_percentage": 95,
+      "production_duration_weeks": 76,
+      "target_egg_weight_g": 64,
+      "hdp_curve": {
+        "week_19": 84,
+        "week_23": 91,
+        "week_27": 95,
+        "week_31": 93,
+        "week_39": 89,
+        "week_47": 85,
+        "week_55": 81,
+        "week_63": 77,
+        "week_71": 73,
+        "week_76": 70
+      },
+      "egg_weight_curve_g": {
+        "week_19": 57,
+        "week_23": 60,
+        "week_27": 64,
+        "week_31": 65,
+        "week_39": 66,
+        "week_47": 67,
+        "week_55": 68,
+        "week_63": 69,
+        "week_71": 70,
+        "week_76": 71
+      },
+      "feed_conversion_ratio": {
+        "week_19": 2.05,
+        "week_27": 1.95,
+        "week_39": 2.15,
+        "week_51": 2.35,
+        "week_63": 2.55,
+        "week_71": 2.75,
+        "week_76": 2.85
+      },
+      "mortality_rate_percent": 0.16
+    },
+    {
+      "name": "Hy-Line Brown",
+      "target_peak_age_weeks": 28,
+      "target_peak_hdp_percentage": 95,
+      "production_duration_weeks": 80,
+      "target_egg_weight_g": 63,
+      "hdp_curve": {
+        "week_20": 84,
+        "week_24": 91,
+        "week_28": 95,
+        "week_32": 93,
+        "week_40": 89,
+        "week_48": 85,
+        "week_56": 81,
+        "week_64": 77,
+        "week_72": 73,
+        "week_80": 70
+      },
+      "egg_weight_curve_g": {
+        "week_20": 58,
+        "week_24": 61,
+        "week_28": 63,
+        "week_32": 64,
+        "week_40": 65,
+        "week_48": 66,
+        "week_56": 67,
+        "week_64": 68,
+        "week_72": 69,
+        "week_80": 70
+      },
+      "feed_conversion_ratio": {
+        "week_20": 2.08,
+        "week_28": 1.98,
+        "week_40": 2.18,
+        "week_52": 2.38,
+        "week_64": 2.58,
+        "week_72": 2.78,
+        "week_80": 2.88
+      },
+      "mortality_rate_percent": 0.14
+    }
+  ],
+  "default_breed": "Lohmann Brown",
+  "grading_standards": {
+    "large": {
+      "min_weight_g": 63,
+      "max_weight_g": 73,
+      "description": "Extra Large"
+    },
+    "medium": {
+      "min_weight_g": 56,
+      "max_weight_g": 62,
+      "description": "Large"
+    },
+    "small": {
+      "min_weight_g": 49,
+      "max_weight_g": 55,
+      "description": "Medium"
+    },
+    "cracked": {
+      "description": "Damaged eggs"
+    }
+  },
+  "hdp_color_coding": {
+    "excellent": {
+      "min_percentage": 95,
+      "color": "green",
+      "label": "उत्कृष्ट"
+    },
+    "good": {
+      "min_percentage": 90,
+      "max_percentage": 94.9,
+      "color": "green",
+      "label": "अच्छा"
+    },
+    "acceptable": {
+      "min_percentage": 80,
+      "max_percentage": 89.9,
+      "color": "amber",
+      "label": "स्वीकार्य"
+    },
+    "poor": {
+      "max_percentage": 79.9,
+      "color": "red",
+      "label": "कमज़ोर"
+    }
+  },
+  "feed_to_egg_ratio_alerts": {
+    "low_ratio": {
+      "threshold": 1.8,
+      "message": "पानी कम पिया जा रहा है — बीमारी की संभावना",
+      "severity": "medium"
+    },
+    "high_ratio": {
+      "threshold": 3.5,
+      "message": "बहुत अधिक पानी — डायरिया की जाँच करें",
+      "severity": "medium"
+    }
+  }
+}

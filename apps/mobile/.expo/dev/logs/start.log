@@ -1,0 +1,13 @@
+{"_e":"root:init","_t":1780559756784,"format":"v0-jsonl","version":"56.1.13"}
+{"_e":"env:mode","_t":1780559756788,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1780559756800,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1780559758575,"mode":"development","web":false,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1780559764530,"serverRoot":"../..\\..\\..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":true,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:server_log","_t":1780559834215,"level":"error","data":["An unexpected error occurred while installing the latest version of React Native DevTools. Using a fallback version instead. Details:\n\ndotslash error: 'fetch' command failed\ncaused by: failed to unpack `\\\\?\\C:\\Users\\Hiten\\AppData\\Local\\dotslash\\1f\\.tmpkJ07GK\\React Native DevTools-win32-x64\\React Native DevTools.exe`\ncaused by: failed to unpack `React Native DevTools-win32-x64/React Native DevTools.exe` into `\\\\?\\C:\\Users\\Hiten\\AppData\\Local\\dotslash\\1f\\.tmpkJ07GK\\React Native DevTools-win32-x64\\React Native DevTools.exe`\ncaused by: There is not enough space on the disk. (os error 112)\n"]}
+{"_e":"metro:instantiate","_t":1780559840373,"atlas":false,"workers":3,"host":"::","port":8081}
+{"_e":"root:init","_t":1780561168331,"format":"v0-jsonl","version":"56.1.13"}
+{"_e":"env:mode","_t":1780561168335,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1780561168348,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1780561170383,"mode":"development","web":false,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1780561175990,"serverRoot":"../..\\..\\..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":true,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1780561252395,"atlas":false,"workers":3,"host":"::","port":8081}
