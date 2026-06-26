@@ -46,7 +46,7 @@ export async function GET(
     // Get customer to check segment
     const { data: customerData, error: customerError } = await supabase
       .from('customers')
-      .select('id, segment, role')
+      .select('id')
       .eq('id', user.id)
       .single();
 
@@ -57,15 +57,7 @@ export async function GET(
       );
     }
 
-    const customer = customerData as { id: string; segment: string; role: string | null };
-
-    // Check segment: only S2 or admin can access farms
-    if (customer.segment !== 'S2' && customer.role !== 'admin') {
-      return NextResponse.json(
-        { error: 'Forbidden: farm management is available for S2 integrators only' },
-        { status: 403 }
-      );
-    }
+    const customer = customerData as { id: string };
 
     // Fetch farm with RLS check (integrator_id = auth.uid())
     const { data: farm, error: farmError } = await supabase
@@ -173,7 +165,7 @@ export async function PATCH(
     // Get customer to check segment
     const { data: customerData, error: customerError } = await supabase
       .from('customers')
-      .select('id, segment, role')
+      .select('id')
       .eq('id', user.id)
       .single();
 
@@ -184,15 +176,7 @@ export async function PATCH(
       );
     }
 
-    const customer = customerData as { id: string; segment: string; role: string | null };
-
-    // Check segment: only S2 or admin can update farms
-    if (customer.segment !== 'S2' && customer.role !== 'admin') {
-      return NextResponse.json(
-        { error: 'Forbidden: farm management is available for S2 integrators only' },
-        { status: 403 }
-      );
-    }
+    const customer = customerData as { id: string };
 
     // Verify farm ownership (RLS check)
     const { data: farm, error: farmError } = await supabase
@@ -285,7 +269,7 @@ export async function DELETE(
     // Get customer to check segment
     const { data: customerData, error: customerError } = await supabase
       .from('customers')
-      .select('id, segment, role')
+      .select('id')
       .eq('id', user.id)
       .single();
 
@@ -296,15 +280,7 @@ export async function DELETE(
       );
     }
 
-    const customer = customerData as { id: string; segment: string; role: string | null };
-
-    // Check segment: only S2 or admin can archive farms
-    if (customer.segment !== 'S2' && customer.role !== 'admin') {
-      return NextResponse.json(
-        { error: 'Forbidden: farm management is available for S2 integrators only' },
-        { status: 403 }
-      );
-    }
+    const customer = customerData as { id: string };
 
     // Verify farm ownership (RLS check)
     const { data: farm, error: farmError } = await supabase

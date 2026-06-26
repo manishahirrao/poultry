@@ -33,7 +33,7 @@ export async function GET(
     // Get customer to check segment
     const { data: customerData, error: customerError } = await supabase
       .from('customers')
-      .select('id, segment, role')
+      .select('id')
       .eq('id', user.id)
       .single();
 
@@ -44,7 +44,7 @@ export async function GET(
       );
     }
 
-    const customer = customerData as { id: string; segment: string; role: string | null };
+    const customer = customerData as { id: string };
 
     // Verify farm ownership (RLS check)
     const { data: farm, error: farmError } = await supabase

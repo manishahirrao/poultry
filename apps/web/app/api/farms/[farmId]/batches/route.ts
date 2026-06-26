@@ -86,7 +86,7 @@ export async function POST(
     // Get customer to check segment
     const { data: customerData, error: customerError } = await supabase
       .from('customers')
-      .select('id, segment, role')
+      .select('id')
       .eq('id', user.id)
       .single();
 
@@ -97,15 +97,7 @@ export async function POST(
       );
     }
 
-    const customer = customerData as { id: string; segment: string; role: string | null };
-
-    // Check segment: only S2 or admin can create batches
-    if (customer.segment !== 'S2' && customer.role !== 'admin') {
-      return NextResponse.json(
-        { error: 'Forbidden: batch management is available for S2 integrators only' },
-        { status: 403 }
-      );
-    }
+    const customer = customerData as { id: string };
 
     // Verify farm ownership (RLS check)
     const { data: farm, error: farmError } = await supabase
@@ -292,7 +284,7 @@ export async function GET(
     // Get customer to check segment
     const { data: customerData, error: customerError } = await supabase
       .from('customers')
-      .select('id, segment, role')
+      .select('id')
       .eq('id', user.id)
       .single();
 
@@ -303,15 +295,7 @@ export async function GET(
       );
     }
 
-    const customer = customerData as { id: string; segment: string; role: string | null };
-
-    // Check segment: only S2 or admin can access batches
-    if (customer.segment !== 'S2' && customer.role !== 'admin') {
-      return NextResponse.json(
-        { error: 'Forbidden: batch access is available for S2 integrators only' },
-        { status: 403 }
-      );
-    }
+    const customer = customerData as { id: string };
 
     // Verify farm ownership (RLS check)
     const { data: farm, error: farmError } = await supabase

@@ -60,7 +60,7 @@ export async function GET(request: NextRequest) {
     // Get customer to check segment
     const { data: customerData, error: customerError } = await supabase
       .from('customers')
-      .select('id, segment, role')
+      .select('id')
       .eq('id', user.id)
       .single();
 
@@ -71,15 +71,7 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const customer = customerData as { id: string; segment: string; role: string | null };
-
-    // Check segment: only S2 or admin can access farms
-    if (customer.segment !== 'S2' && customer.role !== 'admin') {
-      return NextResponse.json(
-        { error: 'Forbidden: farm management is available for S2 integrators only' },
-        { status: 403 }
-      );
-    }
+    const customer = customerData as { id: string };
 
     // Parse query params
     const { searchParams } = new URL(request.url);
@@ -194,7 +186,7 @@ export async function POST(request: NextRequest) {
     // Get customer to check segment
     const { data: customerData, error: customerError } = await supabase
       .from('customers')
-      .select('id, segment, role')
+      .select('id')
       .eq('id', user.id)
       .single();
 
@@ -205,15 +197,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const customer = customerData as { id: string; segment: string; role: string | null };
-
-    // Check segment: only S2 or admin can create farms
-    if (customer.segment !== 'S2' && customer.role !== 'admin') {
-      return NextResponse.json(
-        { error: 'Forbidden: farm management is available for S2 integrators only' },
-        { status: 403 }
-      );
-    }
+    const customer = customerData as { id: string };
 
     // Check max farms limit (50 per integrator)
     const { count: farmCount, error: countError } = await supabase

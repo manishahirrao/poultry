@@ -26,10 +26,10 @@ export async function GET(request: NextRequest) {
     // Get customer from phone
     const { data: customerData } = await supabase
       .from('customers')
-      .select('id, segment')
+      .select('id')
       .eq('phone', user.phone)
       .single();
-    const customer = customerData as { id: string; segment: string } | null;
+    const customer = customerData as { id: string } | null;
 
     if (!customer) {
       return NextResponse.json(
@@ -41,18 +41,8 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const integratorId = searchParams.get('integratorId');
 
-    // For S1 farmers, use their own customer ID as integrator ID
-    // For S2 integrators, use the provided integrator ID or fetch their integrator ID
-    let effectiveIntegratorId = integratorId;
-    
-    if (customer.segment === 'S1') {
-      effectiveIntegratorId = customer.id;
-    } else if (!effectiveIntegratorId) {
-      // For S2, if no integratorId provided, we need to fetch it
-      // This might require a different query depending on your data model
-      // For now, we'll use the customer ID as a fallback
-      effectiveIntegratorId = customer.id;
-    }
+    // Default to the provided integrator ID or the user's own ID
+    let effectiveIntegratorId = integratorId || customer.id;
 
     // Fetch active disease alerts
     const { data: alertsData, error: alertsError } = await supabase

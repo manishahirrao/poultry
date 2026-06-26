@@ -1,18 +1,19 @@
 /**
  * E2E Seed Script v3 — fixed FK ordering, required fields
  */
+require('dotenv').config({ path: './apps/web/.env.local' });
 const { createClient } = require('@supabase/supabase-js');
 
-const SUPABASE_URL = 'https://xrzgixpopbkviytoznqd.supabase.co';
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
-if (!SUPABASE_SERVICE_KEY) { console.error('Set SUPABASE_SERVICE_ROLE_KEY'); process.exit(1); }
+if (!SUPABASE_SERVICE_KEY || !SUPABASE_URL) { console.error('Set SUPABASE credentials'); process.exit(1); }
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY, {
   auth: { autoRefreshToken: false, persistSession: false }
 });
 
-const TEST_PHONE = '9876543210';
-const USER_ID = '9329c467-ff71-4b01-afe2-4e42c57ad9d7';
+const TEST_PHONE = '919022217637';
+const USER_ID = '5c01e14e-aa45-4f57-92e5-7f4c6b84e8ad';
 
 async function main() {
   console.log('=== FlockIQ E2E Seed v3 ===\n');

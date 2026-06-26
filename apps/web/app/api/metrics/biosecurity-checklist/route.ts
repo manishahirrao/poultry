@@ -32,15 +32,15 @@ export async function GET(request: NextRequest) {
 
     const { data: customer } = await supabase
       .from('customers')
-      .select('id, segment')
+      .select('id')
       .eq('phone', user.phone)
       .single();
 
-    if (!customer || (customer.segment !== 'S2' && customer.segment !== 'admin')) {
+    if (!customer) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     }
 
-    if (customer.id !== integratorId && customer.segment !== 'admin') {
+    if (customer.id !== integratorId) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     }
 
@@ -97,15 +97,15 @@ export async function POST(request: NextRequest) {
 
     const { data: customer } = await supabase
       .from('customers')
-      .select('id, segment')
+      .select('id')
       .eq('phone', user.phone)
       .single();
 
-    if (!customer || (customer.segment !== 'S2' && customer.segment !== 'admin')) {
+    if (!customer) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     }
 
-    if (customer.id !== integrator_id && customer.segment !== 'admin') {
+    if (customer.id !== integrator_id) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     }
 

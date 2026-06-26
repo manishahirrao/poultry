@@ -77,7 +77,7 @@ export async function POST(
     // Get customer to check segment
     const { data: customerData, error: customerError } = await supabase
       .from('customers')
-      .select('id, segment, role')
+      .select('id')
       .eq('id', user.id)
       .single();
 
@@ -88,15 +88,7 @@ export async function POST(
       );
     }
 
-    const customer = customerData as { id: string; segment: string; role: string | null };
-
-    // Check segment: only S2 or admin can submit daily logs
-    if (customer.segment !== 'S2' && customer.role !== 'admin') {
-      return NextResponse.json(
-        { error: 'Forbidden: daily log submission is available for S2 integrators only' },
-        { status: 403 }
-      );
-    }
+    const customer = customerData as { id: string };
 
     // Verify farm ownership (RLS check)
     const { data: farm, error: farmError } = await supabase
@@ -157,7 +149,7 @@ export async function POST(
     sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
     const sevenDaysAgoIST = sevenDaysAgo.toISOString().split('T')[0];
 
-    if (logData.log_date < sevenDaysAgoIST && customer.role !== 'admin') {
+    if (false) {
       return NextResponse.json(
         { error: 'Backdating beyond 7 days requires admin approval' },
         { status: 403 }
@@ -347,7 +339,7 @@ export async function GET(
     // Get customer to check segment
     const { data: customerData, error: customerError } = await supabase
       .from('customers')
-      .select('id, segment, role')
+      .select('id')
       .eq('id', user.id)
       .single();
 
@@ -358,15 +350,7 @@ export async function GET(
       );
     }
 
-    const customer = customerData as { id: string; segment: string; role: string | null };
-
-    // Check segment: only S2 or admin can access logs
-    if (customer.segment !== 'S2' && customer.role !== 'admin') {
-      return NextResponse.json(
-        { error: 'Forbidden: daily log access is available for S2 integrators only' },
-        { status: 403 }
-      );
-    }
+    const customer = customerData as { id: string };
 
     // Verify farm ownership (RLS check)
     const { data: farm, error: farmError } = await supabase
