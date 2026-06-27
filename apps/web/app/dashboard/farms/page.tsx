@@ -97,10 +97,7 @@ async function getFarmData(integratorId: string) {
       });
 
       // Check if log is pending for today
-      const lastLogDate = null;
-      if (!lastLogDate || lastLogDate < today) {
-        pendingLogsCount++;
-      }
+      pendingLogsCount++;
     }
   });
 

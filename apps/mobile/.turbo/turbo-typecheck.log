@@ -1,0 +1,19 @@
+
+> mobile@1.0.0 typecheck
+> tsc --noEmit
+
+app/(auth)/onboarding.tsx(11,10): error TS2305: Module '"@poultrypulse/ui"' has no exported member 'OnboardingFlow'.
+app/(tabs)/alerts.tsx(11,21): error TS2305: Module '"@poultrypulse/ui"' has no exported member 'SkeletonList'.
+app/(tabs)/forecast.tsx(14,10): error TS2305: Module '"@poultrypulse/ui"' has no exported member 'PriceHero'.
+app/(tabs)/forecast.tsx(14,44): error TS2305: Module '"@poultrypulse/ui"' has no exported member 'SkeletonCard'.
+app/(tabs)/forecast.tsx(14,58): error TS2305: Module '"@poultrypulse/ui"' has no exported member 'SkeletonList'.
+app/(tabs)/sell-signal.tsx(11,10): error TS2305: Module '"@poultrypulse/ui"' has no exported member 'SellSignalCard'.
+app/(tabs)/sell-signal.tsx(11,26): error TS2305: Module '"@poultrypulse/ui"' has no exported member 'BatchProfitCalculator'.
+app/(tabs)/sell-signal.tsx(11,49): error TS2305: Module '"@poultrypulse/ui"' has no exported member 'SkeletonCard'.
+npm error Lifecycle script `typecheck` failed with error:
+npm error code 1
+npm error path C:\Users\manis\OneDrive\Desktop\poutrysense\apps\mobile
+npm error workspace mobile@1.0.0
+npm error location C:\Users\manis\OneDrive\Desktop\poutrysense\apps\mobile
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c tsc --noEmit
