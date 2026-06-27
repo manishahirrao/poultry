@@ -58,7 +58,7 @@ async function getFarmData(integratorId: string) {
         current_bird_count,
         placement_date,
         current_fcr,
-        cumulative_mortality_pct,
+        total_mortality_count,
         target_harvest_age,
         current_avg_weight_kg,
         target_harvest_weight_kg
@@ -182,7 +182,7 @@ export default async function FarmsPage({
       targetDays: farm.active_batch[0].target_harvest_age || 42,
       birdsAlive: farm.active_batch[0].current_bird_count,
       birdsPlaced: farm.active_batch[0].birds_placed,
-      mortalityPct: farm.active_batch[0].cumulative_mortality_pct || 0,
+      mortalityPct: (farm.active_batch[0].total_mortality_count / (farm.active_batch[0].birds_placed || 1)) * 100 || 0,
       currentWeight: farm.active_batch[0].current_avg_weight_kg || 0, // already in kg
       targetWeight: farm.active_batch[0].target_harvest_weight_kg || 2.1, // already in kg
       fcr: farm.active_batch[0].current_fcr || 0,
