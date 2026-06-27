@@ -127,7 +127,7 @@ export default async function OverviewPage() {
         doc_weight_kg: 0.04,
         birds_alive: batch.current_bird_count || 0,
         birds_placed: batch.birds_placed || 0,
-        status: batch.status as 'active' | 'harvested' | 'closed',
+        status: batch.status as 'active' | 'harvested' | 'closed' | 'growing',
         total_revenue: batchSalesMap[batch.id] || 0,
       }));
     }
