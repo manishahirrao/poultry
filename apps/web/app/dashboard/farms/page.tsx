@@ -49,8 +49,8 @@ async function getFarmData(integratorId: string) {
       district,
       village,
       farm_type,
-      max_birds,
-      whatsapp_connected,
+      total_capacity,
+      whatsapp_enabled,
       active_batch:batches(
         id,
         batch_number,
@@ -173,9 +173,9 @@ export default async function FarmsPage({
     name: farm.name,
     location: `${farm.district}, ${farm.village}`,
     type: (farm.farm_type || 'Broiler') as 'Broiler' | 'Layer' | 'Breeder',
-    maxBirds: farm.max_birds || 15000,
+    maxBirds: farm.total_capacity || 15000,
     status: 'active' as const, // Hardcode or derive from batches
-    whatsappConnected: farm.whatsapp_connected || false,
+    whatsappConnected: farm.whatsapp_enabled || false,
     currentBatch: farm.active_batch && farm.active_batch.length > 0 ? {
       batchNumber: farm.active_batch[0].batch_number,
       dayNumber: farm.active_batch[0].placement_date ? Math.floor((Date.now() - new Date(farm.active_batch[0].placement_date).getTime()) / (1000 * 60 * 60 * 24)) : 0,

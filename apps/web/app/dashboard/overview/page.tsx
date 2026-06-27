@@ -92,7 +92,7 @@ export default async function OverviewPage() {
     const { data } = await supabase
       .from('batches')
       .select('id, current_bird_count, birds_placed, status, current_avg_weight_kg')
-      .in('status', ['active', 'harvested'])
+      .in('status', ['growing', 'active', 'harvested'])
       .is('deleted_at', null);
     
     if (data) {
@@ -143,7 +143,7 @@ export default async function OverviewPage() {
   let projectedRevenue = 0;
   
   for (const batch of activeBatches) {
-    if (batch.status === 'active') {
+    if (batch.status === 'active' || batch.status === 'growing') {
       // Projected revenue for active batches: birds_alive * avg_weight_kg * current_price
       const batchProjectedRevenue = (batch.birds_alive || 0) * (batch.avg_weight_kg || 0) * currentPrice;
       projectedRevenue += batchProjectedRevenue;
