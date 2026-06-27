@@ -1,208 +1,224 @@
-/**
- * E2E Seed Script v3 — fixed FK ordering, required fields
- */
-require('dotenv').config({ path: './apps/web/.env.local' });
 const { createClient } = require('@supabase/supabase-js');
+const dotenv = require('dotenv');
+const crypto = require('crypto');
 
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
-if (!SUPABASE_SERVICE_KEY || !SUPABASE_URL) { console.error('Set SUPABASE credentials'); process.exit(1); }
+// Load environment variables from apps/web/.env.local
+dotenv.config({ path: './apps/web/.env.local' });
 
-const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY, {
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+if (!supabaseUrl || !supabaseServiceKey) {
+  console.error('Missing Supabase credentials in .env.local');
+  process.exit(1);
+}
+
+const supabase = createClient(supabaseUrl, supabaseServiceKey, {
   auth: { autoRefreshToken: false, persistSession: false }
 });
 
-const TEST_PHONE = '919022217637';
-const USER_ID = '5c01e14e-aa45-4f57-92e5-7f4c6b84e8ad';
+// The user ID from previous steps
+const USER_ID = '5c01e14e-aa45-4f57-92e5-7f4c6b84e8ad'; 
 
-async function main() {
-  console.log('=== FlockIQ E2E Seed v3 ===\n');
+function generateUUID() {
+  return crypto.randomUUID();
+}
 
-  // 1. Customer — must come first (FK parent)
-  console.log('1. Upserting customer...');
-  // Check if exists first
-  const { data: existingCust } = await supabase.from('customers').select('id').eq('id', USER_ID).single();
-  if (existingCust) {
-    console.log('  Customer already exists, updating...');
-    const { error } = await supabase.from('customers').update({
-      phone: TEST_PHONE,
-      name: 'Rajesh Yadav Poultry Farm',
-      farm_name: 'Rajesh Yadav Farms',
-      district: 'Gorakhpur',
-      state: 'Uttar Pradesh',
-      subscription_tier: 'FLOCKIQ_PRO',
-      subscription_status: 'active',
-      subscription_start_date: new Date().toISOString().split('T')[0],
-      subscription_end_date: new Date(Date.now() + 365 * 86400000).toISOString().split('T')[0],
-      whatsapp_verified: true,
-      onboarding_completed: true,
-      onboarding_completed_at: new Date().toISOString(),
-      poultry_type: 'broiler',
-    }).eq('id', USER_ID);
-    console.log(error ? `  Error: ${error.message}` : '  ✅ Customer updated');
-  } else {
-    const { error } = await supabase.from('customers').insert({
-      id: USER_ID,
-      email: 'rajesh.yadav@flockiq.dev',
-      phone: TEST_PHONE,
-      name: 'Rajesh Yadav Poultry Farm',
-      farm_name: 'Rajesh Yadav Farms',
-      district: 'Gorakhpur',
-      state: 'Uttar Pradesh',
-      subscription_tier: 'FLOCKIQ_PRO',
-      subscription_status: 'active',
-      subscription_start_date: new Date().toISOString().split('T')[0],
-      subscription_end_date: new Date(Date.now() + 365 * 86400000).toISOString().split('T')[0],
-      whatsapp_verified: true,
-      onboarding_completed: true,
-      onboarding_completed_at: new Date().toISOString(),
-      poultry_type: 'broiler',
-    });
-    console.log(error ? `  Error: ${error.message}` : '  ✅ Customer created');
-  }
+// Fixed UUIDs to prevent duplicates on re-runs
+const FARM1_ID = 'bdbda976-ce00-41cc-8635-47d1a50e748c'; 
+const FARM2_ID = 'a12ba976-ce00-41cc-8635-47d1a50e748d'; 
+const BATCH1_ID = 'e3bda976-ce00-41cc-8635-47d1a50e748e';
+const BATCH2_ID = 'f4bda976-ce00-41cc-8635-47d1a50e748f';
+const SHED1_ID = 'b3bda976-ce00-41cc-8635-47d1a50e748e';
+const SHED2_ID = 'c4bda976-ce00-41cc-8635-47d1a50e748f';
+const SHED3_ID = 'd5bda976-ce00-41cc-8635-47d1a50e748f';
 
-  // 2. Subscription
-  console.log('2. Creating subscription...');
-  const { data: existingSub } = await supabase.from('subscriptions').select('id').eq('user_id', USER_ID).single();
-  if (existingSub) {
-    const { error } = await supabase.from('subscriptions').update({
-      plan_name: 'FLOCKIQ_PRO',
-      subscription_type: 'annual',
-      status: 'active',
-      billing_period_months: 12,
-      next_renewal_date: new Date(Date.now() + 365 * 86400000).toISOString().split('T')[0],
-      amount_paid_inr: 100000,
-    }).eq('user_id', USER_ID);
-    console.log(error ? `  Error: ${error.message}` : '  ✅ Subscription updated');
-  } else {
-    const { error } = await supabase.from('subscriptions').insert({
-      user_id: USER_ID,
-      plan_name: 'FLOCKIQ_PRO',
-      subscription_type: 'annual',
-      status: 'active',
-      billing_period_months: 12,
-      next_renewal_date: new Date(Date.now() + 365 * 86400000).toISOString().split('T')[0],
-      amount_paid_inr: 100000,
-    });
-    console.log(error ? `  Error: ${error.message}` : '  ✅ Subscription created');
-  }
+async function seedData() {
+  console.log('🌱 Starting comprehensive data seed...');
 
-  // 3. Farms (FK: integrator_id → customers.id)
-  console.log('3. Creating farms...');
-  const farmDefs = [
-    { name: 'Green Valley Poultry Farm', location: 'Sahjanwa, Gorakhpur', district: 'Gorakhpur', state: 'Uttar Pradesh', total_sheds: 4, total_capacity: 10000 },
-    { name: 'Sunrise Broiler Unit', location: 'Rudrapur, Deoria', district: 'Deoria', state: 'Uttar Pradesh', total_sheds: 2, total_capacity: 5000 },
-  ];
-  const farmIds = [];
-  for (const f of farmDefs) {
-    // Check if farm already exists
-    const { data: existingFarm } = await supabase.from('farms').select('id').eq('integrator_id', USER_ID).eq('name', f.name).single();
-    if (existingFarm) {
-      farmIds.push({ id: existingFarm.id, capacity: f.total_capacity, name: f.name });
-      console.log(`  Farm "${f.name}" already exists (${existingFarm.id})`);
-      continue;
-    }
-    const { data, error } = await supabase.from('farms').insert({
+  // 1. Clear old test data for this user
+  console.log('Clearing old test data...');
+  await supabase.from('daily_logs').delete().in('batch_id', [BATCH1_ID, BATCH2_ID]);
+  await supabase.from('batches').delete().in('id', [BATCH1_ID, BATCH2_ID]);
+  await supabase.from('sheds').delete().in('id', [SHED1_ID, SHED2_ID, SHED3_ID]);
+  await supabase.from('farms').delete().in('id', [FARM1_ID, FARM2_ID]);
+  await supabase.from('alerts').delete().neq('id', '00000000-0000-0000-0000-000000000000'); // Delete all alerts
+  await supabase.from('predictions').delete().neq('id', '00000000-0000-0000-0000-000000000000');
+
+  // 3. Create Farms
+  console.log('Creating Farms...');
+  const farmsToInsert = [
+    {
+      id: FARM1_ID,
       integrator_id: USER_ID,
-      name: f.name,
-      location: f.location,
-      district: f.district,
-      state: f.state,
-      total_sheds: f.total_sheds,
-      total_capacity: f.total_capacity,
+      name: 'Sunrise Broiler Unit',
       farm_type: 'broiler',
-      contact_person: 'Rajesh Yadav',
-      contact_phone: TEST_PHONE,
-      is_active: true,
-    }).select('id').single();
-    if (error) { console.log(`  Farm error: ${error.message}`); continue; }
-    farmIds.push({ id: data.id, capacity: f.total_capacity, name: f.name });
-    console.log(`  ✅ Farm: ${f.name} (${data.id})`);
-  }
-
-  // 4. Batches + daily logs
-  for (const farm of farmIds) {
-    console.log(`4. Creating batch for ${farm.name}...`);
-    // Check if batch already exists
-    const { data: existingBatch } = await supabase.from('batches').select('id').eq('customer_id', USER_ID).eq('status', 'active').limit(1);
-
-    const batchId = `RY-${rand(4)}`;
-    const { data: batch, error: batchErr } = await supabase.from('batches').insert({
-      customer_id: USER_ID,
-      batch_id: batchId,
-      batch_type: 'broiler',
-      status: 'growing',
-      doc_placement_date: new Date(Date.now() - 25 * 86400000).toISOString().split('T')[0],
-      doc_count: farm.capacity,
-      breed: 'Cobb 500',
-      doc_supplier: 'Venkateshwara Hatcheries',
-      initial_feed_brand: 'Godrej Agrovet',
-      initial_feed_type: 'Starter',
-      current_bird_count: farm.capacity - 35,
-      current_avg_weight_kg: 1.85,
-      current_fcr: 1.65,
-      current_age_days: 25,
-      target_harvest_weight_kg: 2.4,
-      target_harvest_age_days: 38,
-    }).select('id').single();
-
-    if (batchErr) { console.log(`  Batch error: ${batchErr.message}`); continue; }
-    console.log(`  ✅ Batch: ${batchId} (${batch.id})`);
-
-    // Daily logs
-    console.log(`5. Seeding daily logs...`);
-    const logs = [];
-    for (let d = 9; d >= 0; d--) {
-      const logDate = new Date(Date.now() - d * 86400000).toISOString().split('T')[0];
-      const dayNum = 25 - d;
-      const feedKg = Math.round((farm.capacity * 0.085 + dayNum * 8) * 10) / 10;
-      logs.push({
-        farm_id: farm.id,
-        batch_id: batch.id,
-        log_date: logDate,
-        birds_dead: Math.floor(Math.random() * 3),
-        morning_mortality: Math.floor(Math.random() * 2),
-        evening_mortality: Math.floor(Math.random() * 2),
-        total_mortality: Math.floor(Math.random() * 3),
-        feed_given_kg: feedKg,
-        feed_per_bird_g: Math.round((feedKg * 1000) / farm.capacity * 10) / 10,
-        water_consumed_litres: Math.round(feedKg * 1.8),
-        temperature_c: Math.round((28 + Math.random() * 4) * 10) / 10,
-        source: 'manual',
-        synced: true,
-      });
+      district: 'Pune',
+      state: 'Maharashtra',
+      total_capacity: 15000,
+      status: 'active'
+    },
+    {
+      id: FARM2_ID,
+      integrator_id: USER_ID,
+      name: 'Green Valley Poultry Farm',
+      farm_type: 'broiler',
+      district: 'Nashik',
+      state: 'Maharashtra',
+      total_capacity: 20000,
+      status: 'active'
     }
-    const { error: logErr } = await supabase.from('daily_logs').insert(logs);
-    console.log(logErr ? `  Logs error: ${logErr.message}` : `  ✅ ${logs.length} daily logs seeded`);
+  ];
+
+  const { error: farmErr } = await supabase.from('farms').insert(farmsToInsert);
+  if (farmErr) {
+    console.error('Failed to create farms:', farmErr);
+    return;
   }
 
-  // 6. Price predictions
-  console.log('6. Seeding predictions...');
-  const preds = [];
-  for (let d = 13; d >= 0; d--) {
-    const date = new Date(Date.now() - d * 86400000);
-    const basePrice = 155 + Math.random() * 15;
-    preds.push({
+  // 4. Create Sheds
+  console.log('Creating Sheds...');
+  const shedsToInsert = [
+    { id: SHED1_ID, farm_id: FARM1_ID, shed_number: 1, name: 'Shed 1 - East', capacity: 7500, shed_type: 'open_sided', floor_type: 'litter' },
+    { id: SHED2_ID, farm_id: FARM1_ID, shed_number: 2, name: 'Shed 2 - West', capacity: 7500, shed_type: 'open_sided', floor_type: 'litter' },
+    { id: SHED3_ID, farm_id: FARM2_ID, shed_number: 1, name: 'Main Env Shed', capacity: 20000, shed_type: 'env_controlled', floor_type: 'slat' },
+  ];
+  const { error: shedErr } = await supabase.from('sheds').insert(shedsToInsert);
+  if (shedErr) console.error('Failed to create sheds:', shedErr);
+
+  // 5. Create Batches
+  console.log('Creating Batches...');
+  const thirtyDaysAgo = new Date();
+  thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+  const placementDate1 = thirtyDaysAgo.toISOString().split('T')[0];
+
+  const fifteenDaysAgo = new Date();
+  fifteenDaysAgo.setDate(fifteenDaysAgo.getDate() - 15);
+  const placementDate2 = fifteenDaysAgo.toISOString().split('T')[0];
+
+  // ONLY inserting columns added by our SQL script, to avoid "column does not exist" errors
+  const batchesToInsert = [
+    {
+      id: BATCH1_ID,
+      farm_id: FARM1_ID,
       customer_id: USER_ID,
-      district: 'Gorakhpur',
-      prediction_date: date.toISOString().split('T')[0],
-      prediction_status: 'completed',
-      predicted_price: Math.round(basePrice * 10) / 10,
-      confidence_interval_lower: Math.round((basePrice - 5) * 10) / 10,
-      confidence_interval_upper: Math.round((basePrice + 8) * 10) / 10,
-      model_version: 'ensemble_v3',
+      integrator_id: USER_ID,
+      batch_number: 101,
+      batch_id: 'B101',
+      breed: 'Cobb 430',
+      status: 'growing',
+      placement_date: placementDate1,
+      doc_placement_date: placementDate1,
+      birds_placed: 15000,
+      doc_count: 15000,
+      target_harvest_age: 42
+    },
+    {
+      id: BATCH2_ID,
+      farm_id: FARM2_ID,
+      customer_id: USER_ID,
+      integrator_id: USER_ID,
+      batch_number: 102,
+      batch_id: 'B102',
+      breed: 'Ross 308',
+      status: 'growing',
+      placement_date: placementDate2,
+      doc_placement_date: placementDate2,
+      birds_placed: 20000,
+      doc_count: 20000,
+      target_harvest_age: 40
+    }
+  ];
+  
+  const { error: batchErr } = await supabase.from('batches').insert(batchesToInsert);
+  if (batchErr) {
+    console.error('Failed to create batches:', batchErr);
+    return;
+  }
+
+  // 6. Generate Daily Logs (FCR, Mortality, Feed)
+  console.log('Generating 45 days of Daily Logs for metrics...');
+  const logsToInsert = [];
+  
+  // Batch 1 (Day 1 to 30)
+  for (let day = 1; day <= 30; day++) {
+    const logDate = new Date(thirtyDaysAgo);
+    logDate.setDate(logDate.getDate() + day);
+    
+    logsToInsert.push({
+      batch_id: BATCH1_ID,
+      farm_id: FARM1_ID,
+      log_date: logDate.toISOString().split('T')[0],
+      batch_day: day,
+      deaths_today: Math.floor(Math.random() * 5),
+      feed_consumed_kg: 50 + (day * 4)
     });
   }
-  const { error: predErr } = await supabase.from('predictions').insert(preds);
-  console.log(predErr ? `  Predictions error: ${predErr.message}` : `  ✅ ${preds.length} predictions seeded`);
 
-  console.log('\n=== ✅ Seed Complete ===');
-  console.log(`User: Rajesh Yadav | Phone: ${TEST_PHONE} | ID: ${USER_ID}`);
+  // Batch 2 (Day 1 to 15)
+  for (let day = 1; day <= 15; day++) {
+    const logDate = new Date(fifteenDaysAgo);
+    logDate.setDate(logDate.getDate() + day);
+    
+    logsToInsert.push({
+      batch_id: BATCH2_ID,
+      farm_id: FARM2_ID,
+      log_date: logDate.toISOString().split('T')[0],
+      batch_day: day,
+      deaths_today: Math.floor(Math.random() * 3),
+      feed_consumed_kg: 70 + (day * 4.5)
+    });
+  }
+
+  const { error: logErr } = await supabase.from('daily_logs').insert(logsToInsert);
+  if (logErr) {
+    console.error('Failed to create daily logs:', logErr);
+  }
+
+  // 8. Alerts
+  console.log('Creating active alerts...');
+  await supabase.from('alerts').insert([
+    {
+      type: 'disease',
+      severity: 'HIGH',
+      districts: ['Pune', 'Nashik'],
+      title_en: 'Avian Flu Outbreak detected in nearby district',
+      title_hi: 'Avian Flu Outbreak detected in nearby district',
+      body_en: 'Strict biosecurity measures required immediately.',
+      body_hi: 'Strict biosecurity measures required immediately.',
+      is_active: true,
+      issued_at: new Date().toISOString()
+    },
+    {
+      type: 'weather',
+      severity: 'MEDIUM',
+      districts: ['Nashik'],
+      title_en: 'Heatwave Warning (40°C+ expected)',
+      title_hi: 'Heatwave Warning (40°C+ expected)',
+      body_en: 'Ensure proper ventilation and cooling pads are operational.',
+      body_hi: 'Ensure proper ventilation and cooling pads are operational.',
+      is_active: true,
+      issued_at: new Date().toISOString()
+    }
+  ]);
+
+  // 9. Market Predictions
+  console.log('Creating market predictions...');
+  const todayStr = new Date().toISOString().split('T')[0];
+  await supabase.from('predictions').insert([
+    {
+      mandi: 'Pune',
+      prediction_date: todayStr,
+      predicted_at: new Date().toISOString(),
+      p10: 95, p50: 98, p90: 102,
+      sell_signal: 'HOLD',
+      confidence: 85,
+      model_version: 'v2.1',
+      is_demo: false
+    }
+  ]);
+
+  console.log('✅ Success! The dashboard should now be fully populated.');
 }
 
-function rand(len) {
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-  return Array.from({ length: len }, () => chars[Math.floor(Math.random() * chars.length)]).join('');
-}
-
-main().catch(e => { console.error(e); process.exit(1); });
+seedData();

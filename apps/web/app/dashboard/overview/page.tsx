@@ -91,7 +91,7 @@ export default async function OverviewPage() {
   if (supabase) {
     const { data } = await supabase
       .from('batches')
-      .select('id, feed_consumed_kg, avg_weight_kg, doc_weight_kg, birds_alive, birds_placed, status')
+      .select('id, current_bird_count, birds_placed, status, current_avg_weight_kg')
       .in('status', ['active', 'harvested'])
       .is('deleted_at', null);
     
@@ -116,18 +116,16 @@ export default async function OverviewPage() {
       }
       
       activeBatches = data.map((batch: { 
-        feed_consumed_kg?: number; 
-        avg_weight_kg?: number; 
-        doc_weight_kg?: number; 
-        birds_alive?: number; 
+        current_bird_count?: number; 
+        current_avg_weight_kg?: number; 
         birds_placed?: number; 
         status: string; 
         id: string;
       }) => ({
-        feed_consumed_kg: batch.feed_consumed_kg || 0,
-        avg_weight_kg: batch.avg_weight_kg || 0,
-        doc_weight_kg: batch.doc_weight_kg || 0.04,
-        birds_alive: batch.birds_alive || 0,
+        feed_consumed_kg: 0,
+        avg_weight_kg: batch.current_avg_weight_kg || 0,
+        doc_weight_kg: 0.04,
+        birds_alive: batch.current_bird_count || 0,
         birds_placed: batch.birds_placed || 0,
         status: batch.status as 'active' | 'harvested' | 'closed',
         total_revenue: batchSalesMap[batch.id] || 0,
