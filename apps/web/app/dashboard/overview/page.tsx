@@ -92,8 +92,7 @@ export default async function OverviewPage() {
     const { data } = await supabase
       .from('batches')
       .select('id, current_bird_count, birds_placed, status, current_avg_weight_kg')
-      .in('status', ['growing', 'active', 'harvested'])
-      .is('deleted_at', null);
+      .in('status', ['growing', 'harvested', 'closed']);
     
     if (data) {
       // Fetch batch sales for harvested batches
@@ -104,8 +103,7 @@ export default async function OverviewPage() {
         const { data: salesData } = await supabase
           .from('batch_sales')
           .select('batch_id, net_revenue')
-          .in('batch_id', batchIds)
-          .is('deleted_at', null);
+          .in('batch_id', batchIds);
         
         if (salesData) {
           batchSalesMap = salesData.reduce((acc: Record<string, number>, sale: { batch_id: string; net_revenue: number }) => {
