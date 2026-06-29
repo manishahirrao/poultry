@@ -73,22 +73,19 @@ async function fetchFarms() {
       district,
       village,
       farm_type,
-      max_birds,
-      whatsapp_connected,
+      total_capacity,
+      whatsapp_enabled,
       active_batch:batches(
         id,
         batch_number,
         birds_placed,
-        birds_alive,
+        current_bird_count,
         placement_date,
-        fcr,
-        mortality_pct,
-        last_log_date,
-        last_log_time,
-        target_days,
-        current_weight,
-        target_weight,
-        feed_consumed_kg
+        current_fcr,
+        total_mortality_count,
+        target_harvest_age,
+        current_avg_weight_kg,
+        target_harvest_weight_kg
       )
     `)
     .eq('integrator_id', customer.id)
@@ -102,21 +99,21 @@ async function fetchFarms() {
     name: farm.name,
     location: `${farm.district}, ${farm.village}`,
     type: (farm.farm_type || 'Broiler') as 'Broiler' | 'Layer' | 'Breeder',
-    maxBirds: farm.max_birds || 15000,
+    maxBirds: farm.total_capacity || 15000,
     status: 'active' as const,
-    whatsappConnected: farm.whatsapp_connected || false,
+    whatsappConnected: farm.whatsapp_enabled || false,
     currentBatch: farm.active_batch && farm.active_batch.length > 0 ? {
       batchNumber: farm.active_batch[0].batch_number,
       dayNumber: farm.active_batch[0].placement_date ? Math.floor((Date.now() - new Date(farm.active_batch[0].placement_date).getTime()) / (1000 * 60 * 60 * 24)) : 0,
-      targetDays: farm.active_batch[0].target_days || 42,
-      birdsAlive: farm.active_batch[0].birds_alive,
-      birdsPlaced: farm.active_batch[0].birds_placed,
-      mortalityPct: farm.active_batch[0].mortality_pct || 0,
-      currentWeight: (farm.active_batch[0].current_weight || 0) / 1000, // Convert grams to kg
-      targetWeight: (farm.active_batch[0].target_weight || 2100) / 1000, // Convert grams to kg
-      fcr: farm.active_batch[0].fcr || 0,
-      lastLogDate: farm.active_batch[0].last_log_date,
-      lastLogTime: farm.active_batch[0].last_log_time || null,
+      targetDays: farm.active_batch[0].target_harvest_age || 42,
+      birdsAlive: farm.active_batch[0].current_bird_count ?? farm.active_batch[0].birds_placed ?? 0,
+      birdsPlaced: farm.active_batch[0].birds_placed ?? 0,
+      mortalityPct: (farm.active_batch[0].total_mortality_count / (farm.active_batch[0].birds_placed || 1)) * 100 || 0,
+      currentWeight: farm.active_batch[0].current_avg_weight_kg || 0, // already in kg
+      targetWeight: farm.active_batch[0].target_harvest_weight_kg || 2.1, // already in kg
+      fcr: farm.active_batch[0].current_fcr || 0,
+      lastLogDate: null,
+      lastLogTime: null,
     } : undefined,
   }));
 

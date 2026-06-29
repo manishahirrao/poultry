@@ -2,12 +2,13 @@
 > web@1.0.0 typecheck
 > tsc --noEmit
 
-app/dashboard/overview/page.tsx(118,7): error TS2322: Type '{ feed_consumed_kg: number; avg_weight_kg: number; doc_weight_kg: number; birds_alive: number; birds_placed: number; status: "active" | "growing" | "harvested" | "closed"; total_revenue: number; }[]' is not assignable to type 'PortfolioBatchData[]'.
+app/dashboard/farms/FarmsClient.tsx(211,94): error TS2339: Property 'split' does not exist on type 'never'.
+app/dashboard/overview/page.tsx(116,7): error TS2322: Type '{ feed_consumed_kg: number; avg_weight_kg: number; doc_weight_kg: number; birds_alive: number; birds_placed: number; status: "active" | "growing" | "harvested" | "closed"; total_revenue: number; }[]' is not assignable to type 'PortfolioBatchData[]'.
   Type '{ feed_consumed_kg: number; avg_weight_kg: number; doc_weight_kg: number; birds_alive: number; birds_placed: number; status: "active" | "harvested" | "closed" | "growing"; total_revenue: number; }' is not assignable to type 'PortfolioBatchData'.
     Types of property 'status' are incompatible.
       Type '"active" | "growing" | "harvested" | "closed"' is not assignable to type '"active" | "harvested" | "closed" | undefined'.
         Type '"growing"' is not assignable to type '"active" | "harvested" | "closed" | undefined'.
-app/dashboard/overview/page.tsx(146,38): error TS2367: This comparison appears to be unintentional because the types '"harvested" | "closed" | undefined' and '"growing"' have no overlap.
+app/dashboard/overview/page.tsx(144,38): error TS2367: This comparison appears to be unintentional because the types '"harvested" | "closed" | undefined' and '"growing"' have no overlap.
 npm error Lifecycle script `typecheck` failed with error:
 npm error code 2
 npm error path C:\Users\manis\OneDrive\Desktop\poutrysense\apps\web

@@ -180,8 +180,8 @@ export default async function FarmsPage({
       batchNumber: farm.active_batch[0].batch_number,
       dayNumber: farm.active_batch[0].placement_date ? Math.floor((Date.now() - new Date(farm.active_batch[0].placement_date).getTime()) / (1000 * 60 * 60 * 24)) : 0,
       targetDays: farm.active_batch[0].target_harvest_age || 42,
-      birdsAlive: farm.active_batch[0].current_bird_count,
-      birdsPlaced: farm.active_batch[0].birds_placed,
+      birdsAlive: farm.active_batch[0].current_bird_count ?? farm.active_batch[0].birds_placed ?? 0,
+      birdsPlaced: farm.active_batch[0].birds_placed ?? 0,
       mortalityPct: (farm.active_batch[0].total_mortality_count / (farm.active_batch[0].birds_placed || 1)) * 100 || 0,
       currentWeight: farm.active_batch[0].current_avg_weight_kg || 0, // already in kg
       targetWeight: farm.active_batch[0].target_harvest_weight_kg || 2.1, // already in kg
