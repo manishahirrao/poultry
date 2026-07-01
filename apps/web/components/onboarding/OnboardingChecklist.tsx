@@ -63,7 +63,7 @@ export function OnboardingChecklist({ customerId }: OnboardingChecklistProps) {
     }
   };
 
-  const completedSteps = progress ? Object.values(progress).filter(v => v === true).length - 1 : 0; // -1 for dismissed field
+  const completedSteps = progress ? steps.filter(s => progress[s.id as keyof OnboardingProgress] === true).length : 0;
   const totalSteps = steps.length;
   const isComplete = completedSteps === totalSteps;
 

@@ -46,7 +46,7 @@ async function getBatchReportData(batchId: string, integratorId: string) {
         village,
         state,
         farm_type,
-        capacity
+        total_capacity
       ),
       daily_logs (
         id,
@@ -112,7 +112,7 @@ async function getBatchReportData(batchId: string, integratorId: string) {
     .from('predictions')
     .select('p50')
     .eq('mandi', batch.farm?.district || '')
-    .eq('date', batch.closed_at || new Date().toISOString().split('T')[0])
+    .eq('date', new Date().toISOString().split('T')[0])
     .single();
 
   return {
@@ -182,16 +182,16 @@ export default async function BatchReportPage({ searchParams }: PageProps) {
 
   // Calculate derived metrics
   const totalBirdsPlaced = batch.birds_placed || 0;
-  const totalBirdsHarvested = batch.birds_harvested || totalBirdsPlaced;
-  const totalDeaths = batch.cumulative_deaths || 0;
+  const totalBirdsHarvested = batch.birds_harvested || batch.current_bird_count || totalBirdsPlaced;
+  const totalDeaths = batch.total_mortality_count || 0;
   const mortalityPct = totalBirdsPlaced > 0 ? (totalDeaths / totalBirdsPlaced) * 100 : 0;
   
   const dailyLogs = batch.daily_logs || [];
   const totalFeedConsumed = dailyLogs.reduce((sum: number, log: any) => sum + (log.feed_consumed_kg || 0), 0);
-  const avgWeight = batch.avg_weight_g || 0;
+  const avgWeight = (batch.current_avg_weight_kg * 1000) || 0; // Convert kg to g for this variable since it expects g
   
-  const durationDays = batch.placement_date && batch.closed_at 
-    ? Math.floor((new Date(batch.closed_at).getTime() - new Date(batch.placement_date).getTime()) / (1000 * 60 * 60 * 24))
+  const durationDays = batch.placement_date
+    ? Math.floor((new Date().getTime() - new Date(batch.placement_date).getTime()) / (1000 * 60 * 60 * 24))
     : 0;
 
   const feedPurchases = batch.feed_purchases || [];

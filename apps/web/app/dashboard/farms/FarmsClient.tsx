@@ -97,7 +97,7 @@ async function fetchFarms() {
   const transformedFarms = farms.map((farm: any) => ({
     id: farm.id,
     name: farm.name,
-    location: `${farm.district}, ${farm.village}`,
+    location: [farm.district, farm.village].filter(Boolean).join(', ') || farm.district || 'Unknown',
     type: (farm.farm_type || 'Broiler') as 'Broiler' | 'Layer' | 'Breeder',
     maxBirds: farm.total_capacity || 15000,
     status: 'active' as const,
@@ -208,7 +208,7 @@ const FarmsClient = function FarmsClient({ initialFarms, initialKpi }: FarmsClie
       .filter((farm) => {
         // Pending logs filter
         if (showPendingLogsOnly) {
-          const lastLogDate = farm.currentBatch?.lastLogDate ? farm.currentBatch.lastLogDate.split('T')[0] : null;
+          const lastLogDate = farm.currentBatch?.lastLogDate ? String(farm.currentBatch.lastLogDate).split('T')[0] : null;
           if (!lastLogDate || lastLogDate >= today) {
             return false;
           }

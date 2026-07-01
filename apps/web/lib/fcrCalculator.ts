@@ -624,7 +624,7 @@ export interface PortfolioBatchData {
   doc_weight_kg?: number;
   birds_alive?: number;
   birds_placed?: number;
-  status?: 'active' | 'harvested' | 'closed';
+  status?: 'active' | 'harvested' | 'closed' | 'growing';
   total_revenue?: number;
 }
 

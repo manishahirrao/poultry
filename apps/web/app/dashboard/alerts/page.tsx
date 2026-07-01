@@ -76,7 +76,6 @@ function AlertsPageContent() {
           .or(`district.eq.${customerDistrict},district.eq.all`)
           .gt('expires_at', new Date().toISOString())
           .order('severity', { ascending: true })
-          .order('created_at', { ascending: false })
           .limit(20);
 
         if (alertsError) {

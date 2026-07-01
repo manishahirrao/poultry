@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts'
 import useSWR from 'swr'
+import { useLanguage } from '@/providers/LanguageProvider'
 
 interface CommodityPriceRowProps {
   commodity: {
@@ -23,6 +24,8 @@ export function CommodityPriceRow({ commodity }: CommodityPriceRowProps) {
     fetcher
   )
 
+  const { language } = useLanguage()
+
   const deltaPositive = commodity.sevenDayDelta >= 0
   const deltaColour = deltaPositive ? 'text-red-600' : 'text-green-600'
   // For feed costs: price UP = bad for farmer (red), price DOWN = good (green)
@@ -37,8 +40,12 @@ export function CommodityPriceRow({ commodity }: CommodityPriceRowProps) {
         aria-expanded={expanded}
       >
         <div>
-          <p className="font-medium text-gray-900">{commodity.name}</p>
-          <p className="text-xs text-gray-500">{commodity.nameHindi} · {commodity.unit}</p>
+          <p className="font-medium text-gray-900">
+            {language === 'hi' ? commodity.nameHindi : commodity.name}
+          </p>
+          <p className="text-xs text-gray-500">
+            {language === 'hi' ? commodity.name : commodity.nameHindi} · {commodity.unit}
+          </p>
         </div>
         <div className="flex items-center gap-4">
           <div className="text-right">

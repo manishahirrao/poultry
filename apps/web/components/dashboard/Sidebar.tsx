@@ -197,7 +197,7 @@ const NAV_ITEMS: NavItem[] = [
   {
     label: 'GC / लागत',
     labelHi: 'GC / लागत',
-    href: '/dashboard/gc',
+    href: '/dashboard/reports/gc-calculation',
     icon: Calculator,
     segments: ['S2', 'S3', 'S4', 'S5', 'S6', 'admin'],
     roles: ['all'],

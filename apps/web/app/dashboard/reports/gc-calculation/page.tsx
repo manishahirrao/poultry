@@ -77,7 +77,7 @@ PERFORMANCE METRICS
 -------------------
 Total Birds: ${totalBirds || 'N/A'}
 Average Weight (kg): ${avgWeight || 'N/A'}
-FCV: ${fcv || 'N/A'}
+FCR: ${fcv || 'N/A'}
 Mortality %: ${mortality || 'N/A'}
 
 GC CALCULATION
@@ -257,14 +257,14 @@ This is an official GC calculation report for the integrator records.
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">FCV</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">FCR</label>
                 <input
                   type="number"
                   step="0.01"
                   value={fcv}
                   onChange={(e) => setFcv(e.target.value)}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                  placeholder="Enter FCV"
+                  placeholder="Enter FCR"
                 />
               </div>
               <div>

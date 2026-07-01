@@ -84,7 +84,7 @@ export function PortfolioKPIBar({
       <FarmMetricCard
         label="Total Revenue"
         labelHi="कुल राजस्व"
-        value={`₹${totalRevenue.toLocaleString('en-IN')}`}
+        value={`₹${totalRevenue >= 10000000 ? (totalRevenue / 10000000).toFixed(1) + 'Cr' : totalRevenue >= 100000 ? (totalRevenue / 100000).toFixed(1) + 'L' : totalRevenue.toLocaleString('en-IN')}`}
         trend={totalRevenueTrend}
         trendDirection={totalRevenueTrend && totalRevenueTrend > 0 ? 'up' : totalRevenueTrend && totalRevenueTrend < 0 ? 'down' : 'neutral'}
         statusColour={totalRevenue > 0 ? 'green' : 'neutral'}

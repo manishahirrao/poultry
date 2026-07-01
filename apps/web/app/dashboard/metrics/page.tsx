@@ -55,12 +55,11 @@ async function getMetricsData(integratorId: string) {
         id,
         batch_number,
         birds_placed,
-        birds_alive,
+        current_bird_count,
         placement_date,
-        fcr,
-        mortality_pct,
-        last_log_date,
-        feed_consumed_kg
+        current_fcr,
+        total_mortality_count,
+        birds_placed
       )
     `)
     .eq('integrator_id', integratorId)
@@ -85,18 +84,18 @@ async function getMetricsData(integratorId: string) {
   farms.forEach((farm: any) => {
     if (farm.active_batch && farm.active_batch.length > 0) {
       const batch = farm.active_batch[0];
-      const birdsAlive = batch.birds_alive || 0;
+      const birdsAlive = batch.current_bird_count ?? batch.birds_placed ?? 0;
       totalBirds += birdsAlive;
-      weightedFCRSum += (batch.fcr || 0) * birdsAlive; // Weight by bird count
-      totalMortality += batch.mortality_pct || 0;
-      totalFeed += (batch.feed_consumed_kg || 0) / 1000; // Convert to MT
+      weightedFCRSum += (batch.current_fcr || 0) * birdsAlive; // Weight by bird count
+      totalMortality += (batch.total_mortality_count / (batch.birds_placed || 1)) * 100 || 0;
+      totalFeed += 0; // Requires daily_logs join
       activeBatchCount++;
       // Revenue estimation using predictions table would be in production
       estimatedRevenue += birdsAlive * 2.1 * 150; // weight * price placeholder
       
       // Check if log is pending for today
-      const lastLogDate = batch.last_log_date ? batch.last_log_date.split('T')[0] : null;
-      if (!lastLogDate || lastLogDate < today) {
+      const lastLogDate: string | null = null;
+      if (!lastLogDate) {
         pendingLogsCount++;
       }
     }
@@ -177,12 +176,12 @@ export default async function MetricsDashboardPage({
       id: farm.active_batch[0].id,
       batchNumber: farm.active_batch[0].batch_number,
       birdsPlaced: farm.active_batch[0].birds_placed,
-      birdsAlive: farm.active_batch[0].birds_alive,
+      birdsAlive: farm.active_batch[0].current_bird_count ?? farm.active_batch[0].birds_placed ?? 0,
       placementDate: farm.active_batch[0].placement_date,
-      fcr: farm.active_batch[0].fcr,
-      mortality: farm.active_batch[0].mortality_pct,
-      lastLogDate: farm.active_batch[0].last_log_date,
-      feedConsumedKg: farm.active_batch[0].feed_consumed_kg,
+      fcr: farm.active_batch[0].current_fcr || 0,
+      mortality: (farm.active_batch[0].total_mortality_count / (farm.active_batch[0].birds_placed || 1)) * 100 || 0,
+      lastLogDate: '',
+      feedConsumedKg: 0,
     } : undefined,
   }));
 

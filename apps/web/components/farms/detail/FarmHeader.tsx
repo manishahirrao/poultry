@@ -159,7 +159,7 @@ export function FarmHeader({ farm, batch }: FarmHeaderProps) {
                 </span>
               )}
               <span className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">
-                Max {farm.capacity.toLocaleString()} birds
+                Max {farm.capacity ? farm.capacity.toLocaleString() : 'N/A'} birds
               </span>
             </div>
           </div>
@@ -245,14 +245,14 @@ export function FarmHeader({ farm, batch }: FarmHeaderProps) {
               <div>
                 <p className="text-xs text-gray-600">Birds</p>
                 <p className="text-sm font-semibold text-gray-900">
-                  {batch.birds_alive.toLocaleString()} / {batch.birds_placed.toLocaleString()}
+                  {(batch.birds_alive || 0).toLocaleString()} / {(batch.birds_placed || 0).toLocaleString()}
                 </p>
-                <p className="text-xs text-gray-500">Mortality: {batch.mortality.toFixed(2)}%</p>
+                <p className="text-xs text-gray-500">Mortality: {(batch.mortality || 0).toFixed(2)}%</p>
               </div>
               <div>
                 <p className="text-xs text-gray-600">Weight</p>
                 <p className="text-sm font-semibold text-gray-900">
-                  {batch.current_avg_weight.toFixed(0)}g (target: {batch.target_harvest_weight}g)
+                  {(batch.current_avg_weight || 0).toFixed(0)}g (target: {batch.target_harvest_weight}g)
                 </p>
                 <p className="text-xs text-gray-500">Breed: {batch.breed}</p>
               </div>

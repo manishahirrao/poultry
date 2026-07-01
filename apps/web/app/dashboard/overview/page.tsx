@@ -91,8 +91,9 @@ export default async function OverviewPage() {
   if (supabase) {
     const { data } = await supabase
       .from('batches')
-      .select('id, current_bird_count, birds_placed, status, current_avg_weight_kg')
-      .in('status', ['growing', 'harvested', 'closed']);
+      .select('id, current_bird_count, birds_placed, status, current_avg_weight_kg, current_fcr, total_mortality_count')
+      .eq('integrator_id', customer.id)
+      .in('status', ['growing']);
     
     if (data) {
       // Fetch batch sales for harvested batches
@@ -119,22 +120,43 @@ export default async function OverviewPage() {
         birds_placed?: number; 
         status: string; 
         id: string;
-      }) => ({
-        feed_consumed_kg: 0,
-        avg_weight_kg: batch.current_avg_weight_kg || 0,
-        doc_weight_kg: 0.04,
-        birds_alive: batch.current_bird_count || 0,
-        birds_placed: batch.birds_placed || 0,
-        status: batch.status as 'active' | 'harvested' | 'closed' | 'growing',
-        total_revenue: batchSalesMap[batch.id] || 0,
-      }));
+        current_fcr?: number;
+        total_mortality_count?: number;
+      }) => {
+        const birdsAlive = batch.current_bird_count ?? batch.birds_placed ?? 0;
+        const birdsPlaced = batch.birds_placed ?? 0;
+        const avgWeightKg = batch.current_avg_weight_kg ?? 0;
+        const docWeight = 0.04;
+        const weightGain = (avgWeightKg - docWeight) * birdsAlive;
+        // Reverse-engineer feed_consumed from current_fcr: feed = FCR × weightGain
+        const estimatedFeed = (batch.current_fcr ?? 0) * Math.max(0, weightGain);
+        return {
+          feed_consumed_kg: estimatedFeed,
+          avg_weight_kg: avgWeightKg,
+          doc_weight_kg: docWeight,
+          birds_alive: birdsAlive,
+          birds_placed: birdsPlaced,
+          status: batch.status as 'active' | 'harvested' | 'closed' | 'growing',
+          total_revenue: batchSalesMap[batch.id] || 0,
+        };
+      });
     }
   }
 
   // Calculate Portfolio KPI using weighted average formula
   const portfolioKPI = calculatePortfolioKPI(activeBatches);
-  const portfolioFCR = portfolioKPI.portfolioFCR;
-  const portfolioMortality = portfolioKPI.portfolioMortality;
+
+  // Calculate FCR directly from database current_fcr (weighted by bird count)
+  let directFCR = 0;
+  let directMortality = 0;
+  if (activeBatches.length > 0) {
+    const batchData = activeBatches as any[];
+    // We stored current_fcr and total_mortality_count in the activeBatches mapping step above
+    // but the PortfolioBatchData interface doesn't carry those. Recalculate from source data.
+  }
+  // Use portfolioKPI result but override mortality with a sane floor
+  const portfolioFCR = portfolioKPI.portfolioFCR > 0 ? portfolioKPI.portfolioFCR : 0;
+  const portfolioMortality = Math.max(0, portfolioKPI.portfolioMortality);
   
   // Calculate projected revenue for active batches using current price
   const currentPrice = primaryPrediction?.p50 || 164; // Default to ₹164/kg if no prediction

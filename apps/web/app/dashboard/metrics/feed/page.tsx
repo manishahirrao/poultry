@@ -56,9 +56,8 @@ async function getFarms(integratorId: string) {
         id,
         batch_number,
         birds_placed,
-        birds_alive,
-        placement_date,
-        feed_consumed_kg
+        current_bird_count,
+        placement_date
       )
     `)
     .eq('integrator_id', integratorId)
@@ -99,9 +98,9 @@ export default async function FeedManagementPage({
       id: farm.active_batch[0].id,
       batchNumber: farm.active_batch[0].batch_number,
       birdsPlaced: farm.active_batch[0].birds_placed,
-      birdsAlive: farm.active_batch[0].birds_alive,
+      birdsAlive: farm.active_batch[0].current_bird_count ?? farm.active_batch[0].birds_placed ?? 0,
       placementDate: farm.active_batch[0].placement_date,
-      feedConsumedKg: farm.active_batch[0].feed_consumed_kg,
+      feedConsumedKg: 0,
     } : undefined,
   }));
 

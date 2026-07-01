@@ -113,7 +113,6 @@ async function getBatches(integratorId: string) {
       batch_number,
       status,
       placement_date,
-      closed_at,
       farm:farms(id, name)
     `)
     .in('farm_id', (
@@ -140,8 +139,8 @@ export default async function ReportsPage() {
   const farms = await getFarms(integratorId);
   const batches = await getBatches(integratorId);
 
-  const closedBatches = batches.filter(b => b.status === 'closed');
-  const activeBatches = batches.filter(b => b.status === 'active');
+  const closedBatches = batches.filter(b => b.status === 'closed' || b.status === 'harvested');
+  const activeBatches = batches.filter(b => b.status === 'growing');
 
   return (
     <ReportsPageClient

@@ -111,7 +111,11 @@ async function seedData() {
       doc_placement_date: placementDate1,
       birds_placed: 15000,
       doc_count: 15000,
-      target_harvest_age: 42
+      target_harvest_age: 42,
+      current_bird_count: 14500,
+      total_mortality_count: 500,
+      current_fcr: 1.25,
+      current_avg_weight_kg: 1.4
     },
     {
       id: BATCH2_ID,
@@ -126,7 +130,11 @@ async function seedData() {
       doc_placement_date: placementDate2,
       birds_placed: 20000,
       doc_count: 20000,
-      target_harvest_age: 40
+      target_harvest_age: 40,
+      current_bird_count: 19800,
+      total_mortality_count: 200,
+      current_fcr: 1.10,
+      current_avg_weight_kg: 0.8
     }
   ];
   

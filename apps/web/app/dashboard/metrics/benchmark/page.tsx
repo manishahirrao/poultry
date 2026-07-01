@@ -169,7 +169,10 @@ export default async function BenchmarkPage({
       {/* Empty State - No completed batches */}
       {!hasCompletedBatches && (
         <FarmEmptyState
-          variant="no_batch"
+          variant="no_data"
+          heading="No Completed Batches"
+          sub="Benchmark comparison requires at least one harvested batch to compare performance against industry standards."
+          ctaText="Go to My Farms"
           ctaHref="/dashboard/farms"
         />
       )}

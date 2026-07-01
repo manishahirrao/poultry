@@ -285,8 +285,8 @@ export function TopHeader({ customer }: TopHeaderProps) {
     <>
       <header className="h-[60px] bg-white border-b border-[#E3EDE7] px-4 flex items-center justify-between gap-4 flex-shrink-0 z-20">
         {/* Left: Breadcrumb */}
-        <div className="flex items-center gap-2 flex-1 min-w-0">
-          <nav className="text-sm font-medium text-gray-700 truncate flex items-center gap-1.5" aria-label="Breadcrumb">
+        <div className="flex items-center gap-2 whitespace-nowrap">
+          <nav className="text-sm font-medium text-gray-700 flex items-center gap-1.5" aria-label="Breadcrumb">
             <House size={16} weight="duotone" className="text-gray-400 mb-[2px]" />
             {breadcrumb}
           </nav>

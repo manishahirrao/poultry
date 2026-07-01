@@ -57,10 +57,9 @@ async function getFarms(integratorId: string) {
         id,
         batch_number,
         birds_placed,
-        birds_alive,
+        current_bird_count,
         placement_date,
-        mortality_pct,
-        cumulative_deaths
+        total_mortality_count
       )
     `)
     .eq('integrator_id', integratorId)
@@ -113,10 +112,10 @@ export default async function MortalityTrackingPage({
       id: farm.active_batch[0].id,
       batchNumber: farm.active_batch[0].batch_number,
       birdsPlaced: farm.active_batch[0].birds_placed,
-      birdsAlive: farm.active_batch[0].birds_alive,
+      birdsAlive: farm.active_batch[0].current_bird_count ?? farm.active_batch[0].birds_placed ?? 0,
       placementDate: farm.active_batch[0].placement_date,
-      mortality: farm.active_batch[0].mortality_pct,
-      cumulativeDeaths: farm.active_batch[0].cumulative_deaths,
+      mortality: (farm.active_batch[0].total_mortality_count / (farm.active_batch[0].birds_placed || 1)) * 100 || 0,
+      cumulativeDeaths: farm.active_batch[0].total_mortality_count || 0,
     } : undefined,
   }));
 

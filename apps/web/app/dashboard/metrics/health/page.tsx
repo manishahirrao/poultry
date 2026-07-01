@@ -57,7 +57,7 @@ async function getFarms(integratorId: string) {
         id,
         batch_number,
         birds_placed,
-        birds_alive,
+        current_bird_count,
         placement_date
       )
     `)
@@ -102,8 +102,8 @@ export default async function HealthTrackingPage() {
       id: farm.active_batch[0].id,
       batchNumber: farm.active_batch[0].batch_number,
       birdsPlaced: farm.active_batch[0].birds_placed,
-      birdsAlive: farm.active_batch[0].birds_alive,
-      placementDate: farm.active_batch[0].placementDate,
+      birdsAlive: farm.active_batch[0].current_bird_count ?? farm.active_batch[0].birds_placed ?? 0,
+      placementDate: farm.active_batch[0].placement_date,
     } : undefined,
   }));
 
