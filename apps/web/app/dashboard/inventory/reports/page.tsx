@@ -256,8 +256,8 @@ export default function StockReportsPage() {
     ]);
 
     setFarmers([
-      { id: '1', farmer_code: 'FMR-001', full_name: 'Ramesh Kumar', village: 'Pipraich', supervisor_name: 'Rajesh Singh' },
-      { id: '2', farmer_code: 'FMR-002', full_name: 'Suresh Yadav', village: 'Chauri Chaura', supervisor_name: 'Amit Verma' },
+      { id: '1', farmer_code: 'FMR-001', full_name: 'Farmer 1', village: 'Village A', supervisor_name: 'Supervisor 1' },
+      { id: '2', farmer_code: 'FMR-002', full_name: 'Farmer 2', village: 'Village B', supervisor_name: 'Supervisor 2' },
     ]);
 
     setProducts([

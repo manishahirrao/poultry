@@ -178,9 +178,9 @@ export default function DailyReport({ onSuccess, onCancel }: DailyReportProps) {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="">All supervisors</SelectItem>
-                  <SelectItem value="sup1">Rajesh Kumar</SelectItem>
-                  <SelectItem value="sup2">Amit Singh</SelectItem>
-                  <SelectItem value="sup3">Sunil Verma</SelectItem>
+                  <SelectItem value="sup1">Supervisor 1</SelectItem>
+                  <SelectItem value="sup2">Supervisor 2</SelectItem>
+                  <SelectItem value="sup3">Supervisor 3</SelectItem>
                 </SelectContent>
               </Select>
             </div>

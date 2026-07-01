@@ -76,7 +76,7 @@ export function OnboardingForm({ userId }: { userId: string }) {
             value={name}
             onChange={(e) => setName(e.target.value)}
             className="w-full h-12 pl-11 pr-4 rounded-xl border border-neutral-200 bg-neutral-50 focus:bg-white focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all font-jakarta text-[0.9375rem]"
-            placeholder="E.g. Rajesh Yadav"
+            placeholder="Enter your full name"
             required
             minLength={2}
           />

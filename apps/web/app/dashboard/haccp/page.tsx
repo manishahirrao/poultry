@@ -54,7 +54,7 @@ function HACCPContent() {
 
   // Mock supervisor data - in production, this would come from auth
   const supervisorId = 'supervisor-001';
-  const supervisorName = 'Rajesh Kumar';
+  const supervisorName = 'Current Supervisor';
 
   // Mock facility data - in production, this would come from customer profile
   const facilityName = 'Gorakhpur Poultry Processing Unit';
