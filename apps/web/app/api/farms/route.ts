@@ -306,6 +306,7 @@ export async function POST(request: NextRequest) {
       const { data: batch, error: batchError } = await (supabase.from('batches') as any)
         .insert({
           farm_id: (farm as any).id,
+          customer_id: customer.id,
           batch_number: nextBatchNumber,
           breed: farmData.batch.breed,
           doc_supplier: farmData.batch.doc_supplier,
@@ -316,7 +317,7 @@ export async function POST(request: NextRequest) {
           target_market_weight: farmData.batch.target_market_weight,
           feed_supplier: farmData.batch.feed_supplier,
           notes: farmData.batch.notes,
-          status: 'active',
+          status: 'growing',
         })
         .select()
         .single();
