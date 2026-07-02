@@ -14,7 +14,6 @@ export default function AdminLicenseGenerator() {
     payment_amount: 105000,
     payment_reference: '',
     validity_days: 30,
-    validity_days: 30,
     assigned_phone: '',
     farmer_details: {
       name: '',
