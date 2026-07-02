@@ -14,7 +14,14 @@ export default function AdminLicenseGenerator() {
     payment_amount: 105000,
     payment_reference: '',
     validity_days: 30,
-    assigned_phone: ''
+    validity_days: 30,
+    assigned_phone: '',
+    farmer_details: {
+      name: '',
+      farmName: '',
+      district: '',
+      poultryType: 'Broiler'
+    }
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -72,17 +79,69 @@ export default function AdminLicenseGenerator() {
           </select>
         </div>
 
-        {/* Customer Phone (Optional) */}
-        <div>
-          <label className="block text-sm font-semibold text-neutral-900 mb-2 font-jakarta">Assign to Phone Number</label>
-          <input 
-            type="tel"
-            value={formData.assigned_phone}
-            onChange={e => setFormData({...formData, assigned_phone: e.target.value})}
-            placeholder="e.g. 9876543210"
-            className="w-full h-12 px-4 rounded-xl border border-neutral-200 bg-neutral-50 focus:bg-white focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all font-jakarta"
-          />
-          <p className="text-xs text-neutral-500 mt-1 font-jakarta">If provided, the customer will be auto-activated upon login.</p>
+        {/* Customer Phone & CRM Details */}
+        <div className="p-5 bg-neutral-50 rounded-2xl border border-neutral-200 space-y-5">
+          <div>
+            <h3 className="text-base font-bold text-neutral-900 font-sora">Farmer Details (CRM)</h3>
+            <p className="text-xs text-neutral-500 font-jakarta mt-1">Pre-onboard the farmer. They will automatically bypass onboarding when they log in.</p>
+          </div>
+          
+          <div>
+            <label className="block text-sm font-semibold text-neutral-900 mb-2 font-jakarta">Assign to Phone Number *</label>
+            <input 
+              type="tel"
+              required
+              value={formData.assigned_phone}
+              onChange={e => setFormData({...formData, assigned_phone: e.target.value})}
+              placeholder="e.g. 9876543210"
+              className="w-full h-12 px-4 rounded-xl border border-neutral-300 bg-white focus:bg-white focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all font-jakarta"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div>
+              <label className="block text-sm font-semibold text-neutral-900 mb-2 font-jakarta">Farmer Name</label>
+              <input 
+                type="text"
+                value={formData.farmer_details.name}
+                onChange={e => setFormData({...formData, farmer_details: {...formData.farmer_details, name: e.target.value}})}
+                placeholder="e.g. Rajesh Kumar"
+                className="w-full h-12 px-4 rounded-xl border border-neutral-300 bg-white focus:bg-white focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all font-jakarta"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-semibold text-neutral-900 mb-2 font-jakarta">Farm Name</label>
+              <input 
+                type="text"
+                value={formData.farmer_details.farmName}
+                onChange={e => setFormData({...formData, farmer_details: {...formData.farmer_details, farmName: e.target.value}})}
+                placeholder="e.g. Sunrise Poultry"
+                className="w-full h-12 px-4 rounded-xl border border-neutral-300 bg-white focus:bg-white focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all font-jakarta"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-semibold text-neutral-900 mb-2 font-jakarta">District/Location</label>
+              <input 
+                type="text"
+                value={formData.farmer_details.district}
+                onChange={e => setFormData({...formData, farmer_details: {...formData.farmer_details, district: e.target.value}})}
+                placeholder="e.g. Pune"
+                className="w-full h-12 px-4 rounded-xl border border-neutral-300 bg-white focus:bg-white focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all font-jakarta"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-semibold text-neutral-900 mb-2 font-jakarta">Poultry Type</label>
+              <select 
+                value={formData.farmer_details.poultryType}
+                onChange={e => setFormData({...formData, farmer_details: {...formData.farmer_details, poultryType: e.target.value}})}
+                className="w-full h-12 px-4 rounded-xl border border-neutral-300 bg-white focus:bg-white focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all font-jakarta"
+              >
+                <option value="Broiler">Broiler</option>
+                <option value="Layer">Layer</option>
+                <option value="Breeder">Breeder</option>
+              </select>
+            </div>
+          </div>
         </div>
 
         {/* Payment Details */}

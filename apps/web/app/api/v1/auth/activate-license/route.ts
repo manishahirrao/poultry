@@ -88,15 +88,18 @@ export async function POST(request: NextRequest) {
     // 5. Ensure customer record exists
     const { data: custData } = await supabase.from('customers').select('id').eq('id', user.id).single();
     if (!custData) {
+        const farmerDetails = keyData.metadata?.farmer_details || {};
         await supabase.from('customers').insert({
             id: user.id,
             phone: phone,
-            name: 'Farmer',
+            name: farmerDetails.name || 'Farmer',
+            farm_name: farmerDetails.farmName || null,
+            district: farmerDetails.district || 'unknown',
+            poultry_type: farmerDetails.poultryType || null,
             segment: 'S1',
             role: 'user',
             plan: keyData.plan_name,
-            subscription_expires_at: expires_at.toISOString(),
-            district: 'unknown'
+            subscription_expires_at: expires_at.toISOString()
         });
     }
 

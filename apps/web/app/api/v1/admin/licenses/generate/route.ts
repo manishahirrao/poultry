@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { plan_name, payment_method, payment_amount, payment_reference, validity_days, assigned_phone } = body;
+    const { plan_name, payment_method, payment_amount, payment_reference, validity_days, assigned_phone, farmer_details } = body;
 
     const keyCode = generateKeyCode();
 
@@ -33,7 +33,8 @@ export async function POST(request: NextRequest) {
       payment_amount,
       payment_reference,
       validity_days,
-      assigned_phone: assigned_phone || null
+      assigned_phone: assigned_phone || null,
+      metadata: farmer_details ? { farmer_details } : {}
     };
 
     const { data: responseData, error } = await supabase.from('license_keys').insert(data).select().single();
