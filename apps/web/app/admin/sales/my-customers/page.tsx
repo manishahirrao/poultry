@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Users, AlertTriangle, Calendar, CheckCircle2, Loader2, AlertCircle } from 'lucide-react';
+import { Users, AlertTriangle, Calendar, CheckCircle2, Loader2, AlertCircle, Key } from 'lucide-react';
 import { createClient } from '@/utils/supabase/client';
 import { format, differenceInDays } from 'date-fns';
 
@@ -12,7 +12,11 @@ type RenewalStats = {
   status: string;
   expires_at: string;
   days_remaining: number;
-  status_flag: 'healthy' | 'warning' | 'expired';
+  key_code: string;
+  farm_name: string;
+  district: string;
+  poultry_type: string;
+  status_flag: 'healthy' | 'warning' | 'expired' | 'pending';
 };
 
 export default function MyCustomersPage() {
@@ -111,7 +115,33 @@ export default function MyCustomersPage() {
                     </div>
                     <div>
                       <h3 className="font-bold text-neutral-900 text-lg font-sora">{customer.customer_name}</h3>
-                      <p className="text-sm font-jakarta text-neutral-500 font-mono tracking-tight">{customer.phone}</p>
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1 text-sm font-jakarta text-neutral-500">
+                        <span className="font-mono tracking-tight font-medium text-neutral-700">{customer.phone}</span>
+                        {customer.key_code && customer.key_code !== 'N/A' && (
+                          <span className="flex items-center gap-1 bg-neutral-100 px-2 py-0.5 rounded text-xs font-mono text-neutral-600">
+                            <Key size={12} />
+                            {customer.key_code}
+                          </span>
+                        )}
+                        {customer.farm_name && customer.farm_name !== 'N/A' && (
+                          <span className="flex items-center gap-1">
+                            <span className="w-1 h-1 rounded-full bg-neutral-300"></span>
+                            {customer.farm_name}
+                          </span>
+                        )}
+                        {customer.district && customer.district !== 'N/A' && (
+                          <span className="flex items-center gap-1">
+                            <span className="w-1 h-1 rounded-full bg-neutral-300"></span>
+                            {customer.district}
+                          </span>
+                        )}
+                        {customer.poultry_type && customer.poultry_type !== 'N/A' && (
+                          <span className="flex items-center gap-1">
+                            <span className="w-1 h-1 rounded-full bg-neutral-300"></span>
+                            {customer.poultry_type}
+                          </span>
+                        )}
+                      </div>
                     </div>
                   </div>
 

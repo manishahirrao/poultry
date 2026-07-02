@@ -37,7 +37,7 @@ export async function GET(request: NextRequest) {
     let subsData: any[] = [];
     if (customerIds.length > 0) {
       const { data, error } = await supabase.from('subscriptions')
-        .select('user_id, status, expires_at, customers(name, phone)')
+        .select('user_id, status, expires_at, customers(name, phone, farm_name, district, poultry_type)')
         .in('user_id', customerIds);
       if (!error && data) {
         subsData = data;
@@ -65,11 +65,18 @@ export async function GET(request: NextRequest) {
       }
 
       const customerInfo = Array.isArray(sub.customers) ? sub.customers[0] : sub.customers;
+      
+      // Find the associated key code
+      const relatedKey = activatedKeys.find(k => k.activated_by_user_id === sub.user_id);
 
       renewals.push({
         customer_id: sub.user_id,
         customer_name: customerInfo?.name || 'Unknown Farmer',
         phone: customerInfo?.phone || 'N/A',
+        key_code: relatedKey?.key_code || 'N/A',
+        farm_name: customerInfo?.farm_name || 'N/A',
+        district: customerInfo?.district || 'N/A',
+        poultry_type: customerInfo?.poultry_type || 'N/A',
         status: sub.status,
         expires_at: sub.expires_at,
         days_remaining: daysRemaining,
@@ -79,11 +86,15 @@ export async function GET(request: NextRequest) {
 
     // Add pending customers
     pendingKeys.forEach(key => {
-      const farmerName = key.metadata?.farmer_details?.name || 'Pending Farmer';
+      const farmerDetails = key.metadata?.farmer_details || {};
       renewals.push({
         customer_id: key.id, // using key id as a temporary unique identifier
-        customer_name: farmerName,
+        customer_name: farmerDetails.name || 'Pending Farmer',
         phone: key.assigned_phone,
+        key_code: key.key_code,
+        farm_name: farmerDetails.farmName || 'N/A',
+        district: farmerDetails.district || 'N/A',
+        poultry_type: farmerDetails.poultryType || 'N/A',
         status: 'pending',
         expires_at: null,
         days_remaining: key.validity_days, // show validity days
