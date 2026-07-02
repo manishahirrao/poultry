@@ -265,8 +265,9 @@ export async function POST(request: NextRequest) {
     }
 
     // Create sheds
-    const shedsToInsert = farmData.sheds.map(shed => ({
+    const shedsToInsert = farmData.sheds.map((shed, index) => ({
       farm_id: (farm as any).id,
+      shed_number: index + 1,
       name: shed.name,
       capacity: shed.capacity,
       shed_type: shed.shed_type,
