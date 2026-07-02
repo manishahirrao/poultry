@@ -121,16 +121,23 @@ export default function MyCustomersPage() {
                       <div className="flex items-center gap-1 justify-end mb-1">
                         {isExpired ? <AlertTriangle size={16} className="text-red-500" /> :
                          isWarning ? <Calendar size={16} className="text-yellow-500" /> :
+                         customer.status_flag === 'pending' ? <AlertCircle size={16} className="text-orange-500" /> :
                          <CheckCircle2 size={16} className="text-green-500" />}
                         <span className={`text-sm font-bold uppercase tracking-wider ${
-                          isExpired ? 'text-red-600' : isWarning ? 'text-yellow-600' : 'text-green-600'
+                          isExpired ? 'text-red-600' : 
+                          isWarning ? 'text-yellow-600' : 
+                          customer.status_flag === 'pending' ? 'text-orange-600' : 'text-green-600'
                         }`}>
-                          {isExpired ? 'Expired' : isWarning ? 'Expiring Soon' : 'Active'}
+                          {isExpired ? 'Expired' : 
+                           isWarning ? 'Expiring Soon' : 
+                           customer.status_flag === 'pending' ? 'Pending Activation' : 'Active'}
                         </span>
                       </div>
                       <p className="text-xs font-jakarta text-neutral-500">
                         {isExpired ? (
                           <span className="text-red-500 font-semibold">Expired {Math.abs(customer.days_remaining)} days ago</span>
+                        ) : customer.status_flag === 'pending' ? (
+                          <span className="text-orange-500 font-medium">Awaiting Farmer Login</span>
                         ) : (
                           <span>Expires: {format(new Date(customer.expires_at), 'MMM dd, yyyy')} ({customer.days_remaining} days left)</span>
                         )}
