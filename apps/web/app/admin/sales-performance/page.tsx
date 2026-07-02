@@ -27,7 +27,7 @@ export default function SalesPerformancePage() {
         if (!supabase) throw new Error('Auth client not initialized');
         const { data: { session } } = await supabase.auth.getSession();
         
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/v1/admin/sales/leaderboard`, {
+        const res = await fetch(`/api/v1/admin/sales/leaderboard`, {
           headers: {
             'Authorization': `Bearer ${session?.access_token}`,
             'X-Device-Token': localStorage.getItem('flockiq_device_token') || 'fallback'

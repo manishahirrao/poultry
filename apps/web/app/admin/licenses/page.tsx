@@ -13,7 +13,8 @@ export default function AdminLicenseGenerator() {
     payment_method: 'cash',
     payment_amount: 105000,
     payment_reference: '',
-    validity_days: 30
+    validity_days: 30,
+    assigned_phone: ''
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -26,7 +27,7 @@ export default function AdminLicenseGenerator() {
       if (!supabase) throw new Error('Auth client not initialized');
       const { data: { session } } = await supabase.auth.getSession();
       
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/v1/admin/licenses/generate`, {
+      const res = await fetch(`/api/v1/admin/licenses/generate`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
@@ -69,6 +70,19 @@ export default function AdminLicenseGenerator() {
             <option value="FLOCKIQ_FARM">FlockIQ Farm (Standard)</option>
             <option value="FLOCKIQ_PRO">FlockIQ Pro (Enterprise)</option>
           </select>
+        </div>
+
+        {/* Customer Phone (Optional) */}
+        <div>
+          <label className="block text-sm font-semibold text-neutral-900 mb-2 font-jakarta">Assign to Phone Number</label>
+          <input 
+            type="tel"
+            value={formData.assigned_phone}
+            onChange={e => setFormData({...formData, assigned_phone: e.target.value})}
+            placeholder="e.g. 9876543210"
+            className="w-full h-12 px-4 rounded-xl border border-neutral-200 bg-neutral-50 focus:bg-white focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all font-jakarta"
+          />
+          <p className="text-xs text-neutral-500 mt-1 font-jakarta">If provided, the customer will be auto-activated upon login.</p>
         </div>
 
         {/* Payment Details */}

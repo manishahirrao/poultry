@@ -26,16 +26,38 @@ export function ActivationForm() {
       setIsSessionLoading(false);
       return;
     }
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    supabase.auth.getSession().then(async ({ data: { session } }) => {
       if (session) {
         setSession(session);
         if (session.user?.phone) {
           setPhone(session.user.phone.replace('+91', ''));
+          
+          // Check for auto-activation
+          try {
+            const res = await fetch(`/api/v1/auth/activate-license`, {
+              method: 'POST',
+              headers: { 
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${session.access_token}`
+              },
+              body: JSON.stringify({})
+            });
+            if (res.ok) {
+              const resData = await res.json();
+              if (resData.device_token) {
+                localStorage.setItem('flockiq_device_token', resData.device_token);
+              }
+              router.push('/dashboard/overview');
+              return;
+            }
+          } catch (e) {
+            console.error('Auto-activation check failed:', e);
+          }
         }
       }
       setIsSessionLoading(false);
     });
-  }, [supabase]);
+  }, [supabase, router]);
 
   const handleSendOtp = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -44,7 +66,7 @@ export function ActivationForm() {
 
     try {
       // 1. First validate the license key with the backend
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/v1/auth/validate-license`, {
+      const res = await fetch(`/api/v1/auth/validate-license`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ key_code: licenseKey, phone })
@@ -88,7 +110,7 @@ export function ActivationForm() {
       if (authError) throw authError;
 
       // 2. Finalize activation in backend
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/v1/auth/activate-license`, {
+      const res = await fetch(`/api/v1/auth/activate-license`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
@@ -123,7 +145,7 @@ export function ActivationForm() {
     setIsLoading(true);
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/v1/auth/activate-license`, {
+      const res = await fetch(`/api/v1/auth/activate-license`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
